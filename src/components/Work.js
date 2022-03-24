@@ -1,8 +1,9 @@
 import React from 'react'
+import './styles/Work.css';
 
 const Work = () => {
   return (
-    <div>Workkking boy</div>
+    <div className='WorkRoot'>Workkking boy</div>
   )
 }
 
