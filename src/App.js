@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+import ColorTheme from './components/ColorTheme';
 import Work from './components/Work';
 import Home from "./components/Home";
 import About from './components/About';
@@ -11,6 +12,7 @@ function App() {
     <Router>
     <div className="App">
       <Navbar/>
+      <ColorTheme />
       <div className='content'>
         <Routes>
           <Route path='/work' element={<Work />}></Route>

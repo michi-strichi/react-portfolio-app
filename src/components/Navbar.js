@@ -4,7 +4,7 @@ import './styles/Navbar.css';
 
 const Navbar = () => {
   return (
-    <div className='NavbarRoot'>
+    <div className='Navbar'>
         <nav className="NavbarNav">
             <ul className="NavbarList">
                 <li className="NavbarItem">

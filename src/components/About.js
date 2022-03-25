@@ -1,9 +1,12 @@
 import React from 'react'
 import './styles/About.css';
+import Footer from './Footer';
 
 const About = () => {
   return (
-    <div className='AboutRoot'>Abouttttt me</div>
+    <div className='About'>Abouttttt me
+      <Footer />
+    </div>
   )
 }
 

@@ -1,9 +1,12 @@
 import React from 'react'
+import Footer from './Footer';
 import './styles/Work.css';
 
 const Work = () => {
   return (
-    <div className='WorkRoot'>Workkking boy</div>
+    <div className='Work'>Workkking boy
+      <Footer />
+    </div>
   )
 }
 

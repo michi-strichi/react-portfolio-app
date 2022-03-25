@@ -6,15 +6,6 @@ import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
-  // <Router>
-  //   <Routes>
-  //     <Route path='/work' element={<Work/>}></Route>
-  //     <Route path='/' element={<App/>}></Route>
-  //     <Route path='/about' element={<About/>}></Route>
-
-  //   </Routes>
-  // </Router>,
-
   <React.StrictMode>
     <App />
   </React.StrictMode>,
