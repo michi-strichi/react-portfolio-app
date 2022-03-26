@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <Navbar/>
+      <Navbar />
       <ColorTheme />
       <div className='content'>
         <Routes>

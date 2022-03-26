@@ -1,6 +1,7 @@
 import React from 'react'
-import Footer from './Footer';
 import './styles/Work.css';
+import Footer from './Footer';
+
 
 const Work = () => {
   return (
