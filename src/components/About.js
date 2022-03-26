@@ -1,7 +1,6 @@
 import React from 'react'
 import { Canvas } from '@react-three/fiber';
-// import { OrbitControls } from 'drei';
-// import { boxBufferGeometry } from 'three';
+import { OrbitControls } from '@react-three/drei';
 
 import './styles/About.css';
 import Footer from './Footer';
@@ -9,8 +8,9 @@ import Footer from './Footer';
 const Box = () => {
   return (
     <mesh>
-      <sphereGeometry args={[1, 32, 32]} />
-      <meshPhongMaterial color="red" />
+      <OrbitControls />
+      <boxBufferGeometry attach='geometry' />
+      <meshPhongMaterial attach="material" color="red" />
     </mesh>
   )
 }
@@ -23,6 +23,8 @@ const About = () => {
       </div>
       <div className='AboutPortrait'>
         <Canvas>
+          <ambientLight />
+          <gridHelper args={[5000, 1000]} />
           <Box />
         </Canvas>
       </div>
