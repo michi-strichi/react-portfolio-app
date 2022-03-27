@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './styles/Navbar.css';
 
 const Navbar = ({selected}) => {
+
+    const [page, setPage] = useState("home");
 
   return (
     <div className='Navbar'>
         <nav className="NavbarNav">
             <ul className="NavbarList">
                 <li className="NavbarItem">
-                    <Link to='/work' className={selected === "work" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>Work</Link>
+                    <Link to='/work' onClick={() => setPage("work")} className={page === "work" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>Work</Link>
                 </li>
                 <li className="NavbarItem" >
-                    <Link to='/' className={selected === "home" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>Home</Link>
-                </li>
+                    <Link to='/' onClick={() => setPage("home")} className={page === "home" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>Home</Link>
+                </li>   
                 <li className="NavbarItem">
-                    <Link to='/about' className={selected === "about" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>About</Link>
+                    <Link to='/about' onClick={() => setPage("about")} className={page === "about" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>About</Link>
                 </li>
             </ul>
         </nav>
