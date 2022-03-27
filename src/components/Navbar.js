@@ -11,13 +11,13 @@ const Navbar = ({selected}) => {
         <nav className="NavbarNav">
             <ul className="NavbarList">
                 <li className="NavbarItem">
-                    <Link to='/work' onClick={() => setPage("work")} className={page === "work" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>Work</Link>
+                    <Link to='/work' onClick={() => setPage("work")} className={page === "work" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>work</Link>
                 </li>
                 <li className="NavbarItem" >
-                    <Link to='/' onClick={() => setPage("home")} className={page === "home" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>Home</Link>
+                    <Link to='/' onClick={() => setPage("home")} className={page === "home" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>home</Link>
                 </li>   
                 <li className="NavbarItem">
-                    <Link to='/about' onClick={() => setPage("about")} className={page === "about" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>About</Link>
+                    <Link to='/about' onClick={() => setPage("about")} className={page === "about" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>about</Link>
                 </li>
             </ul>
         </nav>
