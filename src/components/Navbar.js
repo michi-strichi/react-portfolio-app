@@ -15,7 +15,7 @@ const Navbar = ({selected}) => {
         <nav className="NavbarNav">
             <ul className="NavbarList">
                 <li className="NavbarItem">
-                    <Link to='/work' onClick={() => setPage("work")} className={page === "work" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>
+                    <Link to='/work' onClick={() => setPage("work")} style={page === "work" ? {fontWeight: 700} : {fontWeight: 500}}>
                         work
                     </Link>
                 </li>
@@ -25,7 +25,7 @@ const Navbar = ({selected}) => {
                     </Link>
                 </li>   
                 <li className="NavbarItem">
-                    <Link to='/about' onClick={() => setPage("about")} className={page === "about" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>
+                    <Link to='/about' onClick={() => setPage("about")} style={page === "about" ? {fontWeight: 700} : {fontWeight: 500}}>
                         about
                     </Link>
                 </li>

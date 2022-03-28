@@ -47,15 +47,6 @@ a{
     transform: translate(0px, 4px);
 }
 
-.NavbarItemSelected{
-    font-weight: 700;
-}
-
-.NavbarItemNotSelected{
-    font-weight: 500;
-}
-
-
 :link{
     color: black;
     text-decoration: none;
