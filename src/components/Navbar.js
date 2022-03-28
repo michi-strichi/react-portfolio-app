@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+
 import './styles/Navbar.css';
+import kleeblatt_medium from './assets/Kleeblatt_medium.svg';
+import kleeblatt_bold from './assets/Kleeblatt_bold.svg';
+
 
 const Navbar = ({selected}) => {
 
@@ -15,20 +19,15 @@ const Navbar = ({selected}) => {
                         work
                     </Link>
                 </li>
-                <li className="NavbarItem" >
-                    <Link to='/' onClick={() => setPage("home")} className={page === "home" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>
-                        <img src="./assets/Kleeblatt_bold.svg"  />
-                        {/* <img src={page === "home" ? "./assets/Kleeblatt_bold.svg" : "./assets/Kleeblatt_medium.svg"} /> */}
-                        {/* <object data={page === "home" ? "./assets/Kleeblatt_bold" : "./assets/Kleeblatt_medium"} width="300" height="300"> </object> */}
+                <li className="NavbarItem kleeblatt">
+                    <Link to='/' onClick={() => setPage("home")}>
+                        <img src={page === "home" ? kleeblatt_bold : kleeblatt_medium} />
                     </Link>
                 </li>   
                 <li className="NavbarItem">
                     <Link to='/about' onClick={() => setPage("about")} className={page === "about" ? "NavbarItemSelected" : "NavbarItemNotSelected"}>
                         about
                     </Link>
-                </li>
-                <li>
-                    <img src="./assets/Kleeblatt_bold.svg" />
                 </li>
             </ul>
         </nav>

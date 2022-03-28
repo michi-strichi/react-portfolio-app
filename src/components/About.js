@@ -4,8 +4,8 @@ import { OrbitControls } from '@react-three/drei';
 
 import './styles/About.css';
 import Footer from './Footer';
-import Navbar from "./Navbar";
 import ColorTheme from './ColorTheme';
+
 
 const Box = () => {
   return (
@@ -20,7 +20,6 @@ const Box = () => {
 const About = () => {
   return (
     <div className='About'>
-      {/* <Navbar selected="about"/> */}
       <ColorTheme />
       <div className='AboutBio'>
         Hi, I'm Michael Hochreiter and im really interested in ....
