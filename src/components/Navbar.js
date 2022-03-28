@@ -21,7 +21,7 @@ const Navbar = ({selected}) => {
                 </li>
                 <li className="NavbarItem kleeblatt">
                     <Link to='/' onClick={() => setPage("home")}>
-                        <img src={page === "home" ? kleeblatt_bold : kleeblatt_medium} />
+                        <img src={page === "home" ? kleeblatt_bold : kleeblatt_medium} alt="Clover Leaf Logo" />
                     </Link>
                 </li>   
                 <li className="NavbarItem">

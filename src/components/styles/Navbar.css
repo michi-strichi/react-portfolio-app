@@ -2,7 +2,9 @@
     background-color: transparent;
     width: 100%;
     position: fixed;
-    margin: 0px auto 30px auto;
+    top: 0px;
+    z-index: 10;
+    margin: 0px auto 0px auto;
 }
 
 .NavbarList{

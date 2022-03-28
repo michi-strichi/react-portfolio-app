@@ -1,8 +1,36 @@
-.About{
-    background-color: white;
-    height: 2000px;
+.About {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 12vh 12vw 0 12vw;
+    background-color: transparent;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 76vh;
+}
+
+.AboutBio {
+    background-color: transparent;
+    z-index: 1;
+    width: 60%;
 }
 
 .AboutPortrait {
-    height: max-content;
+    background-color: transparent;
+    margin-left: -5%;
+    width: 45%;
+    height: 60vh;
 }
+
+
+
+
+
+
