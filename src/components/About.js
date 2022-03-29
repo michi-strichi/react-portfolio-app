@@ -4,7 +4,6 @@ import { OrbitControls } from '@react-three/drei';
 
 import './styles/About.css';
 import Footer from './Footer';
-import ColorTheme from './ColorTheme';
 
 
 const Box = () => {
@@ -20,7 +19,6 @@ const Box = () => {
 const About = () => {
     return (
         <div className='About'>
-            {/* <ColorTheme /> */}
             <div className='Container'>
                 <div className='AboutBio'>
                     <div style={{ fontSize: "3rem" }}>
@@ -42,7 +40,7 @@ const About = () => {
                 <div className='AboutPortrait'>
                     <Canvas>
                         <ambientLight />
-                        <gridHelper args={[5000, 1000]} />
+                        <gridHelper args={[1000, 1000]} />
                         <Box />
                     </Canvas>
                 </div>

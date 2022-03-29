@@ -4,7 +4,11 @@
     position: fixed;
     top: 0px;
     z-index: 10;
-    margin: 0px auto 0px auto;
+    margin: 0px auto;
+    pointer-events: none;
+
+    display: flex;
+    justify-content: center;
 }
 
 .NavbarList{
@@ -16,8 +20,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
-    /* backdrop-filter: blur(4px); */
 }
 
 .NavbarItem{
@@ -32,6 +34,8 @@
     color: black;
 
     transition: all 0.2s;
+
+    pointer-events: all;
 }
 
 .NavbarItem.kleeblatt{
