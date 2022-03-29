@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './styles/Navbar.css';
-import kleeblatt_medium from './assets/Kleeblatt_medium.svg';
-import kleeblatt_bold from './assets/Kleeblatt_bold.svg';
+import kleeblatt_medium from './assets/svgs/Kleeblatt_medium.svg';
+import kleeblatt_bold from './assets/svgs/Kleeblatt_bold.svg';
 
 
-const Navbar = ({ page, theme , setPage}) => {
+const Navbar = ({ page, theme, setPage}) => {
 
     return (
         <div className='Navbar'>

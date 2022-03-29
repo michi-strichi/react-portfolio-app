@@ -1,8 +1,8 @@
 import React from 'react'
 
 import './styles/ColorTheme.css';
-import sun from './assets/Sun.svg';
-import moon from './assets/Moon.svg';
+import sun from './assets/svgs/Sun.svg';
+import moon from './assets/svgs/Moon.svg';
 
 const ColorTheme = ({theme, toggleTheme}) => {
 

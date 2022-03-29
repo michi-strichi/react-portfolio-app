@@ -7,11 +7,12 @@ import Footer from './Footer';
 
 
 const Box = () => {
+
     return (
         <mesh>
             <OrbitControls />
             <boxBufferGeometry attach='geometry' />
-            <meshPhongMaterial attach="material" color="red" />
+            <meshPhongMaterial attach="material" color="black" />
         </mesh>
     )
 }

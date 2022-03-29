@@ -22,3 +22,13 @@ body {
     background-color: transparent;
 }
 
+::selection {
+    /* background: hsl(244, 100%, 84%); WebKit/Blink Browsers */
+    background: hsl(38, 100%, 77%);
+  }
+
+::-moz-selection {
+    /* background: hsl(244, 100%, 84%); Gecko Browsers */
+    background: hsl(38, 100%, 77%);
+}
+

@@ -1,11 +1,10 @@
 import React from 'react'
 import './styles/Work.css';
 import Footer from './Footer';
-import Navbar from "./Navbar";
-import ColorTheme from './ColorTheme';
-
 
 const Work = () => {
+    const projects = require('./assets/projects.json');
+
   return (
     <div className='Work'>
       <Footer />

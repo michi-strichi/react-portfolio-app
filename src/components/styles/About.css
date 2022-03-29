@@ -3,7 +3,7 @@
     padding: 12vh 12vw 0 12vw;
     background-color: transparent;
     height: 100vh;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -19,6 +19,13 @@
     background-color: transparent;
     z-index: 1;
     width: 60%;
+    max-height: 70vh;
+    overflow-y: auto;
+    direction: rtl;
+}
+
+.AboutBio div  {
+    direction: ltr;
 }
 
 .AboutPortrait {
