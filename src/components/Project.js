@@ -2,14 +2,14 @@ import React from 'react'
 
 import './styles/Project.css';
 
-const Project = () => {
-  return (
-    <div className='Project'>
+const Project = ({ title, description, software, thumbnail, detail_0, detail_1 }) => {
+    return (
+        <div className='Project'>
 
 
-        
-    </div>
-  )
+
+        </div>
+    )
 }
 
 export default Project
