@@ -4,14 +4,14 @@ import './styles/ColorTheme.css';
 import sun from './assets/Sun.svg';
 import moon from './assets/Moon.svg';
 
-const ColorTheme = ({theme, setTheme}) => {
+const ColorTheme = ({theme, toggleTheme}) => {
 
     return (
-        <button className='ColorTheme' onClick={() => setTheme("Dark")}>
-            <div className='Knob Light'></div>
+        <button className={'ColorTheme' + ' ' + theme} onClick={toggleTheme}  >
+            <div className={'Knob' + ' ' + theme}></div>
             <div className='IconContainer'>
-                <img src={moon} className='Icon' />
-                <img src={sun} className='Icon' />
+                <img src={moon} className='Icon' alt='Moon Icon' />
+                <img src={sun} className='Icon' alt='Sun Icon' />
             </div>
         </button>
     )

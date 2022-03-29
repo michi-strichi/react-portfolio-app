@@ -12,15 +12,14 @@ function App() {
     const [page, setPage] = useState("home");
     const [theme, setTheme] = useState("Light");
 
-    // const themeToggler = () => {
-    //     theme === "Light" ? setTheme("Dark") : setTheme("Light");
-    //     console.log(theme);
-    // }
+    const toggleTheme = () => {
+        theme === "Light" ? setTheme("Dark") : setTheme("Light")
+    }
 
     return (
         <Router>
             <div className="App">
-                <ColorTheme theme={theme} setTheme={setTheme} />
+                <ColorTheme theme={theme} toggleTheme={toggleTheme}/>
                 <Navbar page={page} theme={theme} setPage={setPage} />
                 <div className='page'  >
                     <Routes>

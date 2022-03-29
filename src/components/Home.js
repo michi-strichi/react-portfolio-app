@@ -6,9 +6,7 @@ import ColorTheme from './ColorTheme';
 const Home = () => {
   return (
     <div className='Home'>
-      {/* <Navbar selected="home" /> */}
-      <ColorTheme />
-      Home aloone
+        
     </div>
   )
 }

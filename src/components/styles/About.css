@@ -1,7 +1,7 @@
 .About {
     box-sizing: border-box;
     padding: 12vh 12vw 0 12vw;
-    background-color: grey;
+    background-color: transparent;
     height: 100vh;
     display:flex;
     flex-direction: column;
