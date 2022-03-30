@@ -1,21 +1,18 @@
-{
-    "projects" : [
-        {
-            "title" : "Excavation Viewer",
-            "description" : "An interactive 3D viewer of the excavation of prehistoric stilt houses at Attersee, Austria. The surrounding area, as well as high-resolution photogrammtery scans of the different excavation layers can be examined virtually.",
-            "software" : "Blender3D, Unreal Engine 4, Adobe Photoshop",
-            "thumbnail" : "",
-            "detail_0" : "",
-            "detail_1" : ""
-        },
-        {
-            "title" : "Virtual Gallery",
-            "description" : "An interactive experience of the degree program Media Technology & Design at the University of Applied Austria Available in VR or as a desktop version. Numerous works created during the course are exhibited. Easily addable, modular displays (2D, 3D, audio, video & code/web/game) allow new projects to be added constantly.",
-            "software" : "Blender3D, Unity, Adobe Photoshop, Ableton Live",
-            "thumbnail" : "",
-            "detail_0" : "",
-            "detail_1" : ""
-        }
-    ]
-}
-
+[
+    {
+        "title": "Excavation Viewer",
+        "description": "An interactive 3D viewer of the excavation of prehistoric stilt houses at Attersee, Austria. The surrounding area, as well as high-resolution photogrammtery scans of the different excavation layers can be examined virtually.",
+        "software": "Blender3D, Unreal Engine 4, Adobe Photoshop",
+        "thumbnail": "",
+        "detail_0": "",
+        "detail_1": ""
+    },
+    {
+        "title": "Virtual Gallery",
+        "description": "An interactive experience of the degree program Media Technology & Design at the University of Applied Austria Available in VR or as a desktop version. Numerous works created during the course are exhibited. Easily addable, modular displays (2D, 3D, audio, video & code/web/game) allow new projects to be added constantly.",
+        "software": "Blender3D, Unity, Adobe Photoshop, Ableton Live",
+        "thumbnail": "",
+        "detail_0": "",
+        "detail_1": ""
+    }
+]

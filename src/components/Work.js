@@ -6,8 +6,8 @@ import Project from './Project';
 const Work = () => {
     const projects = require('./assets/projects.json');
 
-    
-    const [expandedProject, setExpandedProjects] = useState();
+    // let initialExpandedProjects = Array(projects.length).fill(false);
+    // const [expandedProjects, setExpandedProjects] = useState(initialExpandedProjects);
 
     return (
         <div className='Work'>
