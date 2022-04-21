@@ -3,9 +3,9 @@ import './styles/Home.css';
 import Navbar from "./Navbar";
 import ColorTheme from './ColorTheme';
 
-const Home = () => {
+const Home = ({theme}) => {
   return (
-    <div className='Home'>
+    <div className={'Home' + ' ' + theme}>
         
     </div>
   )

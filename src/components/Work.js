@@ -3,14 +3,14 @@ import './styles/Work.css';
 import Footer from './Footer';
 import Project from './Project';
 
-const Work = () => {
+const Work = ({theme}) => {
     const projects = require('./assets/projects.json');
 
     // let initialExpandedProjects = Array(projects.length).fill(false);
     // const [expandedProjects, setExpandedProjects] = useState(initialExpandedProjects);
 
     return (
-        <div className='Work'>
+        <div className={'Work' + ' ' + theme}>
             <Project
                 title={projects[0].title}
                 description={projects[0].description}

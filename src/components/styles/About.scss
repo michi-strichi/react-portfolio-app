@@ -1,0 +1,86 @@
+.About {
+    box-sizing: border-box;
+    padding: 12vh 12vw 0 12vw;
+    background-color: transparent;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 76vh;
+}
+
+.AboutBio {
+    background-color: transparent;
+    z-index: 1;
+    width: 60%;
+    max-height: 70vh;
+    overflow-y: auto;
+    direction: rtl;
+}
+
+.AboutBio div  {
+    direction: ltr;
+}
+
+.AboutPortrait {
+    background-color: transparent;
+    margin-left: -5%;
+    width: 45%;
+    height: 60vh;
+}
+
+
+/* --------------------------------- MOBILE --------------------------------- */
+@media (min-width:320px)  {
+
+    * {
+        color: pink;
+    } 
+
+}
+
+/* --------------------------------- TABLET --------------------------------- */
+@media (min-width:541px)  {
+
+    * {
+        color: green;
+    }
+
+}
+
+/* --------------------------------- LAPTOP --------------------------------- */
+@media (min-width:1025px) {
+
+    * {
+        color: blue;
+    }
+
+}
+
+/* --------------------------------- BIG SCREEN --------------------------------- */
+@media (min-width:1281px) { 
+    
+    * {
+        color: red;
+    }
+
+}
+
+/* --------------------------------- THEMES --------------------------------- */
+
+.About.Dark {
+    background-color: rgb(20, 20, 20);    
+}
+
+
+.About.Light {
+    background-color: rgb(235, 235, 235);
+}
+
+

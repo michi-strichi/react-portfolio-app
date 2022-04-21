@@ -10,7 +10,7 @@ import ColorTheme from "./components/ColorTheme";
 
 function App() {
     const [page, setPage] = useState("home");
-    const [theme, setTheme] = useState("Light");
+    const [theme, setTheme] = useState("Dark");
 
     const toggleTheme = () => {
         theme === "Light" ? setTheme("Dark") : setTheme("Light")
@@ -19,13 +19,13 @@ function App() {
     return (
         <Router>
             <div className="App">
-                <ColorTheme theme={theme} toggleTheme={toggleTheme}/>
-                <Navbar page={page} theme={theme} setPage={setPage} />
+                {/* <ColorTheme theme={theme} toggleTheme={toggleTheme}/> */}
+                {/* <Navbar page={page} theme={theme} setPage={setPage} /> */}
                 <div className='page'  >
                     <Routes>
-                        <Route path='/work' element={<Work />}></Route>
-                        <Route path='/' element={<Home />}></Route>
-                        <Route path='/about' element={<About />}></Route>
+                        <Route path='/' element={<Home theme={theme} />}></Route>
+                        <Route path='/work' element={<Work theme={theme} />}></Route>
+                        <Route path='/about' element={<About theme={theme} />}></Route>
                     </Routes>
                 </div>
             </div>
