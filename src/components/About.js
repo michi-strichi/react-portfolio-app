@@ -25,11 +25,11 @@ const About = ({ theme }) => {
                     <h1 style={{ fontSize: "3rem" }}>
                         Hey, I'm Michael.
                     </h1>
-                    <h4 className='Large'>
-                        Currently I'm studying media technology in the fourth semester and really digging it. I come from a 3D design background, but interaction has found its way into my interests. Now i work in all the places where interactivity meets the third dimension. I think the possibilities that this combination offers are exciting and yet to be fully explored.
+                    <h4>
+                        Currently I'm studying media technology in the fourth semester and really digging it. I come from a 3D background, but interaction has found its way into my interests. Now i work in all the places where interactivity meets the third dimension. I think the possibilities that this combination offers are exciting and yet to be fully explored.
                     </h4>
                     <h4>
-                        When I'm not playing around with 3d models, i'm probably either cooking pasta, shooting a basketball or looking at plants in the woods.
+                        When I'm not playing around with 3D models, i'm probably either cooking pasta, shooting a basketball or looking at plants in the woods.
                     </h4>
 
                     <h3>
