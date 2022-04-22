@@ -30,7 +30,7 @@ const About = ({ theme }) => {
                 </div>
                 <div className='Bio'>
                     <h1>
-                        Hey, I'm Michael.
+                        Hi, I'm Michael ☘️
                     </h1>
                     <h4>
                         Currently I'm studying media technology in the fourth semester and really digging it. I come from a 3D background, but interaction has found its way into my interests. Now i work in all the places where interactivity meets the third dimension. I think the possibilities that this combination offers are exciting and yet to be fully explored.<br />
