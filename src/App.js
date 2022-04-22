@@ -6,11 +6,12 @@ import Work from './components/Work';
 import Home from "./components/Home";
 import About from './components/About';
 import ColorTheme from "./components/ColorTheme";
+import './App.scss';
 
 
 function App() {
     const [page, setPage] = useState("home");
-    const [theme, setTheme] = useState("Light");
+    const [theme, setTheme] = useState("Dark");
 
     const toggleTheme = () => {
         theme === "Light" ? setTheme("Dark") : setTheme("Light")
