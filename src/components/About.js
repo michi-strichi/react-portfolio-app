@@ -63,7 +63,7 @@ const About = ({ theme }) => {
                     </p>
                 </div>
             </div>
-            <Footer />
+            <Footer theme={theme}/>
         </div>
     )
 }

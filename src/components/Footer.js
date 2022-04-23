@@ -1,12 +1,12 @@
 import React from 'react'
-import "./styles/Footer.css"
+import "./styles/Footer.scss"
 
-const Footer = () => {
+const Footer = ({ theme }) => {
     const year = new Date().getFullYear();
 
     return (
-        <footer className='Footer'>
-            <p>© Copyright Michael Hochreiter {year}.<br/>All rights reserved.</p>
+        <footer className={'Footer' + ' ' + theme}>
+            © Copyright Michael Hochreiter {year}.<br/>All rights reserved.
         </footer>
     )
 }

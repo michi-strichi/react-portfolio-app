@@ -1,0 +1,39 @@
+@import './Colors.scss';
+
+/* --------------------------------- MOBILE --------------------------------- */
+@media (min-width:320px)  {
+
+    .Footer{
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 20px;
+    }
+}
+
+/* --------------------------------- TABLET --------------------------------- */
+@media (min-width:581px)  {
+
+}
+
+/* --------------------------------- LAPTOP --------------------------------- */
+@media (min-width:1025px) {
+
+}
+
+/* --------------------------------- BIG SCREEN --------------------------------- */
+@media (min-width:1281px) { 
+    
+}
+
+
+/* --------------------------------- THEMES --------------------------------- */
+
+.Footer.Dark {
+    background-color: $dark-backgroundColor2;
+    color: $dark-text5 ;
+}
+
+Footer.Light {
+    background-color: $light-backgroundColor2;
+    color: $light-text5 ;
+}

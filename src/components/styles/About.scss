@@ -7,7 +7,7 @@
         position: absolute;
 
         .Portrait {
-            background-color: rgb(152, 155, 255);
+            background-color: rgb(96, 96, 96);
             height: 400px;
             width: 100%;
             position: fixed;
@@ -109,5 +109,20 @@
 
 .About.Light {
     background-color: $light-backgroundColor;
-    color: $light-text1;
+
+    h1 {
+        color: $light-text1;
+    }
+
+    h3 {
+        color: $light-text2;
+    }
+
+    h4, span {
+        color: $light-text2;
+    }
+    
+    p {
+        color: $light-text3;
+    }
 }

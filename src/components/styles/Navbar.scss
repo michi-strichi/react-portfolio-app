@@ -1,0 +1,111 @@
+@import './Colors.scss';
+
+/* --------------------------------- MOBILE --------------------------------- */
+@media (min-width:320px) {
+    .Navbar {
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        top: 0;
+
+        .burger {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+
+            .box {
+                height: 4px;
+                width: 40px;
+                margin: 6px 0 6px 0;
+            }
+        }
+
+        ul {
+            margin: 150px 50px 0 50px;
+            padding: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+            list-style: none;
+            font-size: 4em;
+
+            a.selected {
+                font-weight: 600;
+            }
+
+            a.notSelected {
+                font-weight: 200;
+            }
+            
+            :link, :visited, :hover, :active {
+                text-decoration: none;
+            }
+            
+            li {
+                height: 100px
+
+                img {
+                    height: 100px;
+                }
+            }
+
+        }
+    }
+
+    .Inactive {
+
+
+    }
+
+    .Active {
+        backdrop-filter: blur(50px);
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+
+}
+
+
+/* --------------------------------- TABLET --------------------------------- */
+@media (min-width:581px) {}
+
+/* --------------------------------- LAPTOP --------------------------------- */
+@media (min-width:1025px) {}
+
+/* --------------------------------- BIG SCREEN --------------------------------- */
+@media (min-width:1281px) {}
+
+
+/* --------------------------------- THEMES --------------------------------- */
+
+.Navbar.Dark {
+
+    .burger .box {
+        background-color: $dark-text1;
+    }
+
+    :link, :visited, :hover {
+        color: $dark-text1;
+    }
+
+    a:active {
+        color: $dark-highlight !important;
+    }
+
+    a.selected {
+        color: $dark-text1;
+    }
+
+    a.notSelected {
+        color: $dark-text2;
+    }
+
+}
+
+.Navbar.Light {}

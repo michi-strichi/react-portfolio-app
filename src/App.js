@@ -10,7 +10,7 @@ import './App.scss';
 
 
 function App() {
-    const [page, setPage] = useState("home");
+    const [page, setPage] = useState("about");
     const [theme, setTheme] = useState("Dark");
 
     const toggleTheme = () => {
@@ -21,7 +21,7 @@ function App() {
         <Router>
             <div className="App">
                 {/* <ColorTheme theme={theme} toggleTheme={toggleTheme}/> */}
-                {/* <Navbar page={page} theme={theme} setPage={setPage} /> */}
+                <Navbar page={page} theme={theme} setPage={setPage} />
                 <div className='page'  >
                     <Routes>
                         <Route path='/' element={<Home theme={theme} />}></Route>
