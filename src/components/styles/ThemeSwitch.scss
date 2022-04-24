@@ -4,12 +4,12 @@
 @media (min-width:320px) {
 
     .ThemeSwitch {
-        height: 20px;
-        width: 36px;
+        height: 26px;
+        width: 42px;
         padding: 2px;
         border: 0;
         z-index: 10;
-        border-radius: 10px;
+        border-radius: 13px;
 
         position: absolute;
         bottom: 40px;
@@ -17,8 +17,8 @@
 
         .Knob {
             height: 100%;
-            width: 16px;
-            border-radius: 8px;
+            width: 22px;
+            border-radius: 12px;
         }
 
     }

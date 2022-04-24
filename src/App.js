@@ -9,7 +9,7 @@ import './App.scss';
 
 
 function App() {
-    const [page, setPage] = useState("about");
+    const [page, setPage] = useState("home");
     const [theme, setTheme] = useState("Dark");
 
     const toggleTheme = () => {
