@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles/Home.css';
 import Navbar from "./Navbar";
-import ColorTheme from './ColorTheme';
+import ThemeSwitch from './ThemeSwitch';
 
 const Home = ({theme}) => {
   return (

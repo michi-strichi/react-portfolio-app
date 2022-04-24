@@ -10,18 +10,20 @@
 
         .burger {
             position: absolute;
-            top: 30px;
+            top: 40px;
             right: 40px;
 
-            .box {
+            .box0,
+            .box1 {
                 height: 4px;
                 width: 40px;
                 margin: 6px 0 6px 0;
+                position: relative;
             }
         }
 
         ul {
-            margin: 150px 50px 0 50px;
+            margin: 200px 40px 0 50px;
             padding: 0;
 
             display: flex;
@@ -39,16 +41,27 @@
             a.notSelected {
                 font-weight: 200;
             }
-            
-            :link, :visited, :hover, :active {
+
+            :link,
+            :visited,
+            :hover,
+            :active {
                 text-decoration: none;
             }
-            
+
             li {
-                height: 100px
+                height: 90px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+            }
+
+            li.kleeblatt {
 
                 img {
-                    height: 100px;
+                    width: 50px;
+                    padding-top: 12px;
                 }
             }
 
@@ -57,18 +70,30 @@
 
     .Inactive {
 
+        .box0,
+        .box1 {
+            transform: translate(0px, 0px) rotate(0deg);
+            transition: transform 0.2s;
+        }
 
     }
 
     .Active {
-        backdrop-filter: blur(50px);
+        backdrop-filter: blur(40px);
         width: 100%;
         height: 100%;
+
+
+        .box0 {
+            transform: translate(0px, 5px) rotate(45deg);
+            transition: transform 0.2s;
+        }
+
+        .box1 {
+            transform: translate(0px, -5px) rotate(-45deg);
+            transition: transform 0.2s;
+        }
     }
-
-
-
-
 }
 
 
@@ -86,11 +111,14 @@
 
 .Navbar.Dark {
 
-    .burger .box {
+    .burger .box0,
+    .box1 {
         background-color: $dark-text1;
     }
 
-    :link, :visited, :hover {
+    :link,
+    :visited,
+    :hover {
         color: $dark-text1;
     }
 
@@ -106,6 +134,48 @@
         color: $dark-text2;
     }
 
+    .kleeblatt .selected img {
+        filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(265deg) brightness(110%) contrast(98%);
+    }
+
+    .kleeblatt .notSelected img {
+        filter: invert(86%) sepia(99%) saturate(7292%) hue-rotate(189deg) brightness(143%) contrast(84%);
+    }
 }
 
-.Navbar.Light {}
+
+.Navbar.Light {
+
+    .burger .box0,
+    .box1 {
+        background-color: $light-text1;
+    }
+
+    :link,
+    :visited,
+    :hover {
+        color: $light-text1;
+    }
+
+    a:active {
+        color: $light-highlight !important;
+    }
+
+    a.selected {
+        color: $light-text1;
+    }
+
+    a.notSelected {
+        color: $light-text2;
+    }
+
+    .kleeblatt .selected img {
+
+        filter: invert(0%) sepia(97%) saturate(24%) hue-rotate(102deg) brightness(94%) contrast(97%);
+
+    }
+
+    .kleeblatt .notSelected img {
+        filter: invert(7%) sepia(3%) saturate(19%) hue-rotate(330deg) brightness(96%) contrast(96%);
+    }
+}

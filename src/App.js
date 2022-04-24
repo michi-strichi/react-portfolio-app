@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import Work from './components/Work';
 import Home from "./components/Home";
 import About from './components/About';
-import ColorTheme from "./components/ColorTheme";
 import './App.scss';
 
 
@@ -20,8 +19,7 @@ function App() {
     return (
         <Router>
             <div className="App">
-                {/* <ColorTheme theme={theme} toggleTheme={toggleTheme}/> */}
-                <Navbar page={page} theme={theme} setPage={setPage} />
+                <Navbar page={page} theme={theme} setPage={setPage} toggleTheme={toggleTheme}/>
                 <div className='page'  >
                     <Routes>
                         <Route path='/' element={<Home theme={theme} />}></Route>

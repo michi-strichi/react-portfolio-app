@@ -33,7 +33,7 @@ const About = ({ theme }) => {
                         Hi ✌️ I'm Michael
                     </h1>
                     <h4>
-                        <span class="C">C</span>urrently I'm studying media technology &amp; design in the fourth semester and really digging it. I come from a 3D background, but interaction has found its way into my interests. Now i work in all the places where interactivity meets the third dimension.<br />
+                        <span className="C">C</span>urrently I'm studying media technology &amp; design in the fourth semester and really digging it. I come from a 3D background, but interaction has found its way into my interests. Now i work in all the places where interactivity meets the third dimension.<br />
                         When I'm not playing around with 3D models, i'm probably either cooking pasta, shooting a basketball or hiking through some forest.
                     </h4>
 
@@ -48,11 +48,11 @@ const About = ({ theme }) => {
                         Current Reads
                     </h3>
                     <p>
-                        <span class="Book">Epic of Gilgamesh</span> by ???
+                        <span className="Book">Epic of Gilgamesh</span> by ???
                         <br />
-                        <span class="Book">Flatland</span> by Edwin Abbott Abbott
+                        <span className="Book">Flatland</span> by Edwin Abbott Abbott
                         <br />
-                        <span class="Book">Der Schimmelreiter</span> by Theodor Storm
+                        <span className="Book">Der Schimmelreiter</span> by Theodor Storm
                     </p>
 
                     <h3>

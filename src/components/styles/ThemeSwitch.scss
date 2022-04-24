@@ -1,0 +1,68 @@
+@import './Colors.scss';
+
+/* --------------------------------- MOBILE --------------------------------- */
+@media (min-width:320px) {
+
+    .ThemeSwitch {
+        height: 20px;
+        width: 36px;
+        padding: 2px;
+        border: 0;
+        z-index: 10;
+        border-radius: 10px;
+
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+
+        .Knob {
+            height: 100%;
+            width: 16px;
+            border-radius: 8px;
+        }
+
+    }
+
+    .Dark {
+        .Knob {
+            transform: translate(16px, 0px);
+            transition: all 0.3s;
+        }
+    }
+
+    .Light {
+        .Knob {
+            transform: translate(0px, 0px);
+            transition: all 0.3s;
+        }
+    }
+}
+
+/* --------------------------------- TABLET --------------------------------- */
+@media (min-width:581px) {}
+
+/* --------------------------------- LAPTOP --------------------------------- */
+@media (min-width:1025px) {}
+
+/* --------------------------------- BIG SCREEN --------------------------------- */
+@media (min-width:1281px) {}
+
+/* --------------------------------- THEMES --------------------------------- */
+
+.ThemeSwitch.Dark {
+    background-color: $dark-text1;
+
+    div {
+        background-color: $dark-backgroundColor;
+    }
+
+}
+
+.ThemeSwitch.Light {
+    background-color: $light-text1;
+
+    .Knob {
+        background-color: $light-backgroundColor;
+
+    }
+}
