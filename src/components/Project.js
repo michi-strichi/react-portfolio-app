@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './styles/Project.scss';
 
-const Project = ({ theme, title, year, description, software, thumbnail, detail_0, detail_1 }) => {
+const Project = ({ theme, title, year, description, software, role, thumbnail, detail_0, detail_1 }) => {
 
     const [isExpanded, setIsExpanded] = useState('NotExpanded');
 
@@ -29,7 +29,8 @@ const Project = ({ theme, title, year, description, software, thumbnail, detail_
             <div className='Details'>
                 <div className='Info'>
                     <p className='Description'>{description}</p>
-                    <p className='Software'>{software}</p>
+                    <p className='Software'><span className='SoftwareSpan'>Software: </span>{software}</p>
+                    {role !== "" && <p className='Role'><span className='RoleSpan'>Role: </span>{role}</p>}
                 </div>
                 <div className='Detail_0'>
                     <img src={detail_0_loaded}></img>

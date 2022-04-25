@@ -10,7 +10,7 @@ import './App.scss';
 
 function App() {
     const [page, setPage] = useState("home");
-    const [theme, setTheme] = useState("Dark");
+    const [theme, setTheme] = useState("Light");
 
     const toggleTheme = () => {
         theme === "Light" ? setTheme("Dark") : setTheme("Light")

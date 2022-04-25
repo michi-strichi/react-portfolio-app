@@ -23,6 +23,7 @@ const Work = ({ theme }) => {
                     year={project.year}
                     description={project.description}
                     software={project.software}
+                    role={project.role}
                     thumbnail={project.thumbnail}
                     detail_0={project.detail_0}
                     detail_1={project.detail_1} />

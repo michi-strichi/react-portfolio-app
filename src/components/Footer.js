@@ -9,7 +9,6 @@ const Footer = ({ theme }) => {
         <footer className={'Footer' + ' ' + theme}>
             © Copyright Michael Hochreiter {year}.<br/>All rights reserved.
             <img src={kleeblatt_thin} />
-            
         </footer>
     )
 }
