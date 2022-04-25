@@ -9,10 +9,10 @@
         "detail_1":     "prj0_detail1.png"
     },
     {
-        "title":        "Virtual Gallery",
-        "year":         "2021/22",
-        "description":  "An interactive experience of the degree program Media Technology & Design at the University of Applied Austria Available in VR or as a desktop version. Numerous works created during the course are exhibited. Easily addable, modular displays (2D, 3D, audio, video & code/web/game) allow new projects to be added constantly.",
-        "software":     "Blender3D, Unity, Adobe PS, Ableton Live",
+        "title":        "Hercules Beetle",
+        "year":         "2019",
+        "description":  "Realistic model of Hercules Beetle (lat. Dynastes Hercules). Procedural materials and textures. Hair particly systems and full body rig.",
+        "software":     "Blender3D, Adobe PS",
         "thumbnail":    "prj1_thumbnail.png",
         "detail_0":     "prj1_detail0.png",
         "detail_1":     "prj1_detail1.png"

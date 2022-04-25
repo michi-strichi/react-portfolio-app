@@ -6,7 +6,12 @@
     .Footer{
         text-align: center;
         font-size: 0.8rem;
-        padding: 20px;
+        padding: 40px 40px 25px 40px;
+
+        img {
+            height: 20px;
+            margin-top: 5px;
+        }
     }
 }
 
@@ -31,9 +36,17 @@
 .Footer.Dark {
     background-color: $dark-backgroundColor2;
     color: $dark-text5 ;
+
+    img {
+        filter: invert(54%) sepia(1%) saturate(1673%) hue-rotate(315deg) brightness(88%) contrast(83%);
+    }
 }
 
 Footer.Light {
     background-color: $light-backgroundColor2;
     color: $light-text5 ;
+
+    img {
+        filter: invert(47%) sepia(0%) saturate(3590%) hue-rotate(332deg) brightness(95%) contrast(91%);
+    }
 }

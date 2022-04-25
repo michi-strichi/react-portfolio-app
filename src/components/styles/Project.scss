@@ -1,21 +1,68 @@
+@import './Colors.scss';
+
 /* --------------------------------- MOBILE --------------------------------- */
 @media (min-width:320px) {
-
     .Project {
         height: min-content;
-        margin: 10px 10px 100px 10px; 
+        margin: 10px 10px 50px 10px;
+    }
 
-        img {
-            width: 100%;
-            border-radius: 8px;
+    img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .ThumbnailInfo {
+        margin: 3px 5px 5px 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        font-size: 1.2em;
+
+        .Title,
+        .Year {
+            margin: 0;
+            font-weight: 400;
         }
-        
-        .Details {
-            
-            .Detail_0, .Detail_1 {
-                padding: 10px;
-            }
 
+        .Year {
+            font-size: 0.7em;
+            padding: 0 0 2px 4px;
+        }
+    }
+
+    .Details {
+        margin: 0 5px 0 5px;
+
+        .Info {
+            padding-bottom: 10px;
+        }
+
+        .Detail_0,
+        .Detail_1 {
+            margin: 20px 40px 20px 40px;
+        }
+
+        .Software {
+            font-style: italic;
+        }
+    }
+
+    .Expanded {
+        .Details {
+            overflow: hidden;
+            max-height: 2000px;
+            transition: max-height 0.6s;
+        }
+    }
+
+    .NotExpanded {
+        .Details {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s;
         }
     }
 }
@@ -31,6 +78,44 @@
 
 /* --------------------------------- THEMES --------------------------------- */
 
-.Project.Dark {}
+.Project.Dark {
+    .Thumbnail {
+        color: $dark-text1;
 
-.Project.Light {}
+        .Year {
+            color: $dark-text4;
+        }
+    }
+
+    .Details {
+        .Description {
+            color: $dark-text3;
+        }
+
+        .Software {
+            color: $dark-text2;
+        }
+    }
+}
+
+
+
+.Project.Light {
+    .Thumbnail {
+        color: $light-text1;
+
+        .Year {
+            color: $light-text4;
+        }
+    }
+
+    .Details {
+        .Description {
+            color: $light-text3;
+        }
+
+        .Software {
+            color: $light-text2;
+        }
+    }
+}

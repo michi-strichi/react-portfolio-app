@@ -1,3 +1,5 @@
+@import './Colors.scss';
+
 /* --------------------------------- MOBILE --------------------------------- */
 @media (min-width:320px) {
 
@@ -5,6 +7,15 @@
         position: absolute;
         width: 100%;
         padding: 0 0 0 0;
+
+        .Intro {
+            padding: 35px 100px 60px 40px;
+
+            p {
+                font-size: 2em;
+                margin: 0 0 0 0;
+            }
+        }
     }
 }
 
@@ -20,8 +31,12 @@
 /* --------------------------------- THEMES --------------------------------- */
 
 .Work.Dark {
+    background-color: $dark-backgroundColor;
 
 
+    p {
+        color: $dark-text2;
+    }
 }
 
 .Work.Light {}
