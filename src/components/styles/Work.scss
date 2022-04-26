@@ -9,7 +9,7 @@
         padding: 0 0 0 0;
 
         .Intro {
-            padding: 35px 100px 60px 40px;
+            padding: 35px 120px 60px 40px;
 
             p {
                 font-size: 2em;
@@ -20,7 +20,19 @@
 }
 
 /* --------------------------------- TABLET --------------------------------- */
-@media (min-width:581px) {}
+@media (min-width:581px) {
+
+    .Work {
+        .Intro {
+            padding-right: 180px;
+
+            p {
+                font-size: 3.3em;
+            }
+        }
+    }
+
+}
 
 /* --------------------------------- LAPTOP --------------------------------- */
 @media (min-width:1025px) {}
@@ -33,10 +45,15 @@
 .Work.Dark {
     background-color: $dark-backgroundColor;
 
-
     p {
         color: $dark-text2;
     }
 }
 
-.Work.Light {}
+.Work.Light {
+    background-color: $light-backgroundColor;
+
+    p {
+        color: $light-text2;
+    }
+}

@@ -45,12 +45,14 @@
             margin: 20px 40px 20px 40px;
         }
 
-        .Software, .Role {
+        .Software,
+        .Role {
             font-style: italic;
             margin: 5px 0 5px 0;
         }
 
-        .SoftwareSpan, .RoleSpan {
+        .SoftwareSpan,
+        .RoleSpan {
             font-weight: 600;
             font-style: normal;
         }
@@ -75,7 +77,79 @@
 }
 
 /* --------------------------------- TABLET --------------------------------- */
-@media (min-width:581px) {}
+@media (min-width:581px) {
+
+    .ThumbnailInfo {
+        font-size: 1.5em;
+
+        .Year {
+            font-size: 0.85em;
+        }
+    }
+
+    .Details {
+        .Images {
+            display: grid;
+
+        }
+        .Info {
+            padding-bottom: 10px;
+        }
+
+        .Images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            padding: 20px 0 20px 0;
+          }
+
+          .Detail_0 {
+            grid-column: 2;
+            grid-row: 1;
+          }
+
+          .Detail_1 {
+            grid-column: 1;
+            grid-row: 1;
+          }
+
+
+
+        .Detail_0,
+        .Detail_1 {
+            margin: 0;
+        }
+
+        .Software,
+        .Role {
+            font-style: italic;
+            margin: 5px 0 5px 0;
+        }
+
+        .SoftwareSpan,
+        .RoleSpan {
+            font-weight: 600;
+            font-style: normal;
+        }
+
+    }
+
+    .Expanded {
+        .Details {
+            overflow: hidden;
+            max-height: 2000px;
+            transition: max-height 0.6s;
+        }
+    }
+
+    .NotExpanded {
+        .Details {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s;
+        }
+    }
+}
 
 /* --------------------------------- LAPTOP --------------------------------- */
 @media (min-width:1025px) {}
@@ -90,7 +164,7 @@
         color: $dark-text1;
 
         .Year {
-            color: $dark-text4;
+            color: $dark-text5;
         }
     }
 
@@ -99,20 +173,19 @@
             color: $dark-text3;
         }
 
-        .Software, .Role {
+        .Software,
+        .Role {
             color: $dark-text2;
         }
     }
 }
-
-
 
 .Project.Light {
     .Thumbnail {
         color: $light-text1;
 
         .Year {
-            color: $light-text4;
+            color: $light-text5;
         }
     }
 
@@ -121,7 +194,8 @@
             color: $light-text3;
         }
 
-        .Software, .Role {
+        .Software,
+        .Role {
             color: $light-text2;
         }
     }

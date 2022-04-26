@@ -32,11 +32,13 @@ const Project = ({ theme, title, year, description, software, role, thumbnail, d
                     <p className='Software'><span className='SoftwareSpan'>Software: </span>{software}</p>
                     {role !== "" && <p className='Role'><span className='RoleSpan'>Role: </span>{role}</p>}
                 </div>
-                <div className='Detail_0'>
-                    <img src={detail_0_loaded}></img>
-                </div>
-                <div className='Detail_1'>
-                    <img src={detail_1_loaded}></img>
+                <div className='Images'>
+                    <div className='Detail_0'>
+                        <img src={detail_0_loaded}></img>
+                    </div>
+                    <div className='Detail_1'>
+                        <img src={detail_1_loaded}></img>
+                    </div>
                 </div>
             </div>
 
