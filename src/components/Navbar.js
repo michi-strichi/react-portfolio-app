@@ -7,24 +7,13 @@ import kleeblatt_thin from './assets/svgs/Kleeblatt_thin.svg';
 import kleeblatt_bold from './assets/svgs/Kleeblatt_bold.svg';
 
 
-const Navbar = ({ page, theme, setPage, toggleTheme }) => {
+const Navbar = ({ page, theme, matches, setPage, toggleTheme }) => {
 
     const [navbarStatus, setNavbarStatus] = useState('Inactive');
 
     const toggleNavbarStatus = () => {
         navbarStatus === 'Active' ? setNavbarStatus('Inactive') : setNavbarStatus('Active');
     }
-
-    const [matches, setMatches] = useState(
-        window.matchMedia("(min-width: 1025px)").matches
-    )
-
-    useEffect(() => {
-        window
-            .matchMedia("(min-width: 1025px)")
-            .addEventListener('change', e => setMatches(e.matches));
-    }, []);
-
 
     return (
         <div className={'Navbar' + ' ' + theme + ' ' + navbarStatus}>

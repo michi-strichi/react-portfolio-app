@@ -7,9 +7,10 @@
         position: absolute;
 
         .Portrait {
-            height: 400px;
+            height: 35vh;
             width: 100%;
             position: fixed;
+            margin: 40px 0 20px 0;
             top: 0px;
             display: flex;
             flex-direction: column;
@@ -17,16 +18,15 @@
             align-items: center;
 
             .CanvasWrapper {
-                max-width: 581px;
-                width: 100%;
                 background-color: rgb(96, 96, 96);
                 border-radius: 200px;
-                height: 100%;
+                height: 35vh;
+                width: 35vh;
             }
         }
 
         .Bio {
-            margin: 400px 20px 20px 20px;
+            margin: 41vh 20px 20px 20px;
             padding: 20px 20px 200px 20px;
 
             border-radius: 12px;
@@ -34,10 +34,10 @@
             backdrop-filter: blur(40px);
 
             h1 {
-                font-size: 3em;
+                font-size: 11vw;
                 font-weight: 600;
                 margin-bottom: 0;
-
+                margin-top: 0;
             }
 
             h3 {
@@ -78,109 +78,70 @@
     .About {
         .Bio {
             h1 {
-                font-size: 4.4em;
                 margin-bottom: 0;
             }
 
             h3 {
-                font-size: 1.7em;
+                font-size: 1.6em;
             }
 
             h4 {
-                font-size: 1.7em;
+                font-size: 1.5em;
                 margin-top: 0px;
                 margin-bottom: 70px;
             }
 
             p {
-                font-size: 1.4em;
+                font-size: 1.25em;
             }
 
             span.C {
                 font-size: 1.6em;
+            }
+        }
+    }
+}
+
+/* --------------------------------- WIDE TABLET --------------------------------- */
+@media (min-width:781px) {
+
+    .About {
+        .Portrait {
+            width: 82vw;
+        }
+
+        .Bio {
+            h1 {
+                font-size: 9vw;
+
+            }
+
+            h3 {
+                font-size: 1.6em;
+
+            }
+
+            h4 {
+                font-size: 1.5em;
+                margin-bottom: 60px;
+
+            }
+
+            p {
+                font-size: 1.3em;
+    
+            }
+
+            span.C {
+                font-size: 1.6em;
+
             }
         }
     }
 }
 
 /* --------------------------------- LAPTOP --------------------------------- */
-@media (min-width:1025px) {
-    .About {
-        padding: 0 5vw 0 1vw;
-
-        .Wrapper {
-            height: 100vh;
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .Portrait {
-            flex-basis: 30%;
-            position: static;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-
-            .CanvasWrapper {
-                max-width: 581px;
-                width: 100%;
-                background-color: rgb(96, 96, 96);
-                border-radius: 200px;
-                height: 100%;
-            }
-        }
-
-        .Bio {
-            flex-basis: 70%;
-
-            margin: 20px 20px 20px 20px;
-            padding: 20px 20px 20px 20px;
-
-            border-radius: 12px;
-            background-color: transparent;
-            backdrop-filter: blur(40px);
-
-            h1 {
-                font-size: 3em;
-                font-weight: 600;
-                margin-bottom: 0;
-
-            }
-
-            h3 {
-                font-size: 1.5em;
-                font-weight: 600;
-                margin-top: 40px;
-                margin-bottom: 10px;
-            }
-
-            h4 {
-                font-size: 1.4em;
-                font-weight: 600;
-                margin-top: 4px;
-                margin-bottom: 60px;
-            }
-
-            p {
-                font-size: 1.2em;
-                font-weight: 400;
-                margin: 0;
-            }
-
-            span.C {
-                font-size: 1.6em;
-                font-weight: 400;
-            }
-
-            span.Book {
-                font-style: italic;
-            }
-        }
-    }
-}
+@media (min-width:1001px) {}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {}

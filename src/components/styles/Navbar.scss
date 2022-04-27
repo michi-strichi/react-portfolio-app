@@ -101,14 +101,13 @@
 /* --------------------------------- TABLET --------------------------------- */
 @media (min-width:581px) {}
 
-/* --------------------------------- LAPTOP --------------------------------- */
-@media (min-width:1025px) {
-
+/* --------------------------------- WIDE TABLET --------------------------------- */
+@media (min-width:781px) {
     .Navbar {
-        width: 260px;
+        width: 16vw;
         height: 100%;
         left: 0;
-        font-size: 0.7em;
+        font-size: 0.7vw;
 
 
         ul {
@@ -119,27 +118,41 @@
             align-items: flex-start;
 
             li {
-                height: 60px;
+                height: 4vw;
+                transform: translate(0, 0);
+                transition: transform 0.2s;
+            }
+
+            li:hover {
+                transform: translate(10px, 0);
+                transition: transform 0.2s;
             }
 
             li.kleeblatt {
                 img {
-                    width: 30px;
-                    padding-top: 16px;
+                    width: 2vw;
+                    box-sizing: content-box;
+                    padding-right: 20px;
                 }
             }
         }
     }
 
+
     .Active,
     .Inactive {
         backdrop-filter: none;
     }
-
 }
+
+/* --------------------------------- LAPTOP --------------------------------- */
+@media (min-width:1001px) {}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {}
+
+
+
 
 
 /* --------------------------------- THEMES --------------------------------- */
@@ -220,13 +233,13 @@
     }
 }
 
-@media (min-width:1025px) {
+@media (min-width:781px) {
 
     .Navbar.Dark {
-        background-color: $dark-backgroundColor;
+        background-color: $dark-backgroundColor1-5;
     }
 
     .Navbar.Light {
-        background-color: $light-backgroundColor;
+        background-color: $light-backgroundColor1-5;
     }
 }
