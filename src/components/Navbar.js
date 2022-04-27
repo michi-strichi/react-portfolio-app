@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import './styles/Navbar.scss';
@@ -15,13 +15,26 @@ const Navbar = ({ page, theme, setPage, toggleTheme }) => {
         navbarStatus === 'Active' ? setNavbarStatus('Inactive') : setNavbarStatus('Active');
     }
 
+    const [matches, setMatches] = useState(
+        window.matchMedia("(min-width: 1025px)").matches
+    )
+
+    useEffect(() => {
+        window
+            .matchMedia("(min-width: 1025px)")
+            .addEventListener('change', e => setMatches(e.matches));
+    }, []);
+
+
     return (
         <div className={'Navbar' + ' ' + theme + ' ' + navbarStatus}>
-            <div className='burger' onClick={() => toggleNavbarStatus()}>
-                <div className='box0' />
-                <div className='box1' />
-            </div>
-            {navbarStatus === 'Active' &&
+            {!matches &&
+                <div className='burger' onClick={() => toggleNavbarStatus()}>
+                    <div className='box0' />
+                    <div className='box1' />
+                </div>
+            }
+            {(matches || navbarStatus === 'Active') &&
                 <>
                     <nav>
                         <ul>
@@ -44,7 +57,7 @@ const Navbar = ({ page, theme, setPage, toggleTheme }) => {
 
                         </ul>
                     </nav>
-                    <ThemeSwitch theme={theme} toggleTheme={toggleTheme}/>
+                    <ThemeSwitch theme={theme} toggleTheme={toggleTheme} />
                 </>
             }
         </div>

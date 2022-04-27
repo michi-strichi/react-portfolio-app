@@ -102,7 +102,41 @@
 @media (min-width:581px) {}
 
 /* --------------------------------- LAPTOP --------------------------------- */
-@media (min-width:1025px) {}
+@media (min-width:1025px) {
+
+    .Navbar {
+        width: 260px;
+        height: 100%;
+        left: 0;
+        font-size: 0.7em;
+
+
+        ul {
+            margin: 40px;
+            padding: 0;
+
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            li {
+                height: 60px;
+            }
+
+            li.kleeblatt {
+                img {
+                    width: 30px;
+                    padding-top: 16px;
+                }
+            }
+        }
+    }
+
+    .Active,
+    .Inactive {
+        backdrop-filter: none;
+    }
+
+}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {}
@@ -110,74 +144,89 @@
 
 /* --------------------------------- THEMES --------------------------------- */
 
-.Navbar.Dark {
 
-    .burger .box0,
-    .box1 {
-        background-color: $dark-text1;
+@media (min-width:320px) {
+
+    .Navbar.Dark {
+
+        .burger .box0,
+        .box1 {
+            background-color: $dark-text1;
+        }
+
+        :link,
+        :visited,
+        :hover {
+            color: $dark-text1;
+        }
+
+        a:active {
+            color: $dark-highlight !important;
+        }
+
+        a.selected {
+            color: $dark-text1;
+        }
+
+        a.notSelected {
+            color: $dark-text2;
+        }
+
+        .kleeblatt .selected img {
+            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(265deg) brightness(110%) contrast(98%);
+        }
+
+        .kleeblatt .notSelected img {
+            filter: invert(86%) sepia(99%) saturate(7292%) hue-rotate(189deg) brightness(143%) contrast(84%);
+        }
     }
 
-    :link,
-    :visited,
-    :hover {
-        color: $dark-text1;
-    }
 
-    a:active {
-        color: $dark-highlight !important;
-    }
+    .Navbar.Light {
 
-    a.selected {
-        color: $dark-text1;
-    }
+        .burger .box0,
+        .box1 {
+            background-color: $light-text1;
 
-    a.notSelected {
-        color: $dark-text2;
-    }
+        }
 
-    .kleeblatt .selected img {
-        filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(265deg) brightness(110%) contrast(98%);
-    }
+        :link,
+        :visited,
+        :hover {
+            color: $light-text1;
+        }
 
-    .kleeblatt .notSelected img {
-        filter: invert(86%) sepia(99%) saturate(7292%) hue-rotate(189deg) brightness(143%) contrast(84%);
+        a:active {
+            color: $light-highlight !important;
+        }
+
+        a.selected {
+            color: $light-text1;
+        }
+
+        a.notSelected {
+            color: $light-text2;
+        }
+
+        .kleeblatt .selected img {
+
+            filter: invert(0%) sepia(97%) saturate(24%) hue-rotate(102deg) brightness(94%) contrast(97%);
+
+        }
+
+        .kleeblatt .notSelected img {
+            filter: invert(7%) sepia(3%) saturate(19%) hue-rotate(330deg) brightness(96%) contrast(96%);
+        }
     }
 }
 
+@media (min-width:1025px) {
 
-.Navbar.Light {
-
-    .burger .box0,
-    .box1 {
-        background-color: $light-text1;
-
+    .Navbar.Dark {
+        background-color: $dark-backgroundColor;
     }
 
-    :link,
-    :visited,
-    :hover {
-        color: $light-text1;
-    }
-
-    a:active {
-        color: $light-highlight !important;
-    }
-
-    a.selected {
-        color: $light-text1;
-    }
-
-    a.notSelected {
-        color: $light-text2;
-    }
-
-    .kleeblatt .selected img {
-
-        filter: invert(0%) sepia(97%) saturate(24%) hue-rotate(102deg) brightness(94%) contrast(97%);
-
-    }
-
-    .kleeblatt .notSelected img {
-        filter: invert(7%) sepia(3%) saturate(19%) hue-rotate(330deg) brightness(96%) contrast(96%);
+    .Navbar.Light {
+        background-color: $light-backgroundColor;
     }
 }

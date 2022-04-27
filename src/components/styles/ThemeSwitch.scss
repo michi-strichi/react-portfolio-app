@@ -39,7 +39,14 @@
 }
 
 /* --------------------------------- TABLET --------------------------------- */
-@media (min-width:581px) {}
+@media (min-width:581px) {
+    .ThemeSwitch {
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+    }
+
+}
 
 /* --------------------------------- LAPTOP --------------------------------- */
 @media (min-width:1025px) {}
