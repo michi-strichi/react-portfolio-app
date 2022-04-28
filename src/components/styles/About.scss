@@ -111,6 +111,7 @@
         }
 
         .Bio {
+            backdrop-filter: none;
             h1 {
                 font-size: 9vw;
 
@@ -129,7 +130,7 @@
 
             p {
                 font-size: 1.3em;
-    
+
             }
 
             span.C {
@@ -141,7 +142,60 @@
 }
 
 /* --------------------------------- LAPTOP --------------------------------- */
-@media (min-width:1001px) {}
+@media (min-width:1001px) {
+
+    .About {
+        width: 90vw;
+
+        .Portrait {
+            margin: 0;
+            right: 0;
+            margin: 0 8vw 0 0;
+            height: 100vh;
+            width: min-content;
+            flex-direction: column;
+            justify-content: center;
+
+            .CanvasWrapper {
+                width: 20vw;
+                height: 20vw;
+            }
+        }
+
+        .Bio {
+            width: 54vw;
+            margin-top: 80px;
+            margin-left: 7vw;
+
+
+            h1 {
+                font-size: 7vw;
+
+            }
+
+            h3 {
+                font-size: 1.6em;
+
+            }
+
+            h4 {
+                font-size: 1.5em;
+                margin-bottom: 60px;
+
+            }
+
+            p {
+                font-size: 1.3em;
+
+            }
+
+            span.C {
+                font-size: 1.6em;
+
+            }
+        }        
+    }
+}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {}

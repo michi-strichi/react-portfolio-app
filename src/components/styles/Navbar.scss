@@ -146,7 +146,36 @@
 }
 
 /* --------------------------------- LAPTOP --------------------------------- */
-@media (min-width:1001px) {}
+@media (min-width:1001px) {
+    .Navbar {
+        width: 10vw;
+        font-size: 0.5vw;
+
+
+        ul {
+            margin: 2vw;
+
+            li {
+                height: 3vw;
+                transform: translate(0, 0);
+                transition: transform 0.2s;
+            }
+
+            li:hover {
+                transform: translate(10px, 0);
+                transition: transform 0.2s;
+            }
+
+            li.kleeblatt {
+                img {
+                    width: 1.4vw;
+                    box-sizing: content-box;
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {}

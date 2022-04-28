@@ -30,7 +30,7 @@ const About = ({ theme }) => {
                         </Canvas>
                     </div>
                 </div>
-                <div className='Bio'>
+                <div className='Bio' >
                     <h1>
                         Hi ✌️ I'm Michael
                     </h1>
