@@ -33,6 +33,22 @@
             background-color: transparent;
             backdrop-filter: blur(40px);
 
+            .PullBarWrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .PullBar {
+                height: 4px;
+                width: 40%;
+                margin: 0 0 4px 0;
+                padding: 0;
+                border-radius: 2px;
+            }
+
             h1 {
                 font-size: 11vw;
                 font-weight: 600;
@@ -77,6 +93,7 @@
 
     .About {
         .Bio {
+
             h1 {
                 margin-bottom: 0;
             }
@@ -111,7 +128,7 @@
         }
 
         .Bio {
-            backdrop-filter: none;
+
             h1 {
                 font-size: 9vw;
 
@@ -163,6 +180,7 @@
         }
 
         .Bio {
+            backdrop-filter: none;
             width: 54vw;
             margin-top: 80px;
             margin-left: 7vw;
@@ -205,12 +223,16 @@
 .About.Dark {
     background-color: $dark-backgroundColor;
 
+    .PullBar {
+        background-color: $dark-backgroundColor1-5;
+    }
+
     h1 {
         color: $dark-text1;
     }
 
     h3 {
-        color: $dark-text2;
+        color: $dark-text3;
     }
 
     h4,
@@ -218,20 +240,25 @@
         color: $dark-text2;
     }
 
-    p {
-        color: $dark-text3;
+    p, .Book {
+        color: $dark-text4;
     }
 }
 
 .About.Light {
     background-color: $light-backgroundColor;
 
+    .PullBar {
+        background-color: $light-backgroundColor1-5;
+    }
+
+
     h1 {
         color: $light-text1;
     }
 
     h3 {
-        color: $light-text2;
+        color: $light-text3;
     }
 
     h4,
@@ -239,7 +266,7 @@
         color: $light-text2;
     }
 
-    p {
-        color: $light-text3;
+    p, .Book {
+        color: $light-text4;
     }
 }

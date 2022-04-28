@@ -5,7 +5,6 @@ import { OrbitControls } from '@react-three/drei';
 import './styles/About.scss';
 import Footer from './Footer';
 
-
 const Box = () => {
 
     return (
@@ -17,25 +16,31 @@ const Box = () => {
     )
 }
 
-const About = ({ theme }) => {
+const About = ({ theme, matches }) => {
     return (
         <div className={'About' + ' ' + theme}>
             <div className='Wrapper'>
                 <div className='Portrait'>
                     <div className='CanvasWrapper'>
-                        <Canvas>
+                        {/* <Canvas>
                             <ambientLight />
                             <gridHelper args={[1000, 1000]} />
                             <Box />
-                        </Canvas>
+                        </Canvas> */}
                     </div>
                 </div>
                 <div className='Bio' >
+                    {!matches &&
+                        <div className='PullBarWrapper'>
+                            <div className='PullBar' />
+                            <div className='PullBar' />
+                        </div>
+                    }
                     <h1>
                         Hi ✌️ I'm Michael
                     </h1>
                     <h4>
-                        <span className="C">C</span>urrently I'm studying media technology &amp; design in the fourth semester and really digging it. I come from a 3D background, but interaction has found its way into my interests. Now i work in all the places where interactivity meets the third dimension.<br />
+                        <span className="C">C</span>urrently I'm studying media technology &amp; design and am really digging it. I come from a 3D background, but interaction has found its way into my interests. Now i work in all the places where interactivity meets the third dimension.<br />
                         When I'm not playing around with 3D models, i'm probably either cooking pasta, shooting a basketball or hiking through some forest.
                     </h4>
 

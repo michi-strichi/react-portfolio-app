@@ -29,24 +29,19 @@
 }
 
 /* --------------------------------- WIDE TABLET --------------------------------- */
-@media (min-width:781px)  {
-    // .Footer {
-    //     text-align: left;
-    //     font-size: 0.8rem;
-    //     margin-top: 200px;
-    //     padding: 40px 40px 25px 40px;
-
-    //     img {
-    //         display: block;
-    //         height: 20px;
-    //         width: min-content
-    //     }
-    // }
-}
+@media (min-width:781px)  {}
 
 /* --------------------------------- LAPTOP --------------------------------- */
 @media (min-width:1001px) {
 
+    .Footer {
+        font-size: 1.8vh;
+        padding: 2vh 0;
+
+        img{
+            height: 2.6vh;
+        }
+    }
 
 }
 

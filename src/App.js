@@ -31,7 +31,7 @@ function App() {
                     <Routes>
                         <Route path='/' element={<Home theme={theme} />}></Route>
                         <Route path='/work' element={<Work theme={theme} />}></Route>
-                        <Route path='/about' element={<About theme={theme} />}></Route>
+                        <Route path='/about' element={<About theme={theme} matches={matches}/>}></Route>
                     </Routes>
                 </div>
             </div>
