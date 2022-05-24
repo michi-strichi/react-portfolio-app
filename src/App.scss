@@ -26,4 +26,11 @@
 }
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
-@media (min-width:1281px) {}
+@media (min-width:1281px) {
+
+    .App {
+        .page {
+            margin: 0px 0px 0px 10vw;
+        }
+    }
+}
