@@ -123,11 +123,14 @@
 @media (min-width:781px) {
 
     .About {
+        position: relative;
+
         .Portrait {
-            width: 82vw;
+            width: 100%;
         }
 
         .Bio {
+            width: 100%;
 
             h1 {
                 font-size: 9vw;

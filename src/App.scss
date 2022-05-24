@@ -10,8 +10,17 @@
 @media (min-width:781px) {
 
     .App {
+        display: grid;
+        margin: 10px 100px 10px 10px;
+        grid-template-areas: 'empty page';
+        grid-template-columns: 16vw 84vw;
+
         .page {
-            margin: 0px 0px 0px 16vw;
+            grid-area: page;
+        }
+
+        .empty {
+            grid-area: empty;
         }
     }
 }
@@ -29,8 +38,16 @@
 @media (min-width:1281px) {
 
     .App {
+
         .page {
             margin: 0px 0px 0px 10vw;
         }
     }
 }
+
+.item1 {
+    grid-area: myArea;
+  }
+  .grid-container {
+    grid-template-areas: 'myArea myArea myArea myArea myArea';
+  }
