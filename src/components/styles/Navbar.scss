@@ -104,33 +104,33 @@
 /* --------------------------------- WIDE TABLET --------------------------------- */
 @media (min-width:781px) {
     .Navbar {
-        width: 16vw;
+        width: 15vw;
         height: 100%;
         left: 0;
-        font-size: 0.7vw;
+        font-size: 0.4em;
 
 
         ul {
-            margin: 40px;
+            margin: 2.6vw 3vw 3vw 3vw;
             padding: 0;
 
             justify-content: flex-start;
             align-items: flex-start;
 
             li {
-                height: 4vw;
+                height: 33px;
                 transform: translate(0, 0);
                 transition: transform 0.2s;
             }
 
             li:hover {
-                transform: translate(10px, 0);
+                transform: translate(4px, 0);
                 transition: transform 0.2s;
             }
 
             li.kleeblatt {
                 img {
-                    width: 2vw;
+                    width: 19px;
                     box-sizing: content-box;
                     padding-right: 20px;
                 }

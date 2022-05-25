@@ -1,3 +1,5 @@
+@import './components/styles/Colors.scss';
+
 /* --------------------------------- MOBILE --------------------------------- */
 @media (min-width:320px) {
 
@@ -11,16 +13,25 @@
 
     .App {
         display: grid;
-        margin: 10px 100px 10px 10px;
-        grid-template-areas: 'empty page';
-        grid-template-columns: 16vw 84vw;
+        margin: 0 0 0 0;
+        grid-template-areas: 'left right';
+        grid-template-columns: 1.5fr 8.5fr;
+        grid-gap: 0 0;
 
         .page {
-            grid-area: page;
+            grid-area: right;
         }
 
-        .empty {
-            grid-area: empty;
+        .bar {
+            grid-area: left;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
         }
     }
 }
@@ -28,26 +39,21 @@
 /* --------------------------------- LAPTOP --------------------------------- */
 @media (min-width:1001px) {
     .App {
-        .page {
-            margin: 0px 0px 0px 10vw;
-        }
+
     }
 }
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {
-
-    .App {
-
-        .page {
-            margin: 0px 0px 0px 10vw;
-        }
-    }
 }
 
-.item1 {
-    grid-area: myArea;
-  }
-  .grid-container {
-    grid-template-areas: 'myArea myArea myArea myArea myArea';
-  }
+
+.App.Dark {
+    background-color: $dark-backgroundColor;
+    
+}
+
+.App.Light {
+        background-color: $light-backgroundColor;
+}
+

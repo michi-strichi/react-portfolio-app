@@ -25,9 +25,8 @@ function App() {
 
     return (
         <Router>
-            <div className="App">
-                {/* <Navbar page={page} theme={theme} matches={matches} setPage={setPage} toggleTheme={toggleTheme}/> */}
-                <div className='empty' />
+            <div className={'App' + ' ' + theme}>
+                <Navbar className='bar' page={page} theme={theme} matches={matches} setPage={setPage} toggleTheme={toggleTheme}/>
                 <div className='page'  >
                     <Routes>
                         <Route path='/' element={<Home theme={theme} />}></Route>

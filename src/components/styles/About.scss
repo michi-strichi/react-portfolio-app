@@ -10,7 +10,7 @@
             height: 35vh;
             width: 100%;
             position: fixed;
-            margin: 40px 0 20px 0;
+            margin: 7vh 0 0 0;
             top: 0px;
             display: flex;
             flex-direction: column;
@@ -126,11 +126,11 @@
         position: relative;
 
         .Portrait {
-            width: 100%;
+            width: 85vw;
         }
 
         .Bio {
-            width: 100%;
+            margin: 43vh 20px 20px 20px;
 
             h1 {
                 font-size: 9vw;
@@ -138,18 +138,18 @@
             }
 
             h3 {
-                font-size: 1.6em;
+                font-size: 1.5em;
 
             }
 
             h4 {
-                font-size: 1.5em;
+                font-size: 1.3em;
                 margin-bottom: 60px;
 
             }
 
             p {
-                font-size: 1.3em;
+                font-size: 1.2em;
 
             }
 
