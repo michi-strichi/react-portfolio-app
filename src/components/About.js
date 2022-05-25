@@ -33,7 +33,6 @@ const About = ({ theme, matches }) => {
                     {!matches &&
                         <div className='PullBarWrapper'>
                             <div className='PullBar' />
-                            <div className='PullBar' />
                         </div>
                     }
                     <h1>

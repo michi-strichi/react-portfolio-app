@@ -4,49 +4,48 @@
 @media (min-width:320px) {
 
     .ThemeSwitch {
-        height: 26px;
-        width: 42px;
-        padding: 2px;
+        // height: 26px;
+        padding: 0;
         border: 0;
         z-index: 10;
-        border-radius: 13px;
 
         position: absolute;
         bottom: 40px;
         right: 40px;
 
-        .Knob {
-            height: 100%;
-            width: 22px;
-            border-radius: 12px;
+        .Bar {
+            height: 2px;
+            width: 46px;
+            margin-left: 1px;
         }
-
     }
 
+    .Text {
+        font-size: 1.7em;
+        font-family: 'Degular';
+        font-weight: 600;
+        margin: 0;
+    }
+
+
     .Dark {
-        .Knob {
-            transform: translate(16px, 0px);
-            transition: all 0.3s;
+        .Bar {
+            transform: translate(60px, 0px);
+            width: 44px;
+            transition: all 0.2s;
         }
     }
 
     .Light {
-        .Knob {
+        .Bar {
             transform: translate(0px, 0px);
-            transition: all 0.3s;
+            transition: all 0.2s;
         }
     }
 }
 
 /* --------------------------------- TABLET --------------------------------- */
-@media (min-width:581px) {
-    .ThemeSwitch {
-        position: absolute;
-        bottom: 40px;
-        left: 40px;
-    }
-
-}
+@media (min-width:581px) {}
 
 /* --------------------------------- WIDE TABLET --------------------------------- */
 @media (min-width:781px) {}
@@ -60,19 +59,25 @@
 /* --------------------------------- THEMES --------------------------------- */
 
 .ThemeSwitch.Dark {
-    background-color: $dark-text1;
+    background-color: transparent;
 
-    div {
-        background-color: $dark-backgroundColor;
+    .Bar {
+        background-color: $dark-text1;
     }
 
+    .Text {
+        color: $dark-text1;
+    }
 }
 
 .ThemeSwitch.Light {
-    background-color: $light-text1;
+    background-color: transparent;
 
-    .Knob {
-        background-color: $light-backgroundColor;
+    .Bar {
+        background-color: $light-text1;
+    }
 
+    .Text {
+        color: $light-text1;
     }
 }

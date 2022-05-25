@@ -6,7 +6,8 @@ const ColorTheme = ({theme, toggleTheme}) => {
 
     return (
         <button className={'ThemeSwitch' + ' ' + theme} onClick={toggleTheme}>
-            <div className='Knob'></div>
+            <p className='Text'>Light &nbsp; Dark</p>
+            <div className='Bar'></div>
         </button>
     )
 }
