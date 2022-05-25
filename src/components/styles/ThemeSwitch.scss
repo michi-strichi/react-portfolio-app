@@ -4,14 +4,21 @@
 @media (min-width:320px) {
 
     .ThemeSwitch {
-        // height: 26px;
         padding: 0;
         border: 0;
         z-index: 10;
 
         position: absolute;
-        bottom: 40px;
-        right: 40px;
+        bottom: 0;
+        right: 0;
+        margin: 40px;
+        width: 100px;
+
+        .Wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
 
         .Bar {
             height: 2px;
@@ -30,8 +37,8 @@
 
     .Dark {
         .Bar {
-            transform: translate(60px, 0px);
-            width: 44px;
+            transform: translate(55px, 0px);
+            width: 45px;
             transition: all 0.2s;
         }
     }
@@ -48,10 +55,52 @@
 @media (min-width:581px) {}
 
 /* --------------------------------- WIDE TABLET --------------------------------- */
-@media (min-width:781px) {}
+@media (min-width:781px) {
+    
+    .ThemeSwitch {
+        left: 0;
+        bottom: 0;
+        margin: 3vw 3vw 2.5vw 3vw;
+        width: 68px;
+        
+        font-size: 1.4em;
+
+        .Bar {
+            height: 2px;
+            width: 30px;
+            margin-left: 1px;
+        }
+    }
+
+   
+
+    .Dark {
+        .Bar {
+            transform: translate(38px, 0px);
+            width: 30px;
+            transition: all 0.2s;
+        }
+    }
+
+    .Light {
+        .Bar {
+            transform: translate(0px, 0px);
+            transition: all 0.2s;
+        }
+    }
+}
 
 /* --------------------------------- LAPTOP --------------------------------- */
-@media (min-width:1001px) {}
+@media (min-width:1001px) {
+
+    .ThemeSwitch {
+        margin: 2vw;
+        width: 6vw;
+        
+        font-size: 1em;
+        text-align: left;
+    }
+}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {}
