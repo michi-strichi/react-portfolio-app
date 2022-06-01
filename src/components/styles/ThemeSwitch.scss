@@ -73,7 +73,6 @@
     }
 
    
-
     .Dark {
         .Bar {
             transform: translate(38px, 0px);
@@ -94,11 +93,32 @@
 @media (min-width:1001px) {
 
     .ThemeSwitch {
-        margin: 2vw;
-        width: 6vw;
+        margin: 2vw 2vw 1.66vw 2vw;
+        width: 68px;
         
-        font-size: 1em;
-        text-align: left;
+        font-size: 1.4em;
+
+        .Bar {
+            height: 2px;
+            width: 30px;
+            margin-left: 1px;
+        }
+    }
+
+   
+    .Dark {
+        .Bar {
+            transform: translate(38px, 0px);
+            width: 30px;
+            transition: all 0.2s;
+        }
+    }
+
+    .Light {
+        .Bar {
+            transform: translate(0px, 0px);
+            transition: all 0.2s;
+        }
     }
 }
 
