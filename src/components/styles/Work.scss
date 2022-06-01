@@ -27,9 +27,17 @@
             padding-right: 180px;
 
             p {
-                font-size: 3.3em;
+                font-size: 3.1em;
             }
         }
+    }
+
+}
+
+/* --------------------------------- WIDE TABLET --------------------------------- */
+@media (min-width:781px) {
+    .Work {
+        width: 85vw;
     }
 
 }

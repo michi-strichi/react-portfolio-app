@@ -7,7 +7,7 @@ import kleeblatt_thin from './assets/svgs/Kleeblatt_thin.svg';
 import kleeblatt_bold from './assets/svgs/Kleeblatt_bold.svg';
 
 
-const Navbar = ({ page, theme, matches, setPage, toggleTheme }) => {
+const Navbar = ({ page, theme, min781, setPage, toggleTheme }) => {
 
     const [navbarStatus, setNavbarStatus] = useState('Inactive');
 
@@ -17,13 +17,13 @@ const Navbar = ({ page, theme, matches, setPage, toggleTheme }) => {
 
     return (
         <div className={'Navbar' + ' ' + theme + ' ' + navbarStatus}>
-            {!matches &&
+            {!min781 &&
                 <div className='burger' onClick={() => toggleNavbarStatus()}>
                     <div className='box0' />
                     <div className='box1' />
                 </div>
             }
-            {(matches || navbarStatus === 'Active') &&
+            {(min781 || navbarStatus === 'Active') &&
                 <>
                     <nav>
                         <ul>
