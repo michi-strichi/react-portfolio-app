@@ -17,6 +17,7 @@
             }
         }
     }
+
 }
 
 /* --------------------------------- TABLET --------------------------------- */
@@ -36,8 +37,25 @@
 
 /* --------------------------------- WIDE TABLET --------------------------------- */
 @media (min-width:781px) {
+
     .Work {
         width: 85vw;
+
+        .gridContainer {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 0px;
+        }
+
+        .leftContainer {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .rightContainer {
+            grid-column: 2;
+            grid-row: 1;
+        }
     }
 
 }

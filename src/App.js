@@ -30,7 +30,7 @@ function App() {
                 <div className='page'  >
                     <Routes>
                         <Route path='/' element={<Home theme={theme} />}></Route>
-                        <Route path='/work' element={<Work theme={theme} />}></Route>
+                        <Route path='/work' element={<Work theme={theme} min781={min781}/>}></Route>
                         <Route path='/about' element={<About theme={theme} min781={min781}/>}></Route>
                     </Routes>
                 </div>
