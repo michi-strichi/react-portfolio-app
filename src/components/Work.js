@@ -3,20 +3,35 @@ import './styles/Work.scss';
 import Footer from './Footer';
 import Project from './Project';
 
-const Work = ({ min781, theme }) => {
+const Work = ({ theme, min781, min1281 }) => {
     const projects = require('./assets/projects.json');
 
     // let initialExpandedProjects = Array(projects.length).fill(false);
     // const [expandedProjects, setExpandedProjects] = useState(initialExpandedProjects);
 
-    const leftProjects = []
+    const leftProjects = [];
+    const middleProjects = [];
     const rightProjects = [];
 
-    for (let i = 0; i < projects.length; i++) {
-        if (i % 2 === 0) {
-            leftProjects.push(projects[i]);
-        } else {
-            rightProjects.push(projects[i]);
+    if (min781) {
+        for (let i = 0; i < projects.length; i++) {
+            if (i % 2 === 0) {
+                leftProjects.push(projects[i]);
+            } else {
+                rightProjects.push(projects[i]);
+            }
+        }
+    }
+
+    if (min1281) {
+        for (let i = 0; i < projects.length; i++) {
+            if (i % 3 === 0) {
+                leftProjects.push(projects[i]);
+            } else if (i % 3 === 1) {
+                middleProjects.push(projects[i]);
+            } else {
+                rightProjects.push(projects[i]);
+            }
         }
     }
 
@@ -41,7 +56,7 @@ const Work = ({ min781, theme }) => {
                         detail_1={project.detail_1} />
                 ))
             }
-            {min781 &&
+            {min781 && !min1281 &&
                 <div className='gridContainer'>
                     <div className='leftContainer'>
                         {leftProjects.map((project, index) => (
@@ -58,7 +73,7 @@ const Work = ({ min781, theme }) => {
                         ))}
                     </div>
                     <div className='rightContainer'>
-                    {rightProjects.map((project, index) => (
+                        {rightProjects.map((project, index) => (
                             <Project
                                 theme={theme}
                                 title={project.title}
@@ -72,9 +87,53 @@ const Work = ({ min781, theme }) => {
                         ))}
                     </div>
                 </div>
-
             }
-
+            {min1281 &&
+                <div className='gridContainer'>
+                    <div className='leftContainer'>
+                        {leftProjects.map((project, index) => (
+                            <Project
+                                theme={theme}
+                                title={project.title}
+                                year={project.year}
+                                description={project.description}
+                                software={project.software}
+                                role={project.role}
+                                thumbnail={project.thumbnail}
+                                detail_0={project.detail_0}
+                                detail_1={project.detail_1} />
+                        ))}
+                    </div>
+                    <div className='middleContainer'>
+                        {middleProjects.map((project, index) => (
+                            <Project
+                                theme={theme}
+                                title={project.title}
+                                year={project.year}
+                                description={project.description}
+                                software={project.software}
+                                role={project.role}
+                                thumbnail={project.thumbnail}
+                                detail_0={project.detail_0}
+                                detail_1={project.detail_1} />
+                        ))}
+                    </div>
+                    <div className='rightContainer'>
+                        {rightProjects.map((project, index) => (
+                            <Project
+                                theme={theme}
+                                title={project.title}
+                                year={project.year}
+                                description={project.description}
+                                software={project.software}
+                                role={project.role}
+                                thumbnail={project.thumbnail}
+                                detail_0={project.detail_0}
+                                detail_1={project.detail_1} />
+                        ))}
+                    </div>
+                </div>
+            }
             <Footer theme={theme} />
         </div>
     )

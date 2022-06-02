@@ -39,6 +39,7 @@
 @media (min-width:781px) {
 
     .Work {
+        position: relative;
         width: 85vw;
 
         .gridContainer {
@@ -64,7 +65,33 @@
 @media (min-width:1025px) {}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
-@media (min-width:1281px) {}
+@media (min-width:1281px) {
+
+    .Work {
+        width: 90vw;
+
+        .gridContainer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 0px;
+        }
+
+        .leftContainer {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .middleContainer {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .rightContainer {
+            grid-column: 3;
+            grid-row: 1;
+        }
+    }
+}
 
 /* --------------------------------- THEMES --------------------------------- */
 
