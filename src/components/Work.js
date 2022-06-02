@@ -9,11 +9,14 @@ const Work = ({ theme, min781, min1281 }) => {
     // let initialExpandedProjects = Array(projects.length).fill(false);
     // const [expandedProjects, setExpandedProjects] = useState(initialExpandedProjects);
 
-    const leftProjects = [];
-    const middleProjects = [];
-    const rightProjects = [];
+    let leftProjects = [];
+    let middleProjects = [];
+    let rightProjects = [];
 
     if (min781) {
+        leftProjects = [];
+        middleProjects = [];
+        rightProjects = [];
         for (let i = 0; i < projects.length; i++) {
             if (i % 2 === 0) {
                 leftProjects.push(projects[i]);
@@ -24,6 +27,9 @@ const Work = ({ theme, min781, min1281 }) => {
     }
 
     if (min1281) {
+        leftProjects = [];
+        middleProjects = [];
+        rightProjects = [];
         for (let i = 0; i < projects.length; i++) {
             if (i % 3 === 0) {
                 leftProjects.push(projects[i]);
@@ -43,8 +49,8 @@ const Work = ({ theme, min781, min1281 }) => {
                 </p>
             </div>
             {!min781 &&
-                projects.map((project, index) => (
-                    <Project
+                projects.map((project, key) => (
+                    <Project key={key}
                         theme={theme}
                         title={project.title}
                         year={project.year}
@@ -59,8 +65,8 @@ const Work = ({ theme, min781, min1281 }) => {
             {min781 && !min1281 &&
                 <div className='gridContainer'>
                     <div className='leftContainer'>
-                        {leftProjects.map((project, index) => (
-                            <Project
+                        {leftProjects.map((project, key) => (
+                            <Project key={key}
                                 theme={theme}
                                 title={project.title}
                                 year={project.year}
@@ -73,8 +79,8 @@ const Work = ({ theme, min781, min1281 }) => {
                         ))}
                     </div>
                     <div className='rightContainer'>
-                        {rightProjects.map((project, index) => (
-                            <Project
+                        {rightProjects.map((project, key) => (
+                            <Project key={key}
                                 theme={theme}
                                 title={project.title}
                                 year={project.year}
@@ -88,11 +94,12 @@ const Work = ({ theme, min781, min1281 }) => {
                     </div>
                 </div>
             }
+
             {min1281 &&
                 <div className='gridContainer'>
                     <div className='leftContainer'>
-                        {leftProjects.map((project, index) => (
-                            <Project
+                        {leftProjects.map((project, key) => (
+                            <Project key={key}
                                 theme={theme}
                                 title={project.title}
                                 year={project.year}
@@ -105,8 +112,8 @@ const Work = ({ theme, min781, min1281 }) => {
                         ))}
                     </div>
                     <div className='middleContainer'>
-                        {middleProjects.map((project, index) => (
-                            <Project
+                        {leftProjects.map((project, key) => (
+                            <Project key={key}
                                 theme={theme}
                                 title={project.title}
                                 year={project.year}
@@ -119,8 +126,8 @@ const Work = ({ theme, min781, min1281 }) => {
                         ))}
                     </div>
                     <div className='rightContainer'>
-                        {rightProjects.map((project, index) => (
-                            <Project
+                        {rightProjects.map((project, key) => (
+                            <Project key={key}
                                 theme={theme}
                                 title={project.title}
                                 year={project.year}

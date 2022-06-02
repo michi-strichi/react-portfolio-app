@@ -42,10 +42,15 @@
         position: relative;
         width: 85vw;
 
+        .Intro {
+            padding: 30px 30px 38px 30px;
+        }
+
         .gridContainer {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-gap: 0px;
+            grid-gap: 30px;
+            margin: 0 30px 0 30px;
         }
 
         .leftContainer {
@@ -62,18 +67,19 @@
 }
 
 /* --------------------------------- LAPTOP --------------------------------- */
-@media (min-width:1025px) {}
+@media (min-width:1001px) {
+    .Work {
+        width: 90vw;
+    }
+}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {
 
     .Work {
-        width: 90vw;
 
         .gridContainer {
-            display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-gap: 0px;
         }
 
         .leftContainer {
