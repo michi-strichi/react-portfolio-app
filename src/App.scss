@@ -48,12 +48,21 @@
 }
 
 
+/* --------------------------------- THEMES --------------------------------- */
+
 .App.Dark {
     background-color: $dark-backgroundColor;
+
+    ::selection {
+        background-color: $dark-selection;
+    }
     
 }
 
 .App.Light {
-        background-color: $light-backgroundColor;
-}
+    background-color: $light-backgroundColor;
 
+    ::selection {
+        background-color: $light-selection;
+    }
+}

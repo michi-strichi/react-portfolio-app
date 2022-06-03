@@ -9,38 +9,6 @@ const Work = ({ theme, min781, min1281 }) => {
     // let initialExpandedProjects = Array(projects.length).fill(false);
     // const [expandedProjects, setExpandedProjects] = useState(initialExpandedProjects);
 
-    let leftProjects = [];
-    let middleProjects = [];
-    let rightProjects = [];
-
-    if (min781) {
-        leftProjects = [];
-        middleProjects = [];
-        rightProjects = [];
-        for (let i = 0; i < projects.length; i++) {
-            if (i % 2 === 0) {
-                leftProjects.push(projects[i]);
-            } else {
-                rightProjects.push(projects[i]);
-            }
-        }
-    }
-
-    if (min1281) {
-        leftProjects = [];
-        middleProjects = [];
-        rightProjects = [];
-        for (let i = 0; i < projects.length; i++) {
-            if (i % 3 === 0) {
-                leftProjects.push(projects[i]);
-            } else if (i % 3 === 1) {
-                middleProjects.push(projects[i]);
-            } else {
-                rightProjects.push(projects[i]);
-            }
-        }
-    }
-
     return (
         <div className={'Work' + ' ' + theme}>
             <div className='Intro'>
@@ -48,6 +16,7 @@ const Work = ({ theme, min781, min1281 }) => {
                     Some projects that I worked on in the last years...
                 </p>
             </div>
+
             {!min781 &&
                 projects.map((project, key) => (
                     <Project key={key}
@@ -62,85 +31,99 @@ const Work = ({ theme, min781, min1281 }) => {
                         detail_1={project.detail_1} />
                 ))
             }
+
             {min781 && !min1281 &&
                 <div className='gridContainer'>
                     <div className='leftContainer'>
-                        {leftProjects.map((project, key) => (
-                            <Project key={key}
-                                theme={theme}
-                                title={project.title}
-                                year={project.year}
-                                description={project.description}
-                                software={project.software}
-                                role={project.role}
-                                thumbnail={project.thumbnail}
-                                detail_0={project.detail_0}
-                                detail_1={project.detail_1} />
-                        ))}
+                        {projects
+                            .filter((project, key) => key % 2 === 0)
+                            .map((project, key) => (
+                                <Project key={key}
+                                    theme={theme}
+                                    title={project.title}
+                                    year={project.year}
+                                    description={project.description}
+                                    software={project.software}
+                                    role={project.role}
+                                    thumbnail={project.thumbnail}
+                                    detail_0={project.detail_0}
+                                    detail_1={project.detail_1} />
+                            ))}
                     </div>
                     <div className='rightContainer'>
-                        {rightProjects.map((project, key) => (
-                            <Project key={key}
-                                theme={theme}
-                                title={project.title}
-                                year={project.year}
-                                description={project.description}
-                                software={project.software}
-                                role={project.role}
-                                thumbnail={project.thumbnail}
-                                detail_0={project.detail_0}
-                                detail_1={project.detail_1} />
-                        ))}
+                        {projects
+                            .filter((project, key) => key % 2 === 1)
+                            .map((project, key) => (
+                                <Project key={key}
+                                    theme={theme}
+                                    title={project.title}
+                                    year={project.year}
+                                    description={project.description}
+                                    software={project.software}
+                                    role={project.role}
+                                    thumbnail={project.thumbnail}
+                                    detail_0={project.detail_0}
+                                    detail_1={project.detail_1} />
+                            ))}
+                    </div>
+
+                </div>
+            }
+            {min1281 &&
+                <div className='gridContainer'>
+                    <div className='leftContainer'>
+                        {projects
+                            .filter((project, key) => key % 3 === 0)
+                            .map((project, key) => (
+                                <Project key={key}
+                                    theme={theme}
+                                    title={project.title}
+                                    year={project.year}
+                                    description={project.description}
+                                    software={project.software}
+                                    role={project.role}
+                                    thumbnail={project.thumbnail}
+                                    detail_0={project.detail_0}
+                                    detail_1={project.detail_1} />
+                            ))}
+                    </div>
+                    
+                    <div className='middleContainer'>
+                        {projects
+                            .filter((project, key) => key % 3 === 1)
+                            .map((project, key) => (
+                                <Project key={key}
+                                    theme={theme}
+                                    title={project.title}
+                                    year={project.year}
+                                    description={project.description}
+                                    software={project.software}
+                                    role={project.role}
+                                    thumbnail={project.thumbnail}
+                                    detail_0={project.detail_0}
+                                    detail_1={project.detail_1} />
+                            ))}
+                    </div>
+
+                    <div className='rightContainer'>
+                        {projects
+                            .filter((project, key) => key % 3 === 2)
+                            .map((project, key) => (
+                                <Project key={key}
+                                    theme={theme}
+                                    title={project.title}
+                                    year={project.year}
+                                    description={project.description}
+                                    software={project.software}
+                                    role={project.role}
+                                    thumbnail={project.thumbnail}
+                                    detail_0={project.detail_0}
+                                    detail_1={project.detail_1} />
+                            ))}
                     </div>
                 </div>
             }
 
-            {min1281 &&
-                <div className='gridContainer'>
-                    <div className='leftContainer'>
-                        {leftProjects.map((project, key) => (
-                            <Project key={key}
-                                theme={theme}
-                                title={project.title}
-                                year={project.year}
-                                description={project.description}
-                                software={project.software}
-                                role={project.role}
-                                thumbnail={project.thumbnail}
-                                detail_0={project.detail_0}
-                                detail_1={project.detail_1} />
-                        ))}
-                    </div>
-                    <div className='middleContainer'>
-                        {leftProjects.map((project, key) => (
-                            <Project key={key}
-                                theme={theme}
-                                title={project.title}
-                                year={project.year}
-                                description={project.description}
-                                software={project.software}
-                                role={project.role}
-                                thumbnail={project.thumbnail}
-                                detail_0={project.detail_0}
-                                detail_1={project.detail_1} />
-                        ))}
-                    </div>
-                    <div className='rightContainer'>
-                        {rightProjects.map((project, key) => (
-                            <Project key={key}
-                                theme={theme}
-                                title={project.title}
-                                year={project.year}
-                                description={project.description}
-                                software={project.software}
-                                role={project.role}
-                                thumbnail={project.thumbnail}
-                                detail_0={project.detail_0}
-                                detail_1={project.detail_1} />
-                        ))}
-                    </div>
-                </div>
-            }
             <Footer theme={theme} />
         </div>
     )
