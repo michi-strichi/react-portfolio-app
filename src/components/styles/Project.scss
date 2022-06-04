@@ -7,9 +7,16 @@
         margin: 0px 20px -60px 20px;
     }
 
-    img {
+    .Project img {
         width: 100%;
         border-radius: 8px;
+        transition: transform 0.2s;
+
+    }
+
+    .Project img:hover{
+        transform: scale(1.015, 1.015);
+        transition: transform 0.2s;
     }
 
     .ThumbnailInfo {
@@ -36,6 +43,7 @@
     .Thumbnail {
         z-index: 10;
         position: relative;
+
     }
 
     .Details {
@@ -85,6 +93,7 @@
             transition: max-height 0.3s, opacity 0.15s;
         }
     }
+
 }
 
 /* --------------------------------- TABLET --------------------------------- */
@@ -141,7 +150,7 @@
         margin: 0px 0px -60px 0px;
     }
 
-    img {
+    .Project img {
         border-radius: 2px;
     }
 
