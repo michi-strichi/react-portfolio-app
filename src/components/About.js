@@ -16,7 +16,7 @@ const Box = () => {
     )
 }
 
-const About = ({ theme, matches }) => {
+const About = ({ theme, min781 }) => {
     return (
         <div className={'About' + ' ' + theme}>
             <div className='Wrapper'>
@@ -30,9 +30,8 @@ const About = ({ theme, matches }) => {
                     </div>
                 </div>
                 <div className='Bio' >
-                    {!matches &&
+                    {!min781 &&
                         <div className='PullBarWrapper'>
-                            <div className='PullBar' />
                             <div className='PullBar' />
                         </div>
                     }

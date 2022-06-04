@@ -6,7 +6,6 @@ import ThemeSwitch from './ThemeSwitch';
 const Home = ({theme}) => {
   return (
     <div className={'Home' + ' ' + theme}>
-        
     </div>
   )
 }

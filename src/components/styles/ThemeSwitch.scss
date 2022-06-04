@@ -4,55 +4,125 @@
 @media (min-width:320px) {
 
     .ThemeSwitch {
-        height: 26px;
-        width: 42px;
-        padding: 2px;
+        padding: 0;
         border: 0;
         z-index: 10;
-        border-radius: 13px;
 
         position: absolute;
-        bottom: 40px;
-        right: 40px;
+        bottom: 0;
+        left: 0;
+        margin: 40px;
+        width: 100px;
 
-        .Knob {
-            height: 100%;
-            width: 22px;
-            border-radius: 12px;
+        .Wrapper {
+            display: flex;
+            justify-content: space-between;
         }
 
+
+        .Bar {
+            height: 2px;
+            width: 46px;
+            margin-left: 1px;
+        }
     }
 
+    .Text {
+        font-size: 1.7em;
+        font-family: 'Degular';
+        font-weight: 600;
+        margin: 0;
+    }
+
+
+
+
     .Dark {
-        .Knob {
-            transform: translate(16px, 0px);
-            transition: all 0.3s;
+        .Bar {
+            transform: translate(55px, 0px);
+            width: 45px;
+            transition: all 0.2s;
         }
     }
 
     .Light {
-        .Knob {
+        .Bar {
             transform: translate(0px, 0px);
-            transition: all 0.3s;
+            transition: all 0.2s;
         }
     }
 }
 
 /* --------------------------------- TABLET --------------------------------- */
-@media (min-width:581px) {
-    .ThemeSwitch {
-        position: absolute;
-        bottom: 40px;
-        left: 40px;
-    }
-
-}
+@media (min-width:581px) {}
 
 /* --------------------------------- WIDE TABLET --------------------------------- */
-@media (min-width:781px) {}
+@media (min-width:781px) {
+    
+    .ThemeSwitch {
+        left: 0;
+        bottom: 0;
+        margin: 3vw 3vw 2.5vw 3vw;
+        width: 68px;
+        
+        font-size: 1.4em;
+
+        .Bar {
+            height: 2px;
+            width: 30px;
+            margin-left: 1px;
+        }
+    }
+
+   
+    .Dark {
+        .Bar {
+            transform: translate(38px, 0px);
+            width: 30px;
+            transition: all 0.2s;
+        }
+    }
+
+    .Light {
+        .Bar {
+            transform: translate(0px, 0px);
+            transition: all 0.2s;
+        }
+    }
+}
 
 /* --------------------------------- LAPTOP --------------------------------- */
-@media (min-width:1001px) {}
+@media (min-width:1001px) {
+
+    .ThemeSwitch {
+        margin: 2vw 2vw 1.66vw 2vw;
+        width: 68px;
+        
+        font-size: 1.4em;
+
+        .Bar {
+            height: 2px;
+            width: 30px;
+            margin-left: 1px;
+        }
+    }
+
+   
+    .Dark {
+        .Bar {
+            transform: translate(38px, 0px);
+            width: 30px;
+            transition: all 0.2s;
+        }
+    }
+
+    .Light {
+        .Bar {
+            transform: translate(0px, 0px);
+            transition: all 0.2s;
+        }
+    }
+}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {}
@@ -60,19 +130,33 @@
 /* --------------------------------- THEMES --------------------------------- */
 
 .ThemeSwitch.Dark {
-    background-color: $dark-text1;
+    background-color: transparent;
 
-    div {
-        background-color: $dark-backgroundColor;
+    .Bar {
+        background-color: $dark-text1;
     }
 
+    .Text {
+        color: $dark-text1;
+    }
+
+    .Text:active {
+        color: $light-highlight2;
+    }
 }
 
 .ThemeSwitch.Light {
-    background-color: $light-text1;
+    background-color: transparent;
 
-    .Knob {
-        background-color: $light-backgroundColor;
+    .Bar {
+        background-color: $light-text1;
+    }
 
+    .Text {
+        color: $light-text1;
+    }
+
+    .Text:active {
+        color: $dark-highlight1;
     }
 }

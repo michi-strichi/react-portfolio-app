@@ -4,13 +4,14 @@
 @media (min-width:320px) {
 
     .About {
+    
         position: absolute;
 
         .Portrait {
             height: 35vh;
             width: 100%;
             position: fixed;
-            margin: 40px 0 20px 0;
+            margin: 7vh 0 0 0;
             top: 0px;
             display: flex;
             flex-direction: column;
@@ -19,14 +20,14 @@
 
             .CanvasWrapper {
                 background-color: rgb(96, 96, 96);
-                border-radius: 200px;
+                border-radius: 1000px;
                 height: 35vh;
                 width: 35vh;
             }
         }
 
         .Bio {
-            margin: 41vh 20px 20px 20px;
+            margin: 43vh 20px 20px 20px;
             padding: 20px 20px 200px 20px;
 
             border-radius: 12px;
@@ -123,11 +124,14 @@
 @media (min-width:781px) {
 
     .About {
+        position: relative;
+
         .Portrait {
-            width: 82vw;
+            width: 85vw;
         }
 
         .Bio {
+            margin: 43vh 20px 20px 20px;
 
             h1 {
                 font-size: 9vw;
@@ -135,18 +139,18 @@
             }
 
             h3 {
-                font-size: 1.6em;
+                font-size: 1.5em;
 
             }
 
             h4 {
-                font-size: 1.5em;
+                font-size: 1.3em;
                 margin-bottom: 60px;
 
             }
 
             p {
-                font-size: 1.3em;
+                font-size: 1.2em;
 
             }
 
@@ -182,8 +186,9 @@
         .Bio {
             backdrop-filter: none;
             width: 54vw;
-            margin-top: 80px;
+            margin-top: 5vw;
             margin-left: 7vw;
+            padding-bottom: 8vw;
 
 
             h1 {
@@ -216,7 +221,31 @@
 }
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
-@media (min-width:1281px) {}
+@media (min-width:1281px) {
+
+    .About {
+        .Bio {
+            width: 44vw;
+            margin-top: 5vw;
+            margin-left: 9vw;
+            padding-bottom: 8vw;
+
+            h1 {
+                font-size: 5.8vw;
+            }
+        }
+
+        .Portrait {
+            margin-right: 10vw;            
+
+            .CanvasWrapper {
+                width: 24vw;
+                height: 24vw;
+            }
+
+        }
+    }
+}
 
 /* --------------------------------- THEMES --------------------------------- */
 

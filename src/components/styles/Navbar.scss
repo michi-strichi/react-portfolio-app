@@ -4,7 +4,7 @@
 @media (min-width:320px) {
     .Navbar {
         position: fixed;
-        z-index: 10;
+        z-index: 20;
         width: 100%;
         top: 0;
 
@@ -24,7 +24,7 @@
         }
 
         ul {
-            margin: 200px 40px 0 50px;
+            margin: 24vh 40px 0 50px;
             padding: 0;
 
             display: flex;
@@ -104,33 +104,33 @@
 /* --------------------------------- WIDE TABLET --------------------------------- */
 @media (min-width:781px) {
     .Navbar {
-        width: 16vw;
+        width: 15vw;
         height: 100%;
         left: 0;
-        font-size: 0.7vw;
+        font-size: 0.4em;
 
 
         ul {
-            margin: 40px;
+            margin: 2.6vw 3vw 3vw 3vw;
             padding: 0;
 
             justify-content: flex-start;
             align-items: flex-start;
 
             li {
-                height: 4vw;
+                height: 33px;
                 transform: translate(0, 0);
                 transition: transform 0.2s;
             }
 
             li:hover {
-                transform: translate(10px, 0);
+                transform: translate(4px, 0);
                 transition: transform 0.2s;
             }
 
             li.kleeblatt {
                 img {
-                    width: 2vw;
+                    width: 19px;
                     box-sizing: content-box;
                     padding-right: 20px;
                 }
@@ -149,30 +149,9 @@
 @media (min-width:1001px) {
     .Navbar {
         width: 10vw;
-        font-size: 0.5vw;
-
 
         ul {
-            margin: 2vw;
-
-            li {
-                height: 3vw;
-                transform: translate(0, 0);
-                transition: transform 0.2s;
-            }
-
-            li:hover {
-                transform: translate(6px, 0);
-                transition: transform 0.2s;
-            }
-
-            li.kleeblatt {
-                img {
-                    width: 1.4vw;
-                    box-sizing: content-box;
-                    padding-right: 20px;
-                }
-            }
+            margin: 1.8vw 2vw 2vw 2vw;
         }
     }
 }
@@ -203,7 +182,7 @@
         }
 
         a:active {
-            color: $dark-highlight !important;
+            color: $dark-highlight1 !important;
         }
 
         a.selected {
@@ -239,7 +218,7 @@
         }
 
         a:active {
-            color: $light-highlight !important;
+            color: $light-highlight2 !important;
         }
 
         a.selected {
@@ -251,7 +230,6 @@
         }
 
         .kleeblatt .selected img {
-
             filter: invert(0%) sepia(97%) saturate(24%) hue-rotate(102deg) brightness(94%) contrast(97%);
 
         }

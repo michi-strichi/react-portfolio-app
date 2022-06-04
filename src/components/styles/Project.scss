@@ -4,16 +4,23 @@
 @media (min-width:320px) {
     .Project {
         height: min-content;
-        margin: 10px 20px 50px 20px;
+        margin: 0px 20px -60px 20px;
     }
 
-    img {
+    .Project img {
         width: 100%;
         border-radius: 8px;
+        transition: transform 0.2s;
+
+    }
+
+    .Project img:hover{
+        transform: scale(1.015, 1.015);
+        transition: transform 0.2s;
     }
 
     .ThumbnailInfo {
-        margin: 3px 5px 5px 5px;
+        margin: 3px 5px 5px 10px;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -29,12 +36,22 @@
 
         .Year {
             font-size: 0.7em;
-            padding: 0 0 2px 4px;
+            padding: 0 0 3px 6px;
         }
     }
 
+    .Thumbnail {
+        z-index: 10;
+        position: relative;
+
+    }
+
     .Details {
-        margin: 0 5px 0 5px;
+        position: relative;
+        top: -100px;
+        margin: 0;
+        padding: 100px 20px 0px 20px;
+        border-radius: 8px;
 
         .Info {
             padding-bottom: 10px;
@@ -42,7 +59,7 @@
 
         .Detail_0,
         .Detail_1 {
-            margin: 20px 40px 20px 40px;
+            margin: 20px 0px 20px 0px;
         }
 
         .Software,
@@ -63,7 +80,8 @@
         .Details {
             overflow: hidden;
             max-height: 2000px;
-            transition: max-height 0.6s;
+            opacity: 1;
+            transition: max-height 0.6s, opacity 0.15s;
         }
     }
 
@@ -71,13 +89,15 @@
         .Details {
             overflow: hidden;
             max-height: 0;
-            transition: max-height 0.3s;
+            opacity: 0;
+            transition: max-height 0.3s, opacity 0.15s;
         }
     }
+
 }
 
 /* --------------------------------- TABLET --------------------------------- */
-@media (min-width:581px) {
+@media (min-width:501px) {
 
     .ThumbnailInfo {
         font-size: 1.5em;
@@ -87,11 +107,13 @@
         }
     }
 
+
     .Details {
         .Images {
             display: grid;
 
         }
+
         .Info {
             padding-bottom: 10px;
         }
@@ -100,59 +122,51 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 20px;
-            padding: 20px 0 20px 0;
-          }
+            padding: 20px 0 16px 0;
+        }
 
-          .Detail_0 {
+        .Detail_0 {
             grid-column: 2;
             grid-row: 1;
-          }
+        }
 
-          .Detail_1 {
+        .Detail_1 {
             grid-column: 1;
             grid-row: 1;
-          }
-
-
+        }
 
         .Detail_0,
         .Detail_1 {
             margin: 0;
         }
 
-        .Software,
-        .Role {
-            font-style: italic;
-            margin: 5px 0 5px 0;
-        }
-
-        .SoftwareSpan,
-        .RoleSpan {
-            font-weight: 600;
-            font-style: normal;
-        }
-
-    }
-
-    .Expanded {
-        .Details {
-            overflow: hidden;
-            max-height: 2000px;
-            transition: max-height 0.6s;
-        }
-    }
-
-    .NotExpanded {
-        .Details {
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.3s;
-        }
     }
 }
 
 /* --------------------------------- WIDE TABLET --------------------------------- */
-@media (min-width:781px)  {}
+@media (min-width:781px) {
+
+    .Project {
+        margin: 0px 0px -60px 0px;
+    }
+
+    .Project img {
+        border-radius: 2px;
+    }
+
+    .Details {
+        border-radius: 2px;
+    }
+
+    .ThumbnailInfo {
+        font-size: 1.1em;
+
+        .Year {
+            font-size: 0.8em;
+            padding: 0 0 2px 6px;
+        }
+    }
+}
 
 /* --------------------------------- LAPTOP --------------------------------- */
 @media (min-width:1001px) {}
@@ -174,6 +188,8 @@
     }
 
     .Details {
+        background-color: $dark-backgroundColor-2;
+
         .Description {
             color: $dark-text3;
         }
@@ -183,6 +199,7 @@
             color: $dark-text2;
         }
     }
+
 }
 
 .Project.Light {
@@ -195,6 +212,8 @@
     }
 
     .Details {
+        background-color: $light-backgroundColor-2;
+
         .Description {
             color: $light-text3;
         }
