@@ -35,6 +35,8 @@
     }
 
 
+
+
     .Dark {
         .Bar {
             transform: translate(55px, 0px);
@@ -137,6 +139,10 @@
     .Text {
         color: $dark-text1;
     }
+
+    .Text:active {
+        color: $light-highlight2;
+    }
 }
 
 .ThemeSwitch.Light {
@@ -148,5 +154,9 @@
 
     .Text {
         color: $light-text1;
+    }
+
+    .Text:active {
+        color: $dark-highlight1;
     }
 }

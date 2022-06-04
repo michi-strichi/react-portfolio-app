@@ -182,7 +182,7 @@
         }
 
         a:active {
-            color: $dark-highlight !important;
+            color: $dark-highlight1 !important;
         }
 
         a.selected {
@@ -218,7 +218,7 @@
         }
 
         a:active {
-            color: $light-highlight !important;
+            color: $light-highlight2 !important;
         }
 
         a.selected {
@@ -230,7 +230,6 @@
         }
 
         .kleeblatt .selected img {
-
             filter: invert(0%) sepia(97%) saturate(24%) hue-rotate(102deg) brightness(94%) contrast(97%);
 
         }

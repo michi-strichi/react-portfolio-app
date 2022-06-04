@@ -54,7 +54,7 @@
     background-color: $dark-backgroundColor;
 
     ::selection {
-        background-color: $dark-selection;
+        background-color: $dark-highlight1;
     }
     
 }
@@ -63,6 +63,6 @@
     background-color: $light-backgroundColor;
 
     ::selection {
-        background-color: $light-selection;
+        background-color: $light-highlight1;
     }
 }

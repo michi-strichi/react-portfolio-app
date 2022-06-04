@@ -7,7 +7,7 @@ const Footer = ({ theme }) => {
 
     return (
         <footer className={'Footer' + ' ' + theme}>
-            © Copyright Michael Hochreiter {year}.<br/>All rights reserved.
+            © Copyright Michael Hochreiter {year}.<br/>All rights reserved.<br/>
             <img src={kleeblatt_thin} />
         </footer>
     )
