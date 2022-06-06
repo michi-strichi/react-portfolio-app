@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, useGLTF } from '@react-three/drei';
+
+//import { useGLTF } from '@react-three/drei'
 
 import './styles/About.scss';
 import Footer from './Footer';
@@ -16,17 +18,30 @@ const Box = () => {
     )
 }
 
+function Michi_Model({ ...props }) {
+    const group = useRef()
+    const { nodes, materials } = useGLTF('/Michi_3D_smiling.glb')
+    return (
+      <group ref={group} {...props} dispose={null}>
+        <mesh geometry={nodes.michi_smiling.geometry} material={materials['Michi_FINAL_MAT.002']} />
+      </group>
+    )
+  }
+
 const About = ({ theme, min781 }) => {
     return (
         <div className={'About' + ' ' + theme}>
             <div className='Wrapper'>
                 <div className='Portrait'>
                     <div className='CanvasWrapper'>
-                        {/* <Canvas>
+                        <Canvas>
                             <ambientLight />
-                            <gridHelper args={[1000, 1000]} />
-                            <Box />
-                        </Canvas> */}
+                            <OrbitControls />
+                            {/* <gridHelper args={[1000, 1000]} /> */}
+                            <Suspense fallback={null} >
+                                <Michi_Model />
+                            </Suspense>
+                        </Canvas>
                     </div>
                 </div>
                 <div className='Bio' >

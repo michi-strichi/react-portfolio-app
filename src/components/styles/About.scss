@@ -8,10 +8,10 @@
         position: absolute;
 
         .Portrait {
-            height: 35vh;
+            height: 50vh;
             width: 100%;
             position: fixed;
-            margin: 7vh 0 0 0;
+            margin: 0 0 0 0;
             top: 0px;
             display: flex;
             flex-direction: column;
@@ -19,10 +19,9 @@
             align-items: center;
 
             .CanvasWrapper {
-                background-color: rgb(96, 96, 96);
-                border-radius: 1000px;
-                height: 35vh;
-                width: 35vh;
+                background-color: transparent;
+                height: 100%;
+                width: 100%;
             }
         }
 
