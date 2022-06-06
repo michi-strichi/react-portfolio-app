@@ -14,7 +14,7 @@
 
     }
 
-    .Project img:hover{
+    .Project .Thumbnail img:hover{
         transform: scale(1.015, 1.015);
         transition: transform 0.2s;
     }
@@ -55,6 +55,11 @@
 
         .Info {
             padding-bottom: 10px;
+
+            .Description {
+                margin-top: 10px;
+                margin-bottom: 0px
+            }
         }
 
         .Detail_0,
@@ -65,7 +70,7 @@
         .Software,
         .Role {
             font-style: italic;
-            margin: 5px 0 5px 0;
+            margin: 5px 0 7px 0;
         }
 
         .SoftwareSpan,
@@ -122,7 +127,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 20px;
-            padding: 20px 0 16px 0;
+            padding: 20px 0 20px 0;
         }
 
         .Detail_0 {
@@ -191,12 +196,12 @@
         background-color: $dark-backgroundColor-2;
 
         .Description {
-            color: $dark-text3;
+            color: $dark-text2;
         }
 
         .Software,
         .Role {
-            color: $dark-text2;
+            color: $dark-text4;
         }
     }
 
@@ -215,12 +220,12 @@
         background-color: $light-backgroundColor-2;
 
         .Description {
-            color: $light-text3;
+            color: $light-text2;
         }
 
         .Software,
         .Role {
-            color: $light-text2;
+            color: $light-text4;
         }
     }
 }

@@ -14,9 +14,13 @@ function App() {
     const [min781, setMin781] = useState( window.matchMedia("(min-width: 781px)").matches)
     const [min1281, setMin1281] = useState( window.matchMedia("(min-width: 1281px)").matches)
 
-    const toggleTheme = () => {
-        theme === "Light" ? setTheme("Dark") : setTheme("Light")    
+    /*
+    const toggleTheme = (t) => {
+        //theme === "Light" ? setTheme("Dark") : setTheme("Light")    
+        setTheme(t);
     }
+    */
+
 
     useEffect(() => {
         window
@@ -33,7 +37,7 @@ function App() {
     return (
         <Router>
             <div className={'App' + ' ' + theme}>
-                <Navbar className='bar' page={page} theme={theme} min781={min781} setPage={setPage} toggleTheme={toggleTheme}/>
+                <Navbar className='bar' page={page} theme={theme} min781={min781} setPage={setPage} setTheme={setTheme}/>
                 <div className='page'  >
                     <Routes>
                         <Route path='/' element={<Home theme={theme} />}></Route>

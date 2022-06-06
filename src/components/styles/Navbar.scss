@@ -61,7 +61,7 @@
             li.kleeblatt {
 
                 img {
-                    width: 50px;
+                    width: 45px;
                     padding-top: 12px;
                 }
             }
@@ -182,7 +182,7 @@
         }
 
         a:active {
-            color: $dark-highlight1 !important;
+            color: $dark-highlight1  !important;
         }
 
         a.selected {
@@ -199,6 +199,12 @@
 
         .kleeblatt .notSelected img {
             filter: invert(86%) sepia(99%) saturate(7292%) hue-rotate(189deg) brightness(143%) contrast(84%);
+        }
+
+        .kleeblatt:active {
+            img {
+                filter: invert(23%) sepia(17%) saturate(6251%) hue-rotate(235deg) brightness(93%) contrast(96%);
+            }
         }
     }
 
@@ -218,7 +224,7 @@
         }
 
         a:active {
-            color: $light-highlight2 !important;
+            color: $light-highlight2  !important;
         }
 
         a.selected {
@@ -236,6 +242,12 @@
 
         .kleeblatt .notSelected img {
             filter: invert(7%) sepia(3%) saturate(19%) hue-rotate(330deg) brightness(96%) contrast(96%);
+        }
+
+        .kleeblatt:active {
+            img {
+                filter: invert(65%) sepia(52%) saturate(3731%) hue-rotate(93deg) brightness(105%) contrast(94%);
+            }
         }
     }
 }

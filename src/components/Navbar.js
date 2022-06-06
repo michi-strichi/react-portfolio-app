@@ -7,7 +7,7 @@ import kleeblatt_thin from './assets/svgs/Kleeblatt_thin.svg';
 import kleeblatt_bold from './assets/svgs/Kleeblatt_bold.svg';
 
 
-const Navbar = ({ page, theme, min781, setPage, toggleTheme }) => {
+const Navbar = ({ page, theme, min781, setPage, setTheme }) => {
 
     const [navbarStatus, setNavbarStatus] = useState('Inactive');
 
@@ -46,7 +46,7 @@ const Navbar = ({ page, theme, min781, setPage, toggleTheme }) => {
 
                         </ul>
                     </nav>
-                    <ThemeSwitch theme={theme} toggleTheme={toggleTheme} />
+                    <ThemeSwitch theme={theme} setTheme={setTheme} />
                 </>
             }
         </div>

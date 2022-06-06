@@ -21,25 +21,25 @@
 
 
         .Bar {
-            height: 2px;
+            height: 3px;
             width: 46px;
             margin-left: 1px;
         }
     }
 
-    .Text {
-        font-size: 1.7em;
+    .Button {
+        font-size: 1.45em;
         font-family: 'Degular';
         font-weight: 600;
         margin: 0;
+        border: none;
+        padding: 0;
     }
-
-
 
 
     .Dark {
         .Bar {
-            transform: translate(55px, 0px);
+            transform: translate(54px, 0px);
             width: 45px;
             transition: all 0.2s;
         }
@@ -64,14 +64,16 @@
         bottom: 0;
         margin: 3vw 3vw 2.5vw 3vw;
         width: 68px;
-        
-        font-size: 1.4em;
 
         .Bar {
             height: 2px;
             width: 30px;
             margin-left: 1px;
         }
+    }
+
+    .Button {
+        font-size: 2.35em;
     }
 
    
@@ -96,22 +98,24 @@
 
     .ThemeSwitch {
         margin: 2vw 2vw 1.66vw 2vw;
-        width: 68px;
+        width: 64px;
         
-        font-size: 1.4em;
-
         .Bar {
             height: 2px;
-            width: 30px;
+            width: 28px;
             margin-left: 1px;
         }
+    }
+
+    .Button {
+        font-size: 2.2em;
     }
 
    
     .Dark {
         .Bar {
-            transform: translate(38px, 0px);
-            width: 30px;
+            transform: translate(36px, 0px);
+            width: 28px;
             transition: all 0.2s;
         }
     }
@@ -136,12 +140,9 @@
         background-color: $dark-text1;
     }
 
-    .Text {
+    .Button {
         color: $dark-text1;
-    }
-
-    .Text:active {
-        color: $light-highlight2;
+        background-color: transparent;
     }
 }
 
@@ -152,11 +153,16 @@
         background-color: $light-text1;
     }
 
-    .Text {
+    .Button {
         color: $light-text1;
+        background-color: transparent;
     }
+}
 
-    .Text:active {
-        color: $dark-highlight1;
-    }
+.ThemeSwitch button.L:active {
+    color: $light-highlight2;
+}
+
+.ThemeSwitch button.D:active {
+    color: $dark-highlight1;
 }

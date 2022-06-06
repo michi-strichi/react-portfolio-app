@@ -29,8 +29,6 @@ const Project = ({ theme, title, year, description, software, role, thumbnail, d
             <div className='Details'>
                 <div className='Info'>
                     <p className='Description'>{description}</p>
-                    <p className='Software'><span className='SoftwareSpan'>Software: </span>{software}</p>
-                    {role !== "" && <p className='Role'><span className='RoleSpan'>Role: </span>{role}</p>}
                 </div>
                 <div className='Images'>
                     <div className='Detail_0'>
@@ -39,6 +37,11 @@ const Project = ({ theme, title, year, description, software, role, thumbnail, d
                     <div className='Detail_1'>
                         <img src={detail_1_loaded}></img>
                     </div>
+                </div>
+                <div className='Info'>
+                    <p className='Software'><span className='SoftwareSpan'>Software: </span>{software}</p>
+                    {role !== "" && <p className='Role'><span className='RoleSpan'>Role: </span>{role}</p>}
+
                 </div>
             </div>
 

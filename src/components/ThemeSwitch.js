@@ -2,16 +2,16 @@ import React from 'react'
 
 import './styles/ThemeSwitch.scss';
 
-const ColorTheme = ({theme, toggleTheme}) => {
+const ColorTheme = ({theme, setTheme}) => {
 
     return (
-        <button className={'ThemeSwitch' + ' ' + theme} onClick={toggleTheme}>
+        <div className={'ThemeSwitch' + ' ' + theme}>
             <div className='Wrapper'>
-                <p className='Text'>Light</p>
-                <p className='Text'>Dark</p>
+                <button className='Button L' onClick={() => { setTheme("Light");}} >Light</button>
+                <button className='Button D' onClick={() => { setTheme("Dark");}} >Dark</button>
             </div>
             <div className='Bar'></div>
-        </button>
+        </div>
     )
 }
 
