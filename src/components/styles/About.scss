@@ -35,6 +35,9 @@
                 font-size: 1.4em;
                 animation-iteration-count: infinite;
                 animation: wiggle 3s infinite;
+                pointer-events: none;
+                padding: 0 6px 2px 6px;
+                // border-radius: 10px;
             }
 
             .CanvasWrapper {
@@ -47,6 +50,8 @@
                 cursor: move;
             }
         }
+
+    
 
         .Bio {
             margin: 43vh 20px 20px 20px;
@@ -310,6 +315,8 @@
 
     .Hint {
         color: $dark-highlight1;
+        filter: drop-shadow(1px 1px 2px $dark-backgroundColor)
+
     }
 }
 
@@ -340,6 +347,8 @@
     }
 
     .Hint {        
-        color: $light-highlight2;
+        color: $light-highlight2;        
+        filter: drop-shadow(1px 1px 2px $light-backgroundColor)
+
     }
 }

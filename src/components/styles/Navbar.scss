@@ -56,6 +56,9 @@
                 flex-direction: column;
                 align-items: flex-end;
                 justify-content: center;
+
+                cursor: pointer;
+
             }
 
             li.kleeblatt {
@@ -68,6 +71,8 @@
 
         }
     }
+
+
 
     .Inactive {
 
@@ -121,6 +126,8 @@
                 height: 33px;
                 transform: translate(0, 0);
                 transition: transform 0.2s;
+                margin-left: -15px;
+                padding-left: 15px;
             }
 
             li:hover {
