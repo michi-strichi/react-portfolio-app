@@ -1,48 +1,36 @@
 import React, { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-
-//import { useGLTF } from '@react-three/drei'
+import { OrbitControls, useGLTF, PerspectiveCamera } from '@react-three/drei';
 
 import './styles/About.scss';
 import Footer from './Footer';
-
-const Box = () => {
-
-    return (
-        <mesh>
-            <OrbitControls />
-            <boxBufferGeometry attach='geometry' />
-            <meshPhongMaterial attach="material" color="black" />
-        </mesh>
-    )
-}
 
 function Michi_Model({ ...props }) {
     const group = useRef()
     const { nodes, materials } = useGLTF('/Michi_3D_smiling.glb')
     return (
-      <group ref={group} {...props} dispose={null}>
-        <mesh geometry={nodes.michi_smiling.geometry} material={materials['Michi_FINAL_MAT.002']} />
-      </group>
+        <group ref={group} {...props} dispose={null}>
+            <mesh position={[0, -0.6, 0]} rotation={[0, -2, 0]} scale={[1.1, 1.1, 1.1]} geometry={nodes.michi_smiling.geometry} material={materials['Michi_FINAL_MAT.002']} />
+        </group>
     )
-  }
+}
 
 const About = ({ theme, min781 }) => {
     return (
         <div className={'About' + ' ' + theme}>
             <div className='Wrapper'>
                 <div className='Portrait'>
+                <span className='Hint'>rotate me!</span>
                     <div className='CanvasWrapper'>
                         <Canvas>
-                            <ambientLight />
-                            <OrbitControls />
-                            {/* <gridHelper args={[1000, 1000]} /> */}
-                            <Suspense fallback={null} >
+                            <OrbitControls enableZoom={false}/>
+                            <ambientLight intensity={0.9} />
+                            <Suspense fallback={null}>
                                 <Michi_Model />
                             </Suspense>
                         </Canvas>
                     </div>
+
                 </div>
                 <div className='Bio' >
                     {!min781 &&

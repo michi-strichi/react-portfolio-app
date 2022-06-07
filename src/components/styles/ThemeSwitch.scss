@@ -14,9 +14,12 @@
         margin: 40px;
         width: 100px;
 
+        cursor: pointer;
+
         .Wrapper {
             display: flex;
             justify-content: space-between;
+            cursor: pointer;
         }
 
 
@@ -34,6 +37,7 @@
         margin: 0;
         border: none;
         padding: 0;
+        cursor: pointer;
     }
 
 

@@ -14,6 +14,10 @@
 
     }
 
+    .Project .Thumbnail img {
+        cursor: pointer;
+    }
+
     .Project .Thumbnail img:hover{
         transform: scale(1.015, 1.015);
         transition: transform 0.2s;

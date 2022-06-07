@@ -8,20 +8,43 @@
         position: absolute;
 
         .Portrait {
-            height: 50vh;
             width: 100%;
             position: fixed;
             margin: 0 0 0 0;
-            top: 0px;
+            top: -5vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
 
+
+            @keyframes wiggle {
+                0% { transform: translate(-80px, 0px) rotate(6deg); }
+               80% { transform: translate(-80px, 0px) rotate(6deg); }
+               85% { transform: translate(-80px, 0px) rotate(14deg); }
+               95% { transform: translate(-80px, 0px) rotate(-2deg); }
+              100% { transform: translate(-80px, 0px) rotate(6deg); }
+            }
+
+            .Hint {
+                position: absolute;
+                top: 38vh;
+                z-index: 20;
+                font-weight: 600;
+                font-style: italic;
+                font-size: 1.4em;
+                animation-iteration-count: infinite;
+                animation: wiggle 3s infinite;
+            }
+
             .CanvasWrapper {
                 background-color: transparent;
-                height: 100%;
+
+                box-sizing: content-box;
+                height: 50vh;
                 width: 100%;
+
+                cursor: move;
             }
         }
 
@@ -168,21 +191,33 @@
         width: 90vw;
 
         .Portrait {
-            margin: 0;
-            right: 0;
-            margin: 0 8vw 0 0;
-            height: 100vh;
-            width: min-content;
+            top: -6vh;
+            right: -20vw;
             flex-direction: column;
             justify-content: center;
+            width: min-content;
 
             .CanvasWrapper {
-                width: 20vw;
-                height: 20vw;
+                width: 80vw;
+                height: 100vh;
+            }
+
+            @keyframes wiggle {
+                0% { transform: translate(120px, 0px) rotate(6deg); }
+               80% { transform: translate(120px, 0px) rotate(6deg); }
+               85% { transform: translate(120px, 0px) rotate(14deg); }
+               95% { transform: translate(120px, 0px) rotate(-2deg); }
+              100% { transform: translate(120px, 0px) rotate(6deg); }
+            }
+
+            .Hint {
+                top: 47vh;
+
             }
         }
 
         .Bio {
+            position: relative;
             backdrop-filter: none;
             width: 54vw;
             margin-top: 5vw;
@@ -235,11 +270,11 @@
         }
 
         .Portrait {
-            margin-right: 10vw;            
+            right: -17vw;       
 
             .CanvasWrapper {
-                width: 24vw;
-                height: 24vw;
+                // width: 24vw;
+                // height: 24vw;
             }
 
         }
@@ -272,6 +307,10 @@
     .Book {
         color: $dark-text4;
     }
+
+    .Hint {
+        color: $dark-highlight1;
+    }
 }
 
 .About.Light {
@@ -298,5 +337,9 @@
     p,
     .Book {
         color: $light-text4;
+    }
+
+    .Hint {        
+        color: $light-highlight2;
     }
 }
