@@ -5,9 +5,9 @@
         "description":  "An interactive 3D viewer of the excavation of prehistoric stilt houses at Attersee, Austria. The surrounding area, as well as high-resolution photogrammtery scans of the different excavation layers can be examined virtually.",
         "software":     "Blender3D, Unreal Engine 4, Adobe PS",
         "role":         "3D Asset preparation, 3D modelling, scene building, lighting",
-        "thumbnail":    "prj0_thumbnail.jpg",
-        "detail_0":     "prj0_detail0.jpg",
-        "detail_1":     "prj0_detail1.png"
+        "thumbnail":    "excavation_thumbnail.jpg",
+        "detail_0":     "excavation_detail0.jpg",
+        "detail_1":     "excavation_detail1.png"
     },
     {
         "title":        "Hercules Beetle",
@@ -15,28 +15,49 @@
         "description":  "Realistic model of Hercules Beetle (lat. Dynastes Hercules). Procedural materials and textures. Hair particly systems and full body rig.",
         "software":     "Blender3D, Adobe PS",
         "role":         "",
-        "thumbnail":    "prj1_thumbnail.jpg",
-        "detail_0":     "prj1_detail0.jpg",
-        "detail_1":     "prj1_detail1.png"
+        "thumbnail":    "hercules_thumbnail.jpg",
+        "detail_0":     "hercules_detail0.jpg",
+        "detail_1":     "hercules_detail1.png"
     },
     {
-        "title":        "Excavation Viewer",
-        "year":         "2021",
-        "description":  "An interactive 3D viewer of the excavation of prehistoric stilt houses at Attersee, Austria. The surrounding area, as well as high-resolution photogrammtery scans of the different excavation layers can be examined virtually.",
-        "software":     "Blender3D, Unreal Engine 4, Adobe PS",
-        "role":         "3D Asset preparation, 3D modelling, scene building, lighting",
-        "thumbnail":    "prj0_thumbnail.jpg",
-        "detail_0":     "prj0_detail0.jpg",
-        "detail_1":     "prj0_detail1.png"
-    },
-    {
-        "title":        "Hercules Beetle",
-        "year":         "2019",
-        "description":  "Realistic model of Hercules Beetle (lat. Dynastes Hercules). Procedural materials and textures. Hair particly systems and full body rig.",
-        "software":     "Blender3D, Adobe PS",
+        "title":        "Virtual Gallery",
+        "year":         "",
+        "description":  "",
+        "software":     "",
         "role":         "",
-        "thumbnail":    "prj1_thumbnail.jpg",
-        "detail_0":     "prj1_detail0.jpg",
-        "detail_1":     "prj1_detail1.png"
+        "thumbnail":    "gallery_thumbnail.jpg",
+        "detail_0":     "gallery_detail0.jpg",
+        "detail_1":     "gallery_detail1.png"
+    },
+    {
+        "title":        "Spook - Toy Concept",
+        "year":         "",
+        "description":  "",
+        "software":     "",
+        "role":         "",
+        "thumbnail":    "spook_thumbnail.jpg",
+        "detail_0":     "spook_detail0.jpg",
+        "detail_1":     "spook_detail1.png"
+    },
+    {
+        "title":        "Realtime Voronoi",
+        "year":         "",
+        "description":  "",
+        "software":     "",
+        "role":         "",
+        "thumbnail":    "voronoi_thumbnail.jpg",
+        "detail_0":     "voronoi_detail0.jpg",
+        "detail_1":     "voronoi_detail1.jpg"
+    },
+    {
+        "title":        "Witch",
+        "year":         "",
+        "description":  "",
+        "software":     "",
+        "role":         "",
+        "thumbnail":    "witch_thumbnail.jpg",
+        "detail_0":     "witch_detail0.png",
+        "detail_1":     "witch_detail1.png"
     }
+
 ]
