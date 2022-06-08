@@ -62,7 +62,9 @@
 
             .Description {
                 margin-top: 10px;
-                margin-bottom: 0px
+                margin-bottom: 0px;
+                font-weight: 400;
+                font-size: 1.05em;
             }
         }
 
@@ -181,7 +183,19 @@
 @media (min-width:1001px) {}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
-@media (min-width:1281px) {}
+@media (min-width:1281px) {
+
+    .Project {
+        .Title {
+            font-size: 1.6em;
+        }
+        .Details {
+            .Description {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
 
 
 

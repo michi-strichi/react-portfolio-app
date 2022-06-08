@@ -21,19 +21,19 @@
     },
     {
         "title":        "Virtual Gallery",
-        "year":         "",
-        "description":  "",
+        "year":         "2021 - 2022",
+        "description":  "An interactive experience of the degree program Media Technology & Design at the University of Applied Austria Available in VR or as a desktop version. Numerous works created during the course are exhibited. Easily addable, modular displays (2D, 3D, audio, video & code/web/game) allow new projects to be added constantly.",
         "software":     "",
-        "role":         "",
+        "role":         "Project lead, 3D modelling, interaction development, scene building",
         "thumbnail":    "gallery_thumbnail.jpg",
         "detail_0":     "gallery_detail0.jpg",
         "detail_1":     "gallery_detail1.png"
     },
     {
         "title":        "Spook - Toy Concept",
-        "year":         "",
+        "year":         "2020",
         "description":  "",
-        "software":     "",
+        "software":     "Autodesk Maya, Adobe PS",
         "role":         "",
         "thumbnail":    "spook_thumbnail.jpg",
         "detail_0":     "spook_detail0.jpg",
@@ -41,9 +41,9 @@
     },
     {
         "title":        "Realtime Voronoi",
-        "year":         "",
+        "year":         "2020",
         "description":  "",
-        "software":     "",
+        "software":     "Touchdesigner",
         "role":         "",
         "thumbnail":    "voronoi_thumbnail.jpg",
         "detail_0":     "voronoi_detail0.jpg",
@@ -51,13 +51,12 @@
     },
     {
         "title":        "Witch",
-        "year":         "",
+        "year":         "2022",
         "description":  "",
-        "software":     "",
+        "software":     "Blender3D, ZBrush, Adobe AE",
         "role":         "",
         "thumbnail":    "witch_thumbnail.jpg",
         "detail_0":     "witch_detail0.png",
         "detail_1":     "witch_detail1.png"
     }
-
 ]
