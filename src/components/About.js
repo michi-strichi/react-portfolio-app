@@ -57,7 +57,7 @@ const About = ({ theme, min781 }) => {
                         Current Reads
                     </h3>
                     <p>
-                        <span className="Book">Epic of Gilgamesh</span>
+                        <span className="Book">Epic of Gilgamesh</span> by ???
                         <br />
                         <span className="Book">Flatland</span> by Edwin Abbott Abbott
                         <br />
