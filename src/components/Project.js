@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 import './styles/Project.scss';
 
-const Project = ({ theme, title, year, description, software, role, thumbnail, detail_0, detail_1 }) => {
+const Project = ({ theme, title, year, description, link, color, software, role, thumbnail, detail_0, detail_1 }) => {
 
     const [isExpanded, setIsExpanded] = useState('NotExpanded');
 
@@ -14,10 +15,13 @@ const Project = ({ theme, title, year, description, software, role, thumbnail, d
     const detail_0_loaded = require('./assets/images/' + detail_0);
     const detail_1_loaded = require('./assets/images/' + detail_1);
 
-    // VG DESCRIPTION
-    //description":  "An interactive experience of the degree program Media Technology & Design at the University of Applied Austria Available in VR or as a desktop version. Numerous works created during the course are exhibited. Easily addable, modular displays (2D, 3D, audio, video & code/web/game) allow new projects to be added constantly.",
+    const LinkStyle = {
+            color: color,
+      };
 
+   
     return (
+
         <div className={'Project' + ' ' + theme + ' ' + isExpanded}>
             <div className='Thumbnail' onClick={toggleExpanded}>
                 <img src={thumbnail_loaded}></img>
@@ -29,6 +33,7 @@ const Project = ({ theme, title, year, description, software, role, thumbnail, d
             <div className='Details'>
                 <div className='Info'>
                     <p className='Description'>{description}</p>
+                    {link !== undefined && <p className='Link'>-&gt; <a href={link} style={LinkStyle}>Check it out</a></p>}
                 </div>
                 <div className='Images'>
                     <div className='Detail_0'>
@@ -40,7 +45,7 @@ const Project = ({ theme, title, year, description, software, role, thumbnail, d
                 </div>
                 <div className='Info'>
                     <p className='Software'><span className='SoftwareSpan'>Software: </span>{software}</p>
-                    {role !== "" && <p className='Role'><span className='RoleSpan'>Role: </span>{role}</p>}
+                    {role !== undefined && <p className='Role'><span className='RoleSpan'>Role: </span>{role}</p>}
 
                 </div>
             </div>

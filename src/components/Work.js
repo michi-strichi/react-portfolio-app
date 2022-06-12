@@ -24,6 +24,8 @@ const Work = ({ theme, min781, min1281 }) => {
                         title={project.title}
                         year={project.year}
                         description={project.description}
+                        link={project.link}
+                        color={project.color}
                         software={project.software}
                         role={project.role}
                         thumbnail={project.thumbnail}
@@ -43,6 +45,8 @@ const Work = ({ theme, min781, min1281 }) => {
                                     title={project.title}
                                     year={project.year}
                                     description={project.description}
+                                    link={project.link}
+                                    color={project.color}
                                     software={project.software}
                                     role={project.role}
                                     thumbnail={project.thumbnail}
@@ -59,6 +63,8 @@ const Work = ({ theme, min781, min1281 }) => {
                                     title={project.title}
                                     year={project.year}
                                     description={project.description}
+                                    link={project.link}
+                                    color={project.color}
                                     software={project.software}
                                     role={project.role}
                                     thumbnail={project.thumbnail}
@@ -80,6 +86,8 @@ const Work = ({ theme, min781, min1281 }) => {
                                     title={project.title}
                                     year={project.year}
                                     description={project.description}
+                                    link={project.link}
+                                    color={project.color}
                                     software={project.software}
                                     role={project.role}
                                     thumbnail={project.thumbnail}
@@ -97,6 +105,8 @@ const Work = ({ theme, min781, min1281 }) => {
                                     title={project.title}
                                     year={project.year}
                                     description={project.description}
+                                    link={project.link}
+                                    color={project.color}
                                     software={project.software}
                                     role={project.role}
                                     thumbnail={project.thumbnail}
@@ -114,6 +124,8 @@ const Work = ({ theme, min781, min1281 }) => {
                                     title={project.title}
                                     year={project.year}
                                     description={project.description}
+                                    link={project.link}
+                                    color={project.color}
                                     software={project.software}
                                     role={project.role}
                                     thumbnail={project.thumbnail}

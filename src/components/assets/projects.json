@@ -2,7 +2,8 @@
     {
         "title":        "Excavation Viewer",
         "year":         "2021",
-        "description":  "An interactive 3D viewer of the excavation of prehistoric stilt houses at Attersee, Austria. The surrounding area, as well as high-resolution photogrammtery scans of the different excavation layers can be examined virtually.",
+        "description":  "An interactive 3D viewer of the excavation of prehistoric stilt houses at Attersee, Austria. A model of the surrounding area generated from satellite data, as well as high-resolution photogrammtery scans of the different excavation layers can be examined virtually. Various types of unearthed artefacts are marked for easier inspection.",
+        "color":        "#96c9c4",
         "software":     "Blender3D, Unreal Engine 4, Adobe PS",
         "role":         "3D Asset preparation, 3D modelling, scene building, lighting",
         "thumbnail":    "excavation_thumbnail.jpg",
@@ -12,9 +13,9 @@
     {
         "title":        "Hercules Beetle",
         "year":         "2019",
-        "description":  "Realistic model of Hercules Beetle (lat. Dynastes Hercules). Procedural materials and textures. Hair particly systems and full body rig.",
+        "description":  "Realistic model of a Hercules Beetle (lat. Dynastes Hercules), one of the largest beetles on the planet. Materials and textures are fully procedural. Hair particly systems and a full body rig for animation are included.",
         "software":     "Blender3D, Adobe PS",
-        "role":         "",
+        "color":        "#977c19",
         "thumbnail":    "hercules_thumbnail.jpg",
         "detail_0":     "hercules_detail0.jpg",
         "detail_1":     "hercules_detail1.png"
@@ -23,6 +24,8 @@
         "title":        "Virtual Gallery",
         "year":         "2021 - 2022",
         "description":  "An interactive experience of the degree program Media Technology & Design at the University of Applied Austria Available in VR or as a desktop version. Numerous works created during the course are exhibited. Easily addable, modular displays (2D, 3D, audio, video & code/web/game) allow new projects to be added constantly.",
+        "link":         "https://youtu.be/MDxHAQUN23Y",
+        "color":        "#549ccb",
         "software":     "Unity, Blender3D",
         "role":         "Project lead, 3D modelling, interaction development, scene building",
         "thumbnail":    "gallery_thumbnail.jpg",
@@ -32,9 +35,9 @@
     {
         "title":        "Spook - Toy Concept",
         "year":         "2020",
-        "description":  "",
+        "description":  "A concept for a toy collectible. The different parts of 'Spook' can be rotatet and mixed up similar to a Rubik's cube.",
+        "color":        "#29c345",
         "software":     "Autodesk Maya, Adobe PS",
-        "role":         "",
         "thumbnail":    "spook_thumbnail.jpg",
         "detail_0":     "spook_detail0.jpg",
         "detail_1":     "spook_detail1.png"
@@ -42,9 +45,9 @@
     {
         "title":        "Realtime Voronoi",
         "year":         "2020",
-        "description":  "",
+        "description":  "Realtime evolving voronoi texture generated from 4D perlin noise.",
+        "color":        "#8889b7",
         "software":     "Touchdesigner",
-        "role":         "",
         "thumbnail":    "voronoi_thumbnail.jpg",
         "detail_0":     "voronoi_detail0.jpg",
         "detail_1":     "voronoi_detail1.jpg"
@@ -52,9 +55,10 @@
     {
         "title":        "Witch",
         "year":         "2022",
-        "description":  "",
+        "description":  "Game-ready witch character with a beetle's shell as a protetive shield. ",
+        "link":         "https://youtu.be/jAsvio0CDmg",
+        "color":        "#5fbb72",
         "software":     "Blender3D, ZBrush, Adobe AE",
-        "role":         "",
         "thumbnail":    "witch_thumbnail.jpg",
         "detail_0":     "witch_detail0.png",
         "detail_1":     "witch_detail1.png"
