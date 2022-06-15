@@ -14,14 +14,6 @@ function App() {
     const [min781, setMin781] = useState( window.matchMedia("(min-width: 781px)").matches)
     const [min1281, setMin1281] = useState( window.matchMedia("(min-width: 1281px)").matches)
 
-    /*
-    const toggleTheme = (t) => {
-        //theme === "Light" ? setTheme("Dark") : setTheme("Light")    
-        setTheme(t);
-    }
-    */
-
-
     useEffect(() => {
         window
             .matchMedia("(min-width: 781px)")

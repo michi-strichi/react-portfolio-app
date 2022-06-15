@@ -33,7 +33,7 @@ const Navbar = ({ page, theme, min781, setPage, setTheme }) => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to='/work' onClick={() => { setPage("work");; setNavbarStatus('Inactive') }} className={page === "work" ? 'selected' : 'notSelected'}>
+                                <Link to='/work' onClick={() => { setPage("work"); setNavbarStatus('Inactive') }} className={page === "work" ? 'selected' : 'notSelected'}>
                                     work
                                 </Link>
                             </li>
