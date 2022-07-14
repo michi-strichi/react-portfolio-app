@@ -1,0 +1,60 @@
+@import './Colors.scss';
+
+/* --------------------------------- MOBILE --------------------------------- */
+@media (min-width:320px) {
+
+    .Home {
+        position: absolute;
+        width: 100%;
+        padding: 0 0 0 0;
+
+        .CanvasWrapper {
+            height: 100vh;
+        }
+    }
+
+}
+
+/* --------------------------------- TABLET --------------------------------- */
+@media (min-width:581px) {
+
+    .Home {
+
+    }
+
+}
+
+/* --------------------------------- WIDE TABLET --------------------------------- */
+@media (min-width:781px) {
+
+    .Home {
+        position: relative;
+        width: 85vw;
+    }
+
+}
+
+/* --------------------------------- LAPTOP --------------------------------- */
+@media (min-width:1001px) {
+    .Home {
+        width: 90vw;
+    }
+}
+
+/* --------------------------------- BIG SCREEN --------------------------------- */
+@media (min-width:1281px) {
+
+    .Home {
+
+    }
+}
+
+/* --------------------------------- THEMES --------------------------------- */
+
+.Work.Dark {
+    background-color: $dark-backgroundColor;
+}
+
+.Work.Light {
+    background-color: $light-backgroundColor;
+}
