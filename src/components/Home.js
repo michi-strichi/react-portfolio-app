@@ -44,9 +44,12 @@ useGLTF.preload('/planetModels_TEST/shroom_TEST.glb')
 function Planet_Model({ ...props }) {
     const group = useRef()
     const { nodes, materials } = useGLTF('planetModels_TEST//planet_TEST.glb')
+
+    
+
     return (
         <group ref={group} {...props} dispose={null}>
-            <mesh name={'planet'} position={props.pos} geometry={nodes.planet.geometry} material={materials.planet_mat} />
+            <mesh name={'planet'} position={props.pos} scale={[2,2,2]} geometry={nodes.planet.geometry} material={materials.planet_mat} />
         </group>
     )
 }
@@ -62,33 +65,36 @@ const Home = ({ theme }) => {
     // const [dandelions, setDandelions] = useState([]);
     // const [mushrooms, setMushrooms] = useState([]);
 
+    const [moved, setMoved] = useState(false);
+
     const addKlee = (pos, rot) => {
         setKlees([...klees, [pos, rot]]);
         console.log(klees);
     };
 
 
-    const handlePointerDown = (e) => {
+    const handlePointerUp = (e) => {
         console.log(e);
-
-        const intersection = e.intersections[0];
         
-        if (intersection.object.name === 'planet') {
-
-            switch (brush) {
-                case 'klee':
-                    console.log('adding klee');
-                    addKlee(intersection.point, intersection.face.normal);
-                    break;
-                case 'dandelion':
-                    console.log('adding dandelion');
-                    break;
-                case 'mushroom':
-                    console.log('adding mushroom');
-                    break;
+        if(!moved){
+            const intersection = e.intersections[0];
+        
+            if (intersection.object.name === 'planet') {
+    
+                switch (brush) {
+                    case 'klee':
+                        console.log('adding klee');
+                        addKlee(intersection.point, intersection.face.normal);
+                        break;
+                    case 'dandelion':
+                        console.log('adding dandelion');
+                        break;
+                    case 'mushroom':
+                        console.log('adding mushroom');
+                        break;
+                }
             }
         }
-
     };
 
     return (
@@ -98,12 +104,12 @@ const Home = ({ theme }) => {
             <button onClick={() => setBrush('klee')} className='button'>klee</button>
             <div>selected brush: {brush}</div>
 
-            <div className='CanvasWrapper'>
+            <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
                 <Canvas>
                     <OrbitControls />
                     <ambientLight intensity={1} />
                     <Suspense fallback={null}>
-                        <Planet_Model onPointerUp={(e) => handlePointerDown(e)} />
+                        <Planet_Model onPointerUp={(e) => handlePointerUp(e)} />
 
                         {klees.map((klee, index) => (
                             <Klee_Model key={index} pos={klee[0]} rot={klee[1]} />
