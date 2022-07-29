@@ -3,6 +3,8 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import './styles/Home.scss';
 
+import clear_icon from './assets/svgs/clear.svg';
+
 
 function Dandelion_Model({ ...props }) {
     const group = useRef()
@@ -45,11 +47,11 @@ function Planet_Model({ ...props }) {
     const group = useRef()
     const { nodes, materials } = useGLTF('planetModels_TEST//planet_TEST.glb')
 
-    
+
 
     return (
         <group ref={group} {...props} dispose={null}>
-            <mesh name={'planet'} position={props.pos} scale={[2,2,2]} geometry={nodes.planet.geometry} material={materials.planet_mat} />
+            <mesh name={'planet'} position={props.pos} scale={[2, 2, 2]} geometry={nodes.planet.geometry} material={materials.planet_mat} />
         </group>
     )
 }
@@ -75,12 +77,12 @@ const Home = ({ theme }) => {
 
     const handlePointerUp = (e) => {
         console.log(e);
-        
-        if(!moved){
+
+        if (!moved) {
             const intersection = e.intersections[0];
-        
+
             if (intersection.object.name === 'planet') {
-    
+
                 switch (brush) {
                     case 'klee':
                         console.log('adding klee');
@@ -99,10 +101,35 @@ const Home = ({ theme }) => {
 
     return (
         <div className={'Home' + ' ' + theme}>
-            <button onClick={() => setBrush('dandelion')} className='button'>dandelion</button>
-            <button onClick={() => setBrush('mushroom')} className='button'>mushroom</button>
-            <button onClick={() => setBrush('klee')} className='button'>klee</button>
-            <div>selected brush: {brush}</div>
+            <div className='MichaelHochreiter' >
+                <div className='Name'>Michael Hochreiter</div>
+                <div className='Title'>3D Developer</div>
+            </div>
+
+            <div className='Controls'>
+                <div className='?' >
+                    <div className='IconWrapper' >
+                        ?
+                    </div>
+                </div>
+                <div className='Brushes' >
+                    <div className='Bar' />
+                    <div className='IconWrapper' onClick={() => setBrush('klee')}>
+                        <img src={klee_icon} alt={'Clover Icon'} />
+                    </div>
+                    <div className='IconWrapper' onClick={() => setBrush('mushroom')}>
+                        <img src={mushroom_icon} alt={'Mushroom Icon'} />
+                    </div>
+                    <div className='IconWrapper' onClick={() => setBrush('dandelion')}>
+                        <img src={dandelion_icon} alt={'Dandelion Icon'} />
+                    </div>
+                </div>
+                <div className='Clear' >
+                    <div className='IconWrapper' >
+                        <img src={clear_icon} alt={'Clear Planet'} />
+                    </div>
+                </div>
+            </div>
 
             <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
                 <Canvas>
@@ -110,15 +137,13 @@ const Home = ({ theme }) => {
                     <ambientLight intensity={1} />
                     <Suspense fallback={null}>
                         <Planet_Model onPointerUp={(e) => handlePointerUp(e)} />
-
                         {klees.map((klee, index) => (
                             <Klee_Model key={index} pos={klee[0]} rot={klee[1]} />
                         ))}
-
                     </Suspense>
                 </Canvas>
             </div>
-        </div>
+        </div >
     )
 }
 
