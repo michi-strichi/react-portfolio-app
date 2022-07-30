@@ -1,0 +1,140 @@
+@import './Colors.scss';
+
+/* --------------------------------- MOBILE --------------------------------- */
+@media (min-width:320px) {
+
+    .Controls {
+        position: fixed;
+        bottom: 0px;
+
+        height: 100px;
+        width: 100%;
+
+        padding: 20px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        z-index: 10;
+    }
+
+    .Questionmark {
+        height: 60px;
+        width: 60px;
+
+        font-size: 3.5em;
+
+        .IconWrapper {
+            transform: translate(15px, -10px);
+        }
+    }
+
+   
+
+    .Brushes {
+        height: 60px;
+        width: 180px;
+
+        display: flex;
+        flex-direction: row;
+
+        .IconWrapper {
+            padding: 6px;
+            height: 60px;
+            width: 60px;
+        }
+
+        .Bar {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+
+            z-index: -5;
+
+            transition: all 0.15s;
+        }
+
+        .Bar.klee{
+            transform: translate(0,0);
+
+        }
+
+        .Bar.mushroom {
+            transform: translate(60px, 0);
+        }
+
+        .Bar.dandelion {
+            transform: translate(120px,0);
+        }
+    }
+
+    .Clear {
+        height: 60px;
+        width: 60px;
+
+        .ClearBar{
+            height: 4px; 
+            margin: 0 10px 0 10px;
+        }
+
+        .b1 {
+            transform: rotate(45deg);
+        }
+
+        .b2 {
+            transform: translate(0, -4px) rotate(-45deg);
+        }
+
+        .IconWrapper {
+            transform: translate(0, 28px);
+        }
+    }
+
+}
+
+/* --------------------------------- TABLET --------------------------------- */
+@media (min-width:581px) {}
+
+/* --------------------------------- WIDE TABLET --------------------------------- */
+@media (min-width:781px) {}
+
+/* --------------------------------- LAPTOP --------------------------------- */
+@media (min-width:1001px) {}
+
+/* --------------------------------- BIG SCREEN --------------------------------- */
+@media (min-width:1281px) {}
+
+/* --------------------------------- THEMES --------------------------------- */
+
+.Controls.Dark {
+    background-color: $dark-backgroundColor;
+}
+
+.Controls.Light {
+    .Questionmark {
+        color: $light-text5;
+    }
+    .Questionmark:active{
+        color: $light-text2;
+    }
+
+    .ClearBar {
+        background-color: $light-text5;
+    }
+
+    .Clear:active {
+        .ClearBar{
+            background-color: $light-text2;
+        }
+    }
+
+    .Bar {
+        background-color: $light-text1;
+    }
+
+
+
+}
+

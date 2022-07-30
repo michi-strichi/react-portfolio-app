@@ -2,8 +2,7 @@ import React, { useState, useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import './styles/Home.scss';
-
-import clear_icon from './assets/svgs/clear.svg';
+import Controls from './Controls';
 
 
 function Dandelion_Model({ ...props }) {
@@ -105,32 +104,9 @@ const Home = ({ theme }) => {
                 <div className='Name'>Michael Hochreiter</div>
                 <div className='Title'>3D Developer</div>
             </div>
+            <Controls theme={theme} brush={brush} setBrush={setBrush}/>
 
-            <div className='Controls'>
-                <div className='?' >
-                    <div className='IconWrapper' >
-                        ?
-                    </div>
-                </div>
-                <div className='Brushes' >
-                    <div className='Bar' />
-                    <div className='IconWrapper' onClick={() => setBrush('klee')}>
-                        <img src={klee_icon} alt={'Clover Icon'} />
-                    </div>
-                    <div className='IconWrapper' onClick={() => setBrush('mushroom')}>
-                        <img src={mushroom_icon} alt={'Mushroom Icon'} />
-                    </div>
-                    <div className='IconWrapper' onClick={() => setBrush('dandelion')}>
-                        <img src={dandelion_icon} alt={'Dandelion Icon'} />
-                    </div>
-                </div>
-                <div className='Clear' >
-                    <div className='IconWrapper' >
-                        <img src={clear_icon} alt={'Clear Planet'} />
-                    </div>
-                </div>
-            </div>
-
+        
             <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
                 <Canvas>
                     <OrbitControls />
