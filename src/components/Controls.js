@@ -19,34 +19,36 @@ const Controls = ({ theme, brush, setBrush, clearPlanet }) => {
     return (
         <>
             {helpEnabled &&
-                <div className={'HelpText' + ' ' + theme}>
+                <div className={'HelpText ' + 'noselect ' + theme}>
                     <p>Click and drag planet to rotate</p>
                     <p>Click planet to spawn form of life</p>
                 </div>
             }
 
-            <div className={'Controls' + ' ' + theme} >
-                <div className='Questionmark' onClick={() => toggleHelpEnabled()}>
-                    <div className='IconWrapper'>
-                        ?
+            <div className='ControlsWrapper noselect' >
+                <div className={'Controls' + ' ' + theme} >
+                    <div className='Questionmark' onClick={() => toggleHelpEnabled()}>
+                        <div className='IconWrapper'>
+                            ?
+                        </div>
                     </div>
-                </div>
-                <div className='Brushes' >
-                    <div className={'Bar' + ' ' + brush} />
-                    <div className='IconWrapper' onClick={() => {setBrush('klee'); setHelpEnabled(false)}}>
-                        <img src={brush == 'klee' ? klee_col_icon : klee_bw_icon} alt={'Clover Icon'} />
+                    <div className='Brushes' >
+                        <div className={'Bar' + ' ' + brush} />
+                        <div className='IconWrapper' onClick={() => { setBrush('klee'); setHelpEnabled(false) }}>
+                            <img src={brush === 'klee' ? klee_col_icon : klee_bw_icon} alt={'Clover Icon'} />
+                        </div>
+                        <div className='IconWrapper' onClick={() => { setBrush('mushroom'); setHelpEnabled(false) }}>
+                            <img src={brush === 'mushroom' ? mushroom_col_icon : mushroom_bw_icon} alt={'Mushroom Icon'} />
+                        </div>
+                        <div className='IconWrapper' onClick={() => { setBrush('dandelion'); setHelpEnabled(false) }}>
+                            <img src={brush === 'dandelion' ? dandelion_col_icon : dandelion_bw_icon} alt={'Dandelion Icon'} />
+                        </div>
                     </div>
-                    <div className='IconWrapper' onClick={() => {setBrush('mushroom'); setHelpEnabled(false)}}>
-                        <img src={brush == 'mushroom' ? mushroom_col_icon : mushroom_bw_icon} alt={'Mushroom Icon'} />
-                    </div>
-                    <div className='IconWrapper' onClick={() => {setBrush('dandelion'); setHelpEnabled(false)}}>
-                        <img src={brush == 'dandelion' ? dandelion_col_icon : dandelion_bw_icon} alt={'Dandelion Icon'} />
-                    </div>
-                </div>
-                <div className='Clear' onClick={() => {clearPlanet(); setHelpEnabled(false)}}>
-                    <div className='IconWrapper' >
-                        <div className='ClearBar b1' />
-                        <div className='ClearBar b2' />
+                    <div className='Clear' onClick={() => { clearPlanet(); setHelpEnabled(false) }}>
+                        <div className='IconWrapper' >
+                            <div className='ClearBar b1' />
+                            <div className='ClearBar b2' />
+                        </div>
                     </div>
                 </div>
             </div>

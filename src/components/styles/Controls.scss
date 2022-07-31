@@ -3,7 +3,7 @@
 /* --------------------------------- MOBILE --------------------------------- */
 @media (min-width:320px) {
 
-    .Controls {
+    .ControlsWrapper {
         position: fixed;
         bottom: 0px;
 
@@ -12,12 +12,22 @@
 
         padding: 20px;
 
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .Controls {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
 
-        z-index: 10;
+        width: 100%;
+        max-width: 400px;
     }
 
     .Questionmark {
@@ -94,7 +104,7 @@
 
     .HelpText {
         position: fixed;
-        bottom: 13vh;
+        bottom: 125px;
 
         width: 100%;
 
@@ -114,7 +124,103 @@
 @media (min-width:581px) {}
 
 /* --------------------------------- WIDE TABLET --------------------------------- */
-@media (min-width:781px) {}
+@media (min-width:781px) {
+
+    .ControlsWrapper {
+        position: fixed;
+        right: 0px;
+
+        height: 100%;
+        width: 80px;
+
+        flex-direction: column;
+
+    }
+
+    .Controls {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 40px;
+        height: 100%;
+        max-height: 270px;
+    }
+
+
+    .Questionmark {
+        height: 40px;
+        width: 40px;
+
+        font-size: 2em;
+
+        .IconWrapper {
+            transform: translate(12px, -3px);
+        }
+    }
+
+
+    .Brushes {
+        height: 120px;
+        width: 40px;
+
+        flex-direction: column;
+
+        .IconWrapper {
+            padding: 6px;
+            height: 40px;
+            width: 40px;
+        }
+
+        .Bar {
+            width: 40px;
+            height: 40px;
+        }
+
+        .Bar.klee{
+            transform: translate(0,0);
+
+        }
+
+        .Bar.mushroom {
+            transform: translate(0, 40px);
+        }
+
+        .Bar.dandelion {
+            transform: translate(0,80px);
+        }
+    }
+
+    .Clear {
+        height: 40px;
+        width: 40px;
+
+        .ClearBar{
+            height: 2px; 
+            margin: 0 10px 0 10px;
+        }
+
+        .b1 {
+            transform: rotate(45deg);
+        }
+
+        .b2 {
+            transform: translate(0, -2px) rotate(-45deg);
+        }
+
+        .IconWrapper {
+            transform: translate(0, 19px);
+        }
+    }
+
+    .HelpText {
+        width: 85vw;
+        bottom: 40px;
+    }
+
+
+}
 
 /* --------------------------------- LAPTOP --------------------------------- */
 @media (min-width:1001px) {}

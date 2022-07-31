@@ -103,10 +103,10 @@ const Home = ({ theme }) => {
     };
 
     return (
-        <div className={'Home' + ' ' + theme}>
+        <div className={'Home' + ' ' + 'noselect' + ' ' + theme }>
             <div className='MichaelHochreiter' >
-                <div className='Name'>Michael Hochreiter</div>
-                <div className='Title'>3D Developer</div>
+                <p className='Name'>Michael Hochreiter</p>
+                <p className='Title'>3D Developer</p>
             </div>
 
             <Controls theme={theme} brush={brush} setBrush={setBrush} clearPlanet={clearPlanet}/>
