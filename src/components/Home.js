@@ -73,6 +73,10 @@ const Home = ({ theme }) => {
         console.log(klees);
     };
 
+    const clearPlanet = () => {
+        console.log('cleared planet');
+    };
+
 
     const handlePointerUp = (e) => {
         console.log(e);
@@ -104,9 +108,9 @@ const Home = ({ theme }) => {
                 <div className='Name'>Michael Hochreiter</div>
                 <div className='Title'>3D Developer</div>
             </div>
-            <Controls theme={theme} brush={brush} setBrush={setBrush}/>
 
-        
+            <Controls theme={theme} brush={brush} setBrush={setBrush} clearPlanet={clearPlanet}/>
+
             <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
                 <Canvas>
                     <OrbitControls />

@@ -24,10 +24,10 @@
         height: 60px;
         width: 60px;
 
-        font-size: 3.5em;
+        font-size: 3em;
 
         .IconWrapper {
-            transform: translate(15px, -10px);
+            transform: translate(18px, -5px);
         }
     }
 
@@ -75,8 +75,8 @@
         width: 60px;
 
         .ClearBar{
-            height: 4px; 
-            margin: 0 10px 0 10px;
+            height: 3px; 
+            margin: 0 14px 0 14px;
         }
 
         .b1 {
@@ -84,11 +84,27 @@
         }
 
         .b2 {
-            transform: translate(0, -4px) rotate(-45deg);
+            transform: translate(0, -3px) rotate(-45deg);
         }
 
         .IconWrapper {
-            transform: translate(0, 28px);
+            transform: translate(0, 29px);
+        }
+    }
+
+    .HelpText {
+        position: fixed;
+        bottom: 13vh;
+
+        width: 100%;
+
+        z-index: 10;
+
+        p{
+            margin: 5px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: 400;
         }
     }
 
@@ -109,19 +125,42 @@
 /* --------------------------------- THEMES --------------------------------- */
 
 .Controls.Dark {
-    background-color: $dark-backgroundColor;
+    .Questionmark {
+        color: $dark-text7;
+    }
+    .Questionmark:active{
+        color: $dark-text2;
+    }
+
+    .ClearBar {
+        background-color: $dark-text7;
+    }
+
+    .Clear:active {
+        .ClearBar{
+            background-color: $dark-text2;
+        }
+    }
+
+    .Bar {
+        background-color: $dark-text1;
+    }
+}
+
+.HelpText.Dark {
+    color: $dark-text5;
 }
 
 .Controls.Light {
     .Questionmark {
-        color: $light-text5;
+        color: $light-text7;
     }
     .Questionmark:active{
         color: $light-text2;
     }
 
     .ClearBar {
-        background-color: $light-text5;
+        background-color: $light-text7;
     }
 
     .Clear:active {
@@ -133,8 +172,9 @@
     .Bar {
         background-color: $light-text1;
     }
+}
 
-
-
+.HelpText.Light {
+    color: $light-text5;
 }
 
