@@ -12,7 +12,7 @@
         .CanvasWrapper {
             height: 100vh;
         }
-    
+
     }
 
     .MichaelHochreiter {
@@ -20,19 +20,21 @@
         top: 20vh;
         left: 40vw;
 
-        max-width: 500px;
+        max-width: 300px;
+
+        pointer-events: none;
 
         z-index: 10;
 
         margin: 0 0 0 -25vw;
 
-        .Name{
+        .Name {
             font-size: 4em;
             line-height: 50px;
             margin: 0;
             font-weight: 300;
         }
-        
+
         .Title {
             padding: 2px 0 0 3px;
             font-size: 1.7em;
@@ -42,20 +44,25 @@
     }
 
     .noselect {
-        -webkit-touch-callout: none; /* iOS Safari */
-          -webkit-user-select: none; /* Safari */
-           -khtml-user-select: none; /* Konqueror HTML */
-             -moz-user-select: none; /* Old versions of Firefox */
-              -ms-user-select: none; /* Internet Explorer/Edge */
-                  user-select: none; /* Non-prefixed version, currently
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Old versions of Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently
                                         supported by Chrome, Edge, Opera and Firefox */
-      }
+    }
 
 }
 
 /* --------------------------------- TABLET --------------------------------- */
-@media (min-width:581px) {
-}
+@media (min-width:581px) {}
 
 /* --------------------------------- WIDE TABLET --------------------------------- */
 @media (min-width:781px) {
@@ -90,17 +97,25 @@
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {
 
-    .Home {
-
-    }
+    .Home {}
 }
 
 /* --------------------------------- THEMES --------------------------------- */
 
 .Home.Dark {
     background-color: $dark-backgroundColor;
+
+    .MichaelHochreiter {
+        color: $dark-text1;
+
+    }
 }
 
 .Home.Light {
     background-color: $light-backgroundColor;
+
+    .MichaelHochreiter {
+        color: $light-text1;
+
+    }
 }

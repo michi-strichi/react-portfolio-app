@@ -63,7 +63,9 @@
 
             z-index: -5;
 
-            transition: all 0.15s;
+            transition: transform 0.15s;
+
+            border-radius: 8px;
         }
 
         .Bar.klee{
@@ -131,7 +133,7 @@
         right: 0px;
 
         height: 100%;
-        width: 80px;
+        width: 92px;
 
         flex-direction: column;
 
@@ -143,39 +145,42 @@
         justify-content: space-between;
         align-items: center;
 
-        width: 40px;
+        width: 46px;
         height: 100%;
         max-height: 270px;
     }
 
 
     .Questionmark {
-        height: 40px;
-        width: 40px;
+        height: 46px;
+        width: 46px;
 
-        font-size: 2em;
+        font-size: 2.2em;
+        font-weight: 300;
 
         .IconWrapper {
-            transform: translate(12px, -3px);
+            transform: translate(15px, -3px);
         }
     }
 
 
     .Brushes {
-        height: 120px;
-        width: 40px;
+        height: 138px;
+        width: 46px;
 
         flex-direction: column;
 
         .IconWrapper {
-            padding: 6px;
-            height: 40px;
-            width: 40px;
+            padding: 3px;
+            height: 46px;
+            width: 46px;
         }
 
         .Bar {
-            width: 40px;
-            height: 40px;
+            width: 46px;
+            height: 46px;
+
+            border-radius: 2px;
         }
 
         .Bar.klee{
@@ -184,21 +189,21 @@
         }
 
         .Bar.mushroom {
-            transform: translate(0, 40px);
+            transform: translate(0, 46px);
         }
 
         .Bar.dandelion {
-            transform: translate(0,80px);
+            transform: translate(0,92px);
         }
     }
 
     .Clear {
-        height: 40px;
-        width: 40px;
+        height: 46px;
+        width: 46px;
 
         .ClearBar{
             height: 2px; 
-            margin: 0 10px 0 10px;
+            margin: 0 11px 0 11px;
         }
 
         .b1 {
@@ -210,20 +215,25 @@
         }
 
         .IconWrapper {
-            transform: translate(0, 19px);
+            transform: translate(0, 22px);
         }
     }
 
     .HelpText {
         width: 85vw;
-        bottom: 40px;
+        bottom: 46px;
     }
 
 
 }
 
 /* --------------------------------- LAPTOP --------------------------------- */
-@media (min-width:1001px) {}
+@media (min-width:1001px) {
+
+    .HelpText {
+        width: 90vw;
+    }
+}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {}
@@ -232,14 +242,14 @@
 
 .Controls.Dark {
     .Questionmark {
-        color: $dark-text7;
+        color: $dark-text5;
     }
     .Questionmark:active{
         color: $dark-text2;
     }
 
     .ClearBar {
-        background-color: $dark-text7;
+        background-color: $dark-text5;
     }
 
     .Clear:active {
@@ -259,14 +269,14 @@
 
 .Controls.Light {
     .Questionmark {
-        color: $light-text7;
+        color: $light-text5;
     }
     .Questionmark:active{
         color: $light-text2;
     }
 
     .ClearBar {
-        background-color: $light-text7;
+        background-color: $light-text5;
     }
 
     .Clear:active {
