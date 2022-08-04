@@ -7,6 +7,8 @@ import { BoxBufferGeometry, Mesh } from 'three';
 import { useSpring, a } from '@react-spring/three';
 import { config } from 'react-spring';
 
+const modelScaleSmall = 1;
+const modelScaleLarge = 2;
 
 const Klee_Model = ({ ...props }) => {
     const group = useRef()
@@ -17,8 +19,8 @@ const Klee_Model = ({ ...props }) => {
     const [created, setCreated] = useState(false);
 
     const springProps = useSpring({
-        scale: created ? [2, 2, 2] : [1, 1, 1],
-        config: { mass: 0.5, tension: 210, friction: 20, precision: 0.01, velocity: 0 }
+        scale: created ? [modelScaleLarge, modelScaleLarge, modelScaleLarge] : [modelScaleSmall, modelScaleSmall, modelScaleSmall],
+        config: { mass: 0.5, tension: 250, friction: 20, precision: 0.01, velocity: 0 }
     });
 
     useEffect(() => {
@@ -44,8 +46,8 @@ const Mushroom_Model = ({ ...props }) => {
     const [created, setCreated] = useState(false);
 
     const springProps = useSpring({
-        scale: created ? [2, 2, 2] : [1, 1, 1],
-        config: { mass: 0.5, tension: 210, friction: 20, precision: 0.01, velocity: 0 }
+        scale: created ? [modelScaleLarge, modelScaleLarge, modelScaleLarge] : [modelScaleSmall, modelScaleSmall, modelScaleSmall],
+        config: { mass: 0.5, tension: 250, friction: 20, precision: 0.01, velocity: 0 }
     });
 
     useEffect(() => {
@@ -71,8 +73,8 @@ const Dandelion_Model = ({ ...props }) => {
     const [created, setCreated] = useState(false);
 
     const springProps = useSpring({
-        scale: created ? [2, 2, 2] : [1, 1, 1],
-        config: { mass: 0.5, tension: 210, friction: 20, precision: 0.01, velocity: 0 }
+        scale: created ? [modelScaleLarge, modelScaleLarge, modelScaleLarge] : [modelScaleSmall, modelScaleSmall, modelScaleSmall],
+        config: { mass: 0.5, tension: 250, friction: 20, precision: 0.01, velocity: 0 }
     });
 
     useEffect(() => {
