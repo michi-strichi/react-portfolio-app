@@ -5,90 +5,97 @@ import './styles/Home.scss';
 import Controls from './Controls';
 import { BoxBufferGeometry, Mesh } from 'three';
 import { useSpring, a } from '@react-spring/three';
-import { config } from 'react-spring';
 
-const modelScaleSmall = 1;
-const modelScaleLarge = 2;
 
 const Klee_Model = ({ ...props }) => {
     const group = useRef()
-    const { nodes, materials } = useGLTF('/planetModels_TEST/klee_TEST.glb')
-
-    const mesh = useRef();
+    const { nodes, materials } = useGLTF('/planetModels/klee_compressed.glb')
 
     const [created, setCreated] = useState(false);
 
     const springProps = useSpring({
-        scale: created ? [modelScaleLarge, modelScaleLarge, modelScaleLarge] : [modelScaleSmall, modelScaleSmall, modelScaleSmall],
+        scale: created ? props.scaleLarge : props.scaleSmall,
         config: { mass: 0.5, tension: 250, friction: 20, precision: 0.01, velocity: 0 }
     });
 
     useEffect(() => {
-        mesh.current.lookAt(0, 0, 0);
+        group.current.lookAt(0, 0, 0);
         setCreated(true);
     });
 
     return (
-        <group ref={group} {...props} dispose={null} >
-            <a.mesh scale={springProps.scale} visible={created ? true : false} ref={mesh} position={props.pos} geometry={nodes.klee.geometry} material={materials.klee_mat} />
-        </group>
+      <a.group ref={group} {...props} dispose={null} visible={created ? true : false} position={props.pos} scale={springProps.scale}>
+        <mesh geometry={nodes.Cylinder090.geometry} material={materials.klee_flower_petal_MAT} />
+        <mesh geometry={nodes.Cylinder090_1.geometry} material={materials.klee_flower_stem_MAT} />
+        <mesh geometry={nodes.Cylinder090_2.geometry} material={materials.klee_leaf_MAT} />
+        <mesh geometry={nodes.Cylinder090_3.geometry} material={materials.flower_stem_MAT} />
+      </a.group>
     )
-}
-useGLTF.preload('/planetModels_TEST/klee_TEST.glb')
+  }
+  
+  useGLTF.preload('/planetModels/klee_compressed.glb')
 
 
-const Mushroom_Model = ({ ...props }) => {
+  const Mushroom_Model = ({ ...props }) => {
     const group = useRef()
-    const { nodes, materials } = useGLTF('/planetModels_TEST/shroom_TEST.glb')
-
-    const mesh = useRef();
+    const { nodes, materials } = useGLTF('/planetModels/mushroom_compressed.glb')
 
     const [created, setCreated] = useState(false);
 
     const springProps = useSpring({
-        scale: created ? [modelScaleLarge, modelScaleLarge, modelScaleLarge] : [modelScaleSmall, modelScaleSmall, modelScaleSmall],
+        scale: created ? props.scaleLarge : props.scaleSmall,
         config: { mass: 0.5, tension: 250, friction: 20, precision: 0.01, velocity: 0 }
     });
 
     useEffect(() => {
-        mesh.current.lookAt(0, 0, 0);
+        group.current.lookAt(0, 0, 0);
         setCreated(true);
     });
 
     return (
-        <group ref={group} {...props} dispose={null}>
-            <a.mesh scale={springProps.scale} visible={created ? true : false} ref={mesh} position={props.pos} geometry={nodes.mushroom.geometry} material={materials.shroom_mat} />
-        </group>
+      <a.group ref={group} {...props} dispose={null} visible={created ? true : false} position={props.pos} scale={springProps.scale}>
+        <mesh geometry={nodes.Circle076.geometry} material={materials.mushroom_trunk_MAT} />
+        <mesh geometry={nodes.Circle076_1.geometry} material={materials.mushroom_hat_MAT} />
+      </a.group>
     )
-}
-useGLTF.preload('/planetModels_TEST/shroom_TEST.glb')
+  }
+  
+  useGLTF.preload('/planetModels/mushroom_compressed.glb')
+  
 
 
-const Dandelion_Model = ({ ...props }) => {
+  const Dandelion_Model = ({ ...props }) => {
     const group = useRef()
-    const { nodes, materials } = useGLTF('/planetModels_TEST/dandelion_TEST.glb')
-
     const mesh = useRef();
+    const { nodes, materials } = useGLTF('/planetModels/dandelion_compressed.glb')
 
     const [created, setCreated] = useState(false);
 
+   
+
     const springProps = useSpring({
-        scale: created ? [modelScaleLarge, modelScaleLarge, modelScaleLarge] : [modelScaleSmall, modelScaleSmall, modelScaleSmall],
+        scale: created ? props.scaleLarge : props.scaleSmall,
         config: { mass: 0.5, tension: 250, friction: 20, precision: 0.01, velocity: 0 }
     });
 
     useEffect(() => {
-        mesh.current.lookAt(0, 0, 0);
+        group.current.lookAt(0, 0, 0);
         setCreated(true);
+        mesh.current.material.transparent = true;
     });
 
     return (
-        <group ref={group} {...props} dispose={null}>
-            <a.mesh scale={springProps.scale} visible={created ? true : false} ref={mesh} position={props.pos} geometry={nodes.dandelion.geometry} material={materials.dandelion_mat} />
-        </group>
+      <a.group ref={group} {...props} dispose={null}  visible={created ? true : false} position={props.pos} scale={springProps.scale}>
+        <mesh geometry={nodes.Icosphere010.geometry} material={materials.dandelion_center_MAT} />
+        <mesh geometry={nodes.Icosphere010_1.geometry} material={materials['flower_stem_MAT.001']} />
+        <mesh geometry={nodes.Icosphere010_2.geometry} material={materials.dandelion_petal_trunk_MAT} />
+        <mesh geometry={nodes.Icosphere010_3.geometry} material={materials.dandelion_petal_stem_MAT} />
+        <mesh ref={mesh} geometry={nodes.Icosphere010_4.geometry} material={materials.dandelion_petal_leaves_MAT} />
+      </a.group>
     )
-}
-useGLTF.preload('/planetModels_TEST/dandelion_TEST.glb')
+  }
+  
+  useGLTF.preload('/planetModels/dandelion_compressed.glb')
 
 
 
@@ -101,7 +108,7 @@ const Planet_Model = ({ ...props }) => {
     const mesh = useRef();
 
     return (
-        <group ref={group} {...props} dispose={null}>
+        <group visible={true} ref={group} {...props} dispose={null}>
             <mesh ref={mesh} name={'planet'} position={props.pos} scale={[2, 2, 2]} geometry={nodes.planet.geometry} material={materials.planet_mat}>
                 <meshStandardMaterial attach='material' color='lime' />
             </mesh>
@@ -186,13 +193,13 @@ const Home = ({ theme }) => {
                         <Planet_Model onPointerUp={(e) => handlePointerUp(e)}>
                         </Planet_Model>
                         {klees.map((klee, index) => (
-                            <Klee_Model key={index} pos={klee[0]} rot={klee[1]} />
+                            <Klee_Model key={index} pos={klee[0]} rot={klee[1]} scaleSmall={[0.5, 0.5, 0.5]} scaleLarge={[1,1,1]} />
                         ))}
                         {mushrooms.map((mushroom, index) => (
-                            <Mushroom_Model key={index} pos={mushroom[0]} rot={mushroom[1]} />
+                            <Mushroom_Model key={index} pos={mushroom[0]} rot={mushroom[1]} scaleSmall={[0.5, 0.5, 0.5]} scaleLarge={[1,1,1]}/>
                         ))}
                         {dandelions.map((dandelion, index) => (
-                            <Dandelion_Model key={index} pos={dandelion[0]} rot={dandelion[1]} />
+                            <Dandelion_Model key={index} pos={dandelion[0]} rot={dandelion[1]} scaleSmall={[0.5, 0.5, 0.5]} scaleLarge={[1,1,1]}/>
                         ))}
 
                     </Suspense>
