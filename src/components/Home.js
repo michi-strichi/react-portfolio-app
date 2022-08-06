@@ -5,11 +5,12 @@ import './styles/Home.scss';
 import Controls from './Controls';
 import { BoxBufferGeometry, GridHelper, Mesh } from 'three';
 import { useSpring, a } from '@react-spring/three';
+import { randFloat } from 'three/src/math/MathUtils';
 
 const rotationSpeed = 0.001;
 
 
-const Klee_Model = ({ ...props }) => {
+const KleeModel = ({ ...props }) => {
     const innerGroup = useRef()
     const outerGroup = useRef()
     const { nodes, materials } = useGLTF('/planetModels/klee_compressed.glb')
@@ -23,6 +24,7 @@ const Klee_Model = ({ ...props }) => {
 
     useEffect(() => {
         innerGroup.current.lookAt(0, 0, 0);
+        innerGroup.current.rotateZ(randFloat(0, Math.PI * 2));
         setCreated(true);
     }, []);
 
@@ -45,8 +47,9 @@ const Klee_Model = ({ ...props }) => {
 useGLTF.preload('/planetModels/klee_compressed.glb')
 
 
-const Mushroom_Model = ({ ...props }) => {
-    const group = useRef()
+const MushroomModel = ({ ...props }) => {
+    const innerGroup = useRef()
+    const outerGroup = useRef()
     const { nodes, materials } = useGLTF('/planetModels/mushroom_compressed.glb')
 
     const [created, setCreated] = useState(false);
@@ -57,15 +60,22 @@ const Mushroom_Model = ({ ...props }) => {
     });
 
     useEffect(() => {
-        group.current.lookAt(0, 0, 0);
+        innerGroup.current.lookAt(0, 0, 0);
+        innerGroup.current.rotateZ(randFloat(0, Math.PI * 2));
         setCreated(true);
+    }, []);
+
+    useFrame(() => {
+        outerGroup.current.rotation.y += rotationSpeed;
     });
 
     return (
-        <a.group ref={group} {...props} dispose={null} visible={created ? true : false} position={props.pos} scale={springProps.scale}>
-            <mesh geometry={nodes.Circle076.geometry} material={materials.mushroom_trunk_MAT} />
-            <mesh geometry={nodes.Circle076_1.geometry} material={materials.mushroom_hat_MAT} />
-        </a.group>
+        <group ref={outerGroup}>
+            <a.group ref={innerGroup} {...props} dispose={null} visible={created ? true : false} position={props.pos} scale={springProps.scale}>
+                <mesh geometry={nodes.Circle076.geometry} material={materials.mushroom_trunk_MAT} />
+                <mesh geometry={nodes.Circle076_1.geometry} material={materials.mushroom_hat_MAT} />
+            </a.group>
+        </group>
     )
 }
 
@@ -73,14 +83,12 @@ useGLTF.preload('/planetModels/mushroom_compressed.glb')
 
 
 
-const Dandelion_Model = ({ ...props }) => {
-    const group = useRef()
-    const mesh = useRef();
+const DandelionModel = ({ ...props }) => {
+    const innerGroup = useRef();
+    const outerGroup = useRef();
     const { nodes, materials } = useGLTF('/planetModels/dandelion_compressed.glb')
 
     const [created, setCreated] = useState(false);
-
-
 
     const springProps = useSpring({
         scale: created ? props.scaleLarge : props.scaleSmall,
@@ -88,19 +96,28 @@ const Dandelion_Model = ({ ...props }) => {
     });
 
     useEffect(() => {
-        group.current.lookAt(0, 0, 0);
+        innerGroup.current.lookAt(0, 0, 0);
+        innerGroup.current.rotateZ(randFloat(0, Math.PI * 2));
+        materials.dandelion_petal_leaves_MAT.alphaTest = 0.1;
+        materials.dandelion_petal_leaves_MAT.transparent = true;
+        materials.dandelion_petal_leaves_MAT.side = 'THREE.DoubleSide';
         setCreated(true);
-        mesh.current.material.transparent = true;
+    }, []);
+
+    useFrame(() => {
+        outerGroup.current.rotation.y += rotationSpeed;
     });
 
     return (
-        <a.group ref={group} {...props} dispose={null} visible={created ? true : false} position={props.pos} scale={springProps.scale}>
-            <mesh geometry={nodes.Icosphere010.geometry} material={materials.dandelion_center_MAT} />
-            <mesh geometry={nodes.Icosphere010_1.geometry} material={materials['flower_stem_MAT.001']} />
-            <mesh geometry={nodes.Icosphere010_2.geometry} material={materials.dandelion_petal_trunk_MAT} />
-            <mesh geometry={nodes.Icosphere010_3.geometry} material={materials.dandelion_petal_stem_MAT} />
-            <mesh ref={mesh} geometry={nodes.Icosphere010_4.geometry} material={materials.dandelion_petal_leaves_MAT} />
-        </a.group>
+        <group ref={outerGroup} >
+            <a.group ref={innerGroup} {...props} dispose={null} visible={created ? true : false} position={props.pos} scale={springProps.scale}>
+                <mesh geometry={nodes.Icosphere010.geometry} material={materials.dandelion_center_MAT} />
+                <mesh geometry={nodes.Icosphere010_1.geometry} material={materials['flower_stem_MAT.001']} />
+                <mesh geometry={nodes.Icosphere010_2.geometry} material={materials.dandelion_petal_trunk_MAT} />
+                <mesh geometry={nodes.Icosphere010_3.geometry} material={materials.dandelion_petal_stem_MAT} />
+                <mesh geometry={nodes.Icosphere010_4.geometry} material={materials.dandelion_petal_leaves_MAT} />
+            </a.group>
+        </group>
     )
 }
 
@@ -110,7 +127,7 @@ useGLTF.preload('/planetModels/dandelion_compressed.glb')
 
 
 
-const Planet_Model = ({ ...props }) => {
+const PlanetModel = ({ ...props }) => {
     const group = useRef()
     const { nodes, materials } = useGLTF('/planetModels/planet_compressed.glb')
 
@@ -143,19 +160,21 @@ const Home = ({ theme }) => {
 
     const [moved, setMoved] = useState(false);
 
-    const addFormOfLife = (formOfLife, pos, rot) => {
+    const addFormOfLife = (formOfLife, pos) => {
         switch (formOfLife) {
             case 'klee':
-                setKlees([...klees, [pos, rot]]);
+                setKlees([...klees, pos]);
                 break;
             case 'mushroom':
-                setMushrooms([...mushrooms, [pos, rot]]);
+                setMushrooms([...mushrooms, pos]);
                 break;
             case 'dandelion':
-                setDandelions([...dandelions, [pos, rot]]);
+                setDandelions([...dandelions, pos]);
                 break;
         }
+
     };
+
 
     const clearPlanet = () => {
         setKlees([]);
@@ -165,24 +184,19 @@ const Home = ({ theme }) => {
 
 
     const handlePointerUp = (e) => {
-
+        e.stopPropagation();
         if (!moved) {
-
-
             e.intersections.forEach(intersection => {
                 if (intersection.object.name === 'planet') {
-
-                    console.log(intersection);
                     switch (brush) {
                         case 'klee':
-                            addFormOfLife('klee', intersection.point, [0, 0, 0]);
-                            console.log(intersection.point);
+                            addFormOfLife('klee', intersection.point);
                             break;
                         case 'mushroom':
-                            addFormOfLife('mushroom', intersection.point, [0, 0, 0]);
+                            addFormOfLife('mushroom', intersection.point);
                             break;
                         case 'dandelion':
-                            addFormOfLife('dandelion', intersection.point, [0, 0, 0]);
+                            addFormOfLife('dandelion', intersection.point);
                             break;
                     }
                 }
@@ -205,34 +219,31 @@ const Home = ({ theme }) => {
                 <Canvas>
                     <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={2.5} maxDistance={10} rotateSpeed={0.5} />
                     <ambientLight intensity={0.2} />
-                    <directionalLight color='white' position={[3, 4, 5]} intensity={0.5} />
+                    <directionalLight color='white' position={[3, 4, 5]} intensity={0.1} />
                     <Suspense fallback={null}>
-                        <Planet_Model onPointerUp={(e) => handlePointerUp(e)} />
+                        <PlanetModel onPointerUp={(e) => { handlePointerUp(e); console.log("wtf") }} />
                         {klees.map((klee, index) => (
-                            <Klee_Model
+                            <KleeModel
                                 key={index}
-                                pos={klee[0]}
-                                rot={klee[1]}
+                                pos={klee}
                                 scaleSmall={[0.5, 0.5, 0.5]}
-                                scaleLarge={[1, 1, 1]}
+                                scaleLarge={[1.3, 1.3, 1.3]}
                             />
                         ))}
                         {mushrooms.map((mushroom, index) => (
-                            <Mushroom_Model 
-                            key={index} 
-                            pos={mushroom[0]} 
-                            rot={mushroom[1]} 
-                            scaleSmall={[0.5, 0.5, 0.5]} 
-                            scaleLarge={[1, 1, 1]} 
+                            <MushroomModel
+                                key={index}
+                                pos={mushroom}
+                                scaleSmall={[0.5, 0.5, 0.5]}
+                                scaleLarge={[1.3, 1.3, 1.3]}
                             />
                         ))}
                         {dandelions.map((dandelion, index) => (
-                            <Dandelion_Model 
-                            key={index} 
-                            pos={dandelion[0]} 
-                            rot={dandelion[1]} 
-                            scaleSmall={[0.5, 0.5, 0.5]} 
-                            scaleLarge={[1, 1, 1]} />
+                            <DandelionModel
+                                key={index}
+                                pos={dandelion}
+                                scaleSmall={[0.5, 0.5, 0.5]}
+                                scaleLarge={[1.3, 1.3, 1.3]} />
                         ))}
                     </Suspense>
                 </Canvas>
