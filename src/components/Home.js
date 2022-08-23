@@ -1,11 +1,13 @@
 import React, { useState, useRef, Suspense, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
+import { OrbitControls, useGLTF, Sky, Stars, Box, useHelper, Environment } from '@react-three/drei';
 import './styles/Home.scss';
 import Controls from './Controls';
-import { BoxBufferGeometry, GridHelper, Mesh } from 'three';
+import { BoxGeometry, DirectionalLightHelper, GridHelper, Mesh } from 'three';
 import { useSpring, a } from '@react-spring/three';
 import { randFloat } from 'three/src/math/MathUtils';
+
+
 
 const rotationSpeed = 0.001;
 
@@ -127,7 +129,7 @@ useGLTF.preload('/planetModels/dandelion_compressed.glb')
 
 
 
-const PlanetModel = ({ ...props }) => {
+const PlanetModel_old = ({ ...props }) => {
     const group = useRef()
     const { nodes, materials } = useGLTF('/planetModels/planet_compressed.glb')
 
@@ -145,6 +147,36 @@ const PlanetModel = ({ ...props }) => {
 }
 
 useGLTF.preload('/planetModels/planet_compressed.glb')
+
+const PlanetModel = ({ ...props }) => {
+    const group = useRef()
+    const { nodes, materials } = useGLTF('/planetModels/planet.glb')
+
+    // useEffect(() => {
+    //     materials.planet_grassPatch_MAT.alphaTest = 0.8;
+    //     materials.planet_grassPatch_MAT.transparent = true;
+    //     materials.planet_grassPatch_MAT.side = 'THREE.DoubleSide';
+
+    // }, []);
+
+    useFrame(() => {
+        group.current.rotation.y += rotationSpeed;
+    });
+
+    return (
+        // <group ref={group} {...props} dispose={null} scale={[2, 2, 2]}>
+        //     <mesh geometry={nodes.Plane1795.geometry} material={materials.planet_grassPatch_MAT} />
+        //     <mesh name={'planet'} geometry={nodes.Plane1795_1.geometry} material={materials.planet_core_MAT} />
+        // </group>
+        <group ref={group} {...props} dispose={null} scale={[2, 2, 2]}>
+            <mesh geometry={nodes.Mesh_01799.geometry} material={materials['Material_0.002']} />
+            <mesh name={'planet'} geometry={nodes.Mesh_01799_1.geometry} material={materials.planet_core_MAT} />
+        </group>
+    )
+}
+
+useGLTF.preload('/planetModels/planet.glb')
+
 
 
 
@@ -205,7 +237,6 @@ const Home = ({ theme }) => {
     };
 
 
-
     return (
         <div className={'Home' + ' ' + 'noselect' + ' ' + theme}>
             <div className='MichaelHochreiter' >
@@ -218,16 +249,18 @@ const Home = ({ theme }) => {
             <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
                 <Canvas>
                     <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={2.5} maxDistance={10} rotateSpeed={0.5} />
-                    <ambientLight intensity={0.2} />
-                    <directionalLight color='white' position={[3, 4, 5]} intensity={0.1} />
+
                     <Suspense fallback={null}>
-                        <PlanetModel onPointerUp={(e) => { handlePointerUp(e); console.log("wtf") }} />
+                        <ambientLight intensity={theme === "Light" ? 0.7 : 0.4} color={theme === "Light" ? 'white' : '#d7d8fc'} />
+                        <directionalLight color={theme === "Light" ? '#ffdea6' : '#8e8aff'} position={theme === "Light" ? [0, 4, 2] : [2, 5, 0]} intensity={theme === "Light" ? 0.2 : 0.6} />
+                        <Environment files={theme === "Light" ? '/hdris/lauter_waterfall.hdr' : '/hdris/satara_night.hdr'} />
+                        <PlanetModel onPointerUp={(e) => handlePointerUp(e)} />
                         {klees.map((klee, index) => (
                             <KleeModel
                                 key={index}
                                 pos={klee}
                                 scaleSmall={[0.5, 0.5, 0.5]}
-                                scaleLarge={[1.3, 1.3, 1.3]}
+                                scaleLarge={[0.85, 0.85, 0.85]}
                             />
                         ))}
                         {mushrooms.map((mushroom, index) => (
@@ -235,7 +268,7 @@ const Home = ({ theme }) => {
                                 key={index}
                                 pos={mushroom}
                                 scaleSmall={[0.5, 0.5, 0.5]}
-                                scaleLarge={[1.3, 1.3, 1.3]}
+                                scaleLarge={[1.1, 1.1, 1.1]}
                             />
                         ))}
                         {dandelions.map((dandelion, index) => (
@@ -243,8 +276,9 @@ const Home = ({ theme }) => {
                                 key={index}
                                 pos={dandelion}
                                 scaleSmall={[0.5, 0.5, 0.5]}
-                                scaleLarge={[1.3, 1.3, 1.3]} />
+                                scaleLarge={[1.2, 1.2, 1.2]} />
                         ))}
+                        {theme === 'Dark' && <Stars radius={400} count={1500} />}
                     </Suspense>
                 </Canvas>
             </div>
