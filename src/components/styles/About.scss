@@ -318,6 +318,19 @@
         filter: drop-shadow(1px 1px 4px $dark-backgroundColor);
 
     }
+
+    a {
+        color: $dark-highlight1;
+        text-decoration: none;
+    }
+
+    a:active {
+        color: $dark-highlight3;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 .About.Light {
@@ -351,4 +364,18 @@
         filter: drop-shadow(1px 1px 2px $light-backgroundColor)
 
     }
+
+    a {
+        color: $light-highlight2;
+        text-decoration: none;
+    }
+
+    a:active {
+        color: $light-highlight3;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
 }

@@ -1,6 +1,6 @@
 import React, { useState, useRef, Suspense, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Stars, Environment } from '@react-three/drei';
+import { OrbitControls, useGLTF, Stars, Environment, Cloud } from '@react-three/drei';
 import './styles/Home.scss';
 import Controls from './Controls';
 import { useSpring, a } from '@react-spring/three';
@@ -245,6 +245,8 @@ const Home = ({ theme }) => {
                                 scaleLarge={[1.5, 1.5, 1.5]} />
                         ))}
                         {theme === 'Dark' && <Stars radius={400} count={1500} />}
+                        {theme === 'Light' && <Cloud />}
+                        
                     </Suspense>
                 </Canvas>
             </div>

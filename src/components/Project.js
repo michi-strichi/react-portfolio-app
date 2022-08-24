@@ -33,7 +33,7 @@ const Project = ({ theme, title, year, description, link, color, software, role,
             <div className='Details'>
                 <div className='Info'>
                     <p className='Description'>{description}</p>
-                    {link !== undefined && <p className='Link'>-&gt; <a href={link} style={LinkStyle}>Check it out</a></p>}
+                    {link !== undefined && <p className='Link'>-&gt; <a href={link} style={LinkStyle} target='_blank'>Check it out</a></p>}
                 </div>
                 <div className='Images'>
                     <div className='Detail_0'>

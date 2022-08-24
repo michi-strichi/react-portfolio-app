@@ -13,7 +13,7 @@ const Work = ({ theme, min781, min1281 }) => {
         <div className={'Work' + ' ' + theme}>
             <div className='Intro'>
                 <p>
-                    Some projects that I worked on in the last years...
+                    Personal projects that I worked on in the last years...
                 </p>
             </div>
 

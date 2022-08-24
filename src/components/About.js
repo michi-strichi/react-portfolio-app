@@ -42,29 +42,28 @@ const About = ({ theme, min781 }) => {
                         Hi ✌️ I'm Michael
                     </h1>
                     <h4>
-                        <span className="C">C</span>urrently I'm studying media technology &amp; design and am really digging it. I come from a 3D background, but interaction has found its way into my interests. Now i work in all the places where interactivity meets the third dimension.<br />
+                        <span className="C">C</span>urrently I'm studying media technology &amp; design and am really digging it. I come from a 3D background, but interactive media has found its way into my interests. Now i work in all the places where interactivity meets the three dimensions.<br />
                         When I'm not playing around with 3D models, i'm probably either cooking pasta, shooting a basketball or hiking through some forest.
                     </h4>
 
                     <h3>
-                        Skills
+                        Work Experience
                     </h3>
                     <p>
-                        Drinking water really quickly, great basketball hustle
+                        Interaction Developer at <a href='https://www.re-spaces.com' target='_blank'>Responsive Spaces</a>, Linz
+                        <br />
+                        3D Design Intern at <a href='https://www.crazyeye.at' target='_blank'>Crazy Eye</a>, Vienna
                     </p>
 
                     <h3>
                         Current Reads
                     </h3>
                     <p>
-                        <span className="Book">Epic of Gilgamesh</span> by ???
-                        <br />
-                        <span className="Book">Flatland</span> by Edwin Abbott Abbott
-                        <br />
-                        <span className="Book">Moby-Dick</span> by Herman Melville
+                        <span className="Book">Moby Dick</span> by Herman Melville
                         <br />
                         <span className="Book">Don't Sleep, There are Snakes</span> by Daniel Everett
-                        
+                        <br />
+                        <span className="Book">Fear and Loathing in Las Vegas</span> by Hunter S. Thompson
                     </p>
 
                     <h3>
@@ -72,6 +71,13 @@ const About = ({ theme, min781 }) => {
                     </h3>
                     <p>
                         Cicada sitting on a toad's back
+                    </p>
+
+                    <h3>
+                        My Mantra
+                    </h3>
+                    <p>
+                        "Observe the world like a child and design it like an adult"
                     </p>
                 </div>
             </div>

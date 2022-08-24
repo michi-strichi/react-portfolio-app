@@ -69,10 +69,6 @@
 
             .Link {
                 margin: 7px 0 0 0;
-                a {
-                    
-                }
-
             }
         }
 
@@ -261,5 +257,18 @@
         .Link {
             color: $light-text2;
         }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:active {
+        text-decoration: none;
+        filter: brightness(60%);
     }
 }
