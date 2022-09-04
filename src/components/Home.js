@@ -10,15 +10,14 @@ import { randFloat } from 'three/src/math/MathUtils';
 
 const rotationSpeed = 0.001;
 
-function Clouds() {
+const Clouds = () => {
+
     return (
         <group>
-            {/* <Cloud position={[-10, -6, -10]} speed={0.2} opacity={0.4} />
-            <Cloud position={[10, 6, -15]} speed={0.2} opacity={0.25} />
-            <Cloud position={[0, 10, 0]} speed={0.2} opacity={0.2} />
-            <Cloud position={[0, -10, 0]} speed={0.2} opacity={0.2} />
-            <Cloud position={[-10, -6, 15]} speed={0.2} opacity={0.3} /> */}
-            <Cloud position={[10, 6, 10]} speed={0.2} opacity={0.25}/>
+            <Cloud position={[-5, 6, 15]} speed={0.2} opacity={0.4} segments={5} />
+            <Cloud position={[8, 6, -10]} speed={0.2} opacity={0.35} segments={5} />
+            {/* <Cloud position={[0, 10, 0]} speed={0.2} opacity={0.2} /> */}
+            {/* <Cloud position={[-10, 6, 15]} speed={0.2} opacity={0.3} /> */}
         </group>
     )
 }
@@ -147,7 +146,7 @@ const PlanetModel = ({ ...props }) => {
     });
 
     return (
-        <group ref={group} {...props} dispose={null} scale={[2, 2, 2]}>
+        <group ref={group} {...props} dispose={null} scale={[2, 2, 2]} renderOrder={1}>
             <mesh geometry={nodes.Mesh_01799.geometry} material={materials['Material_0.002']} />
             <mesh name={'planet'} geometry={nodes.Mesh_01799_1.geometry} material={materials.planet_core_MAT} />
         </group>
@@ -163,7 +162,7 @@ useGLTF.preload('/planetModels/planet_compressed.glb')
 
 
 
-const Home = ({ theme }) => {
+const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) => {
 
     const [klees, setKlees] = useState([]);
     const [mushrooms, setMushrooms] = useState([]);
@@ -172,6 +171,8 @@ const Home = ({ theme }) => {
     const [brush, setBrush] = useState('klee');
 
     const [moved, setMoved] = useState(false);
+
+
 
     const addFormOfLife = (formOfLife, pos) => {
         switch (formOfLife) {
@@ -217,6 +218,16 @@ const Home = ({ theme }) => {
         }
     };
 
+    let globalScale = [0.8, 0.8, 0.8];
+
+    if(min781){
+        globalScale = [1.1, 1.1, 1.1];
+    } else if(min1281) {
+        globalScale = [1.4, 1.4, 1.4 ];
+    } else {
+        globalScale = [0.8, 0.8, 0.8];
+    }
+
 
     return (
         <div className={'Home' + ' ' + 'noselect' + ' ' + theme}>
@@ -226,54 +237,44 @@ const Home = ({ theme }) => {
             </div>
 
             <Controls theme={theme} brush={brush} setBrush={setBrush} clearPlanet={clearPlanet} />
-
+            {homeHintEnabled && <span className='Hint'>rotate me! <br/>click me!</span> }
             <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
                 <Canvas>
-
-                    <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={2.5} maxDistance={10} rotateSpeed={0.5} />
-
+                    <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={3.5} maxDistance={8} rotateSpeed={0.5} />
                     <Suspense fallback={null}>
-                        <Clouds />
                         <ambientLight intensity={theme === "Light" ? 0.7 : 0.5} color={theme === "Light" ? 'white' : '#d7d8fc'} />
                         <directionalLight color={theme === "Light" ? '#ffdea6' : '#8e8aff'} position={theme === "Light" ? [0, 4, 2] : [2, 5, 0]} intensity={theme === "Light" ? 0.2 : 0.6} />
                         <Environment files={theme === "Light" ? '/hdris/lauter_waterfall.hdr' : '/hdris/satara_night.hdr'} />
-
-
-
-
                         {theme === 'Light' && <Sky />}
-
+                        {theme === 'Light' && <Clouds />}
                         {theme === 'Dark' && <Stars radius={400} count={1500} />}
 
-                        {/* <Clouds /> */}
-                        <Cloud position={[-20,0,0]}/>
-
-
-                        <PlanetModel onPointerUp={(e) => handlePointerUp(e)} />
-                        {klees.map((klee, index) => (
-                            <KleeModel
-                                key={index}
-                                pos={klee}
-                                scaleSmall={[0.5, 0.5, 0.5]}
-                                scaleLarge={[0.95, 0.95, 0.95]}
-                            />
-                        ))}
-                        {mushrooms.map((mushroom, index) => (
-                            <MushroomModel
-                                key={index}
-                                pos={mushroom}
-                                scaleSmall={[0.5, 0.5, 0.5]}
-                                scaleLarge={[1.3, 1.3, 1.3]}
-                            />
-                        ))}
-                        {dandelions.map((dandelion, index) => (
-                            <DandelionModel
-                                key={index}
-                                pos={dandelion}
-                                scaleSmall={[0.5, 0.5, 0.5]}
-                                scaleLarge={[1.5, 1.5, 1.5]} />
-                        ))}
-
+                        <group scale={globalScale}>
+                            <PlanetModel onPointerUp={(e) => handlePointerUp(e)} onClick={() => setHomeHintEnabled(false)}/>
+                            {klees.map((klee, index) => (
+                                <KleeModel
+                                    key={index}
+                                    pos={klee}
+                                    scaleSmall={[0.5, 0.5, 0.5]}
+                                    scaleLarge={[0.95, 0.95, 0.95]}
+                                />
+                            ))}
+                            {mushrooms.map((mushroom, index) => (
+                                <MushroomModel
+                                    key={index}
+                                    pos={mushroom}
+                                    scaleSmall={[0.5, 0.5, 0.5]}
+                                    scaleLarge={[1.3, 1.3, 1.3]}
+                                />
+                            ))}
+                            {dandelions.map((dandelion, index) => (
+                                <DandelionModel
+                                    key={index}
+                                    pos={dandelion}
+                                    scaleSmall={[0.5, 0.5, 0.5]}
+                                    scaleLarge={[1.5, 1.5, 1.5]} />
+                            ))}
+                        </group>
                     </Suspense>
                 </Canvas>
             </div>
@@ -282,5 +283,4 @@ const Home = ({ theme }) => {
 }
 
 export default Home
-
 

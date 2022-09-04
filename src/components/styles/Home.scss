@@ -8,9 +8,15 @@
         width: 100%;
         padding: 0 0 0 0;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
 
         .CanvasWrapper {
             height: 100vh;
+            width: 100%;
         }
 
     }
@@ -32,7 +38,7 @@
             font-size: 4em;
             line-height: 50px;
             margin: 0;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .Title {
@@ -41,6 +47,28 @@
             margin: 0;
             font-weight: 400;
         }
+    }
+
+    @keyframes wiggle2 {
+        0% { transform: translate(110px, 180px) rotate(6deg); }
+       80% { transform: translate(110px, 180px) rotate(6deg); }
+       85% { transform: translate(110px, 180px) rotate(14deg); }
+       95% { transform: translate(110px, 180px) rotate(-2deg); }
+      100% { transform: translate(110px, 180px) rotate(6deg); }
+    }
+
+    .Hint {
+        position: absolute;
+        top: 38vh;
+        z-index: 19;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 1.4em;
+        animation-iteration-count: infinite;
+        animation: wiggle2 3s infinite;
+        pointer-events: none;
+        padding: 0 6px 2px 6px;
+        border-radius: 10px;
     }
 
     .noselect {
@@ -78,6 +106,14 @@
         left: 50vw;
     }
 
+    @keyframes wiggle2 {
+        0% { transform: translate(120px, 130px) rotate(6deg); }
+       80% { transform: translate(120px, 130px) rotate(6deg); }
+       85% { transform: translate(120px, 130px) rotate(14deg); }
+       95% { transform: translate(120px, 130px) rotate(-2deg); }
+      100% { transform: translate(120px, 130px) rotate(6deg); }
+    }
+
 }
 
 /* --------------------------------- LAPTOP --------------------------------- */
@@ -101,17 +137,27 @@
 .Home.Dark {
     background-color: $dark-backgroundColor2;
 
+    .Hint {        
+        color: $light-backgroundColor;        
+        filter: drop-shadow(1px 1px 2px $light-text5)
+
+    }
+
     .MichaelHochreiter {
         color: $dark-text1;
-
     }
 }
 
 .Home.Light {
     background-color: $light-backgroundColor;
 
+    .Hint {        
+        color: $light-backgroundColor;        
+        filter: drop-shadow(1px 1px 2px $light-text5)
+
+    }
+
     .MichaelHochreiter {
         color: $light-text1;
-
     }
 }

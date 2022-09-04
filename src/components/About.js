@@ -15,19 +15,19 @@ function Michi_Model({ ...props }) {
     )
 }
 
-const About = ({ theme, min781 }) => {
+const About = ({ theme, min781, aboutHintEnabled, setAboutHintEnabled }) => {
     return (
         <div className={'About' + ' ' + theme}>
             <div className='Wrapper'>
                 <div className='Portrait'>
-                    <span className='Hint'>rotate me!</span>
-                    <div className='CanvasWrapper'>
-                        <Canvas>
+                    {aboutHintEnabled && <span className='Hint'>rotate me!</span>}
+                    <div className='CanvasWrapper' onClick={() => setAboutHintEnabled(false)}>
+                        <Canvas >
                             <OrbitControls autoRotate dampingFactor={0.3} enablePan={false} enableZoom={false} autoRotateSpeed={-0.5} />
 
                             <Suspense fallback={null}>
                                 <ambientLight intensity={0.9} />
-                                <Michi_Model />
+                                <Michi_Model  />
                             </Suspense>
                         </Canvas>
                     </div>
