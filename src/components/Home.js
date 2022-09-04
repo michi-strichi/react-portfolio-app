@@ -16,8 +16,6 @@ const Clouds = () => {
         <group>
             <Cloud position={[-5, 6, 15]} speed={0.2} opacity={0.4} segments={5} />
             <Cloud position={[8, 6, -10]} speed={0.2} opacity={0.35} segments={5} />
-            {/* <Cloud position={[0, 10, 0]} speed={0.2} opacity={0.2} /> */}
-            {/* <Cloud position={[-10, 6, 15]} speed={0.2} opacity={0.3} /> */}
         </group>
     )
 }
