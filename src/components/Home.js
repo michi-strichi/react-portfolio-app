@@ -232,7 +232,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
     return (
         <div className={'Home' + ' ' + 'noselect' + ' ' + theme}>
             <div className='MichaelHochreiter' >
-                <p className='Name'>Michael Hochreiter</p>
+                <p className='Name'>Michael Hochreiter epic</p>
                 <p className='Title'>3D Developer</p>
             </div>
 
