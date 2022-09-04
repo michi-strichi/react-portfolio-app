@@ -1,6 +1,6 @@
 import React, { useState, useRef, Suspense, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Stars, Environment, Cloud } from '@react-three/drei';
+import { OrbitControls, useGLTF, Stars, Environment, Cloud, Sky } from '@react-three/drei';
 import './styles/Home.scss';
 import Controls from './Controls';
 import { useSpring, a } from '@react-spring/three';
@@ -9,6 +9,19 @@ import { randFloat } from 'three/src/math/MathUtils';
 
 
 const rotationSpeed = 0.001;
+
+function Clouds() {
+    return (
+        <group>
+            {/* <Cloud position={[-10, -6, -10]} speed={0.2} opacity={0.4} />
+            <Cloud position={[10, 6, -15]} speed={0.2} opacity={0.25} />
+            <Cloud position={[0, 10, 0]} speed={0.2} opacity={0.2} />
+            <Cloud position={[0, -10, 0]} speed={0.2} opacity={0.2} />
+            <Cloud position={[-10, -6, 15]} speed={0.2} opacity={0.3} /> */}
+            <Cloud position={[10, 6, 10]} speed={0.2} opacity={0.25}/>
+        </group>
+    )
+}
 
 
 const KleeModel = ({ ...props }) => {
@@ -147,12 +160,14 @@ useGLTF.preload('/planetModels/planet_compressed.glb')
 
 
 
+
+
+
 const Home = ({ theme }) => {
 
     const [klees, setKlees] = useState([]);
     const [mushrooms, setMushrooms] = useState([]);
     const [dandelions, setDandelions] = useState([]);
-
 
     const [brush, setBrush] = useState('klee');
 
@@ -214,12 +229,26 @@ const Home = ({ theme }) => {
 
             <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
                 <Canvas>
+
                     <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={2.5} maxDistance={10} rotateSpeed={0.5} />
 
                     <Suspense fallback={null}>
+                        <Clouds />
                         <ambientLight intensity={theme === "Light" ? 0.7 : 0.5} color={theme === "Light" ? 'white' : '#d7d8fc'} />
                         <directionalLight color={theme === "Light" ? '#ffdea6' : '#8e8aff'} position={theme === "Light" ? [0, 4, 2] : [2, 5, 0]} intensity={theme === "Light" ? 0.2 : 0.6} />
                         <Environment files={theme === "Light" ? '/hdris/lauter_waterfall.hdr' : '/hdris/satara_night.hdr'} />
+
+
+
+
+                        {theme === 'Light' && <Sky />}
+
+                        {theme === 'Dark' && <Stars radius={400} count={1500} />}
+
+                        {/* <Clouds /> */}
+                        <Cloud position={[-20,0,0]}/>
+
+
                         <PlanetModel onPointerUp={(e) => handlePointerUp(e)} />
                         {klees.map((klee, index) => (
                             <KleeModel
@@ -244,9 +273,7 @@ const Home = ({ theme }) => {
                                 scaleSmall={[0.5, 0.5, 0.5]}
                                 scaleLarge={[1.5, 1.5, 1.5]} />
                         ))}
-                        {theme === 'Dark' && <Stars radius={400} count={1500} />}
-                        {theme === 'Light' && <Cloud />}
-                        
+
                     </Suspense>
                 </Canvas>
             </div>
@@ -255,3 +282,5 @@ const Home = ({ theme }) => {
 }
 
 export default Home
+
+

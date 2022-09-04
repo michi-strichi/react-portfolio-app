@@ -1,6 +1,6 @@
 import React, { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF, PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls, useGLTF, CameraShake } from '@react-three/drei';
 
 import './styles/About.scss';
 import Footer from './Footer';
@@ -20,12 +20,13 @@ const About = ({ theme, min781 }) => {
         <div className={'About' + ' ' + theme}>
             <div className='Wrapper'>
                 <div className='Portrait'>
-                <span className='Hint'>rotate me!</span>
+                    <span className='Hint'>rotate me!</span>
                     <div className='CanvasWrapper'>
                         <Canvas>
-                            <OrbitControls enableZoom={false}/>
-                            <ambientLight intensity={0.9} />
+                            <OrbitControls autoRotate dampingFactor={0.3} enablePan={false} enableZoom={false} autoRotateSpeed={-0.5} />
+
                             <Suspense fallback={null}>
+                                <ambientLight intensity={0.9} />
                                 <Michi_Model />
                             </Suspense>
                         </Canvas>
@@ -42,8 +43,8 @@ const About = ({ theme, min781 }) => {
                         Hi ✌️ I'm Michael
                     </h1>
                     <h4>
-                        <span className="C">C</span>urrently I'm studying media technology &amp; design and am really digging it. I come from a 3D background, but interactive media has found its way into my interests. Now i work in all the places where interactivity meets the three dimensions.<br />
-                        When I'm not playing around with 3D models, i'm probably either cooking pasta, shooting a basketball or hiking through some forest.
+                        <span className="C">C</span>urrently I'm studying media technology &amp; design in Hagenberg and am really digging it. I come from a 3D background, but interactive media has found its way into my interests. Now i work in all the places where interactivity meets the three dimensions.<br />
+                        When I'm not playing around with 3D models, i'm probably either cooking pasta, blasting music way too loud or hiking through some forest.
                     </h4>
 
                     <h3>
