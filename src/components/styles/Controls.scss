@@ -28,6 +28,7 @@
 
         width: 100%;
         max-width: 400px;
+
     }
 
     .Questionmark {
@@ -36,9 +37,13 @@
 
         font-size: 3em;
 
+        
+        cursor: pointer;
+
         .IconWrapper {
             transform: translate(18px, -5px);
         }
+
     }
 
    
@@ -53,6 +58,8 @@
         border-radius: 8px;
 
         z-index: 0;
+
+        cursor: pointer;
 
         .IconWrapper {
             padding: 6px;
@@ -91,6 +98,9 @@
     .Clear {
         height: 60px;
         width: 60px;
+
+        
+        cursor: pointer;
 
         .ClearBar{
             height: 3px; 
