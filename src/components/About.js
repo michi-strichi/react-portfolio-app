@@ -21,8 +21,8 @@ const About = ({ theme, min781, aboutHintEnabled, setAboutHintEnabled }) => {
             <div className='Wrapper'>
                 <div className='Portrait'>
                     {aboutHintEnabled && <span className='Hint'>rotate me!</span>}
-                    <div className='CanvasWrapper' onClick={() => setAboutHintEnabled(false)}>
-                        <Canvas >
+                    <div className='CanvasWrapper' onPointerUp={() => setAboutHintEnabled(false)}>
+                        <Canvas dpr={window.devicePixelRatio}>
                             <OrbitControls autoRotate dampingFactor={0.3} enablePan={false} enableZoom={false} autoRotateSpeed={-0.5} />
 
                             <Suspense fallback={null}>

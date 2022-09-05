@@ -20,8 +20,10 @@ const Controls = ({ theme, brush, setBrush, clearPlanet }) => {
         <>
             {helpEnabled &&
                 <div className={'HelpText ' + 'noselect ' + theme}>
-                    <p>Click and drag planet to rotate</p>
-                    <p>Click planet to spawn form of life</p>
+                    <p>
+                        Click and drag planet to rotate <br />
+                        Click planet to spawn form of life
+                    </p>
                 </div>
             }
 
