@@ -32,6 +32,18 @@
         "detail_1": "gallery_detail1.png"
     },
     {
+        "title": "ArtisVR",
+        "year": "2022",
+        "description": "A virtual reality application that allows users to quickly and easily furnish a room as desired. A room can be created with custom dimensions or selected from one of the predefined rooms. ArtisVR meant as a brainstorming tool for interior designers and personal use alike. ",
+        "link": "https://youtu.be/ANwm-mRawRE",
+        "color": "#9d72e8",
+        "software": "Blender3D, Unity",
+        "role": "3D modelling, development",
+        "thumbnail": "artisVR_thumbnail.jpg",
+        "detail_0": "artisVR_detail0.jpg",
+        "detail_1": "artisVR_detail1.png"
+    },
+    {
         "title": "Spook - Toy Concept",
         "year": "2020",
         "description": "A concept for a toy collectible. The different parts of 'Spook' can be rotatet and mixed up similar to a Rubik's cube.",
@@ -71,18 +83,6 @@
         "thumbnail": "soundreactive_thumbnail.jpg",
         "detail_0": "soundreactive_detail0.jpg",
         "detail_1": "soundreactive_detail1.png"
-    },
-    {
-        "title": "ArtisVR",
-        "year": "2022",
-        "description": "A virtual reality application that allows users to quickly and easily furnish a room as desired. A room can be created with custom dimensions or selected from one of the predefined rooms. ArtisVR meant as a brainstorming tool for interior designers and personal use alike. ",
-        "link": "",
-        "color": "#9d72e8",
-        "software": "Blender3D, Unity",
-        "role": "3D modelling, development",
-        "thumbnail": "artisVR_thumbnail.jpg",
-        "detail_0": "artisVR_detail0.jpg",
-        "detail_1": "artisVR_detail1.png"
     },
     {
         "title": "This Website",

@@ -17,7 +17,6 @@ const Project = ({ theme, title, year, description, link, color, software, role,
     const LinkStyle = {
             color: color,
       };
-
    
     return (
 
