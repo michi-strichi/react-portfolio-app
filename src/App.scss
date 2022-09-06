@@ -1,9 +1,7 @@
 @import './components/styles/Colors.scss';
 
 /* --------------------------------- MOBILE --------------------------------- */
-@media (min-width:320px) {
-
-}
+@media (min-width:320px) {}
 
 /* --------------------------------- TABLET --------------------------------- */
 @media (min-width:581px) {}
@@ -26,7 +24,7 @@
             grid-area: left;
         }
 
-        .background { 
+        .background {
             position: fixed;
             top: 0;
             left: 0;
@@ -44,8 +42,7 @@
 }
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
-@media (min-width:1281px) {
-}
+@media (min-width:1281px) {}
 
 
 /* --------------------------------- THEMES --------------------------------- */
@@ -56,7 +53,7 @@
     ::selection {
         background-color: $dark-highlight1;
     }
-    
+
 }
 
 .App.Light {
@@ -65,4 +62,12 @@
     ::selection {
         background-color: $light-highlight1;
     }
+}
+
+.darkBody {
+    background-color: $dark-backgroundColor;
+}
+
+.lightBody {
+    background-color: $light-backgroundColor;
 }

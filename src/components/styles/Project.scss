@@ -31,6 +31,8 @@
         align-items: flex-end;
 
         font-size: 1.2em;
+        
+        cursor: pointer;
 
         .Title,
         .Year {
@@ -47,6 +49,8 @@
     .Thumbnail {
         z-index: 10;
         position: relative;
+
+
 
     }
 
@@ -184,7 +188,7 @@
 }
 
 /* --------------------------------- LAPTOP --------------------------------- */
-@media (min-width:1001px) {}
+// @media (min-width:1001px) {}
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
 @media (min-width:1281px) {

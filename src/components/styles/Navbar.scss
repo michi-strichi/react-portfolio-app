@@ -10,8 +10,9 @@
 
         .burger {
             position: absolute;
-            top: 40px;
-            right: 40px;
+            top: 32px;
+            right: 36px;
+            padding: 8px 4px;
 
             .box0,
             .box1 {
@@ -63,7 +64,7 @@
 
             li.kleeblatt {
 
-                img {
+                img, svg {
                     width: 45px;
                     padding-top: 12px;
                 }
@@ -102,7 +103,7 @@
 
 
 /* --------------------------------- TABLET --------------------------------- */
-@media (min-width:581px) {}
+// @media (min-width:581px) {}
 
 /* --------------------------------- WIDE TABLET --------------------------------- */
 @media (min-width:781px) {
@@ -134,7 +135,7 @@
             }
 
             li.kleeblatt {
-                img {
+                img, svg {
                     width: 19px;
                     box-sizing: content-box;
                     padding-right: 20px;
@@ -162,9 +163,7 @@
 }
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
-@media (min-width:1281px) {}
-
-
+// @media (min-width:1281px) {}
 
 
 
@@ -198,16 +197,18 @@
             color: $dark-text2;
         }
 
-        .kleeblatt .selected img {
+        .kleeblatt .selected img,
+        .kleeblatt .selected svg {
             filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(265deg) brightness(110%) contrast(98%);
         }
 
-        .kleeblatt .notSelected img {
+        .kleeblatt .notSelected img,
+        .kleeblatt .notSelected svg {
             filter: invert(86%) sepia(99%) saturate(7292%) hue-rotate(189deg) brightness(143%) contrast(84%);
         }
 
         .kleeblatt:active {
-            img {
+            img, svg {
                 filter: invert(23%) sepia(17%) saturate(6251%) hue-rotate(235deg) brightness(93%) contrast(96%);
             }
         }
@@ -240,17 +241,19 @@
             color: $light-text2;
         }
 
-        .kleeblatt .selected img {
+        .kleeblatt .selected img,
+        .kleeblatt .selected svg {
             filter: invert(0%) sepia(97%) saturate(24%) hue-rotate(102deg) brightness(94%) contrast(97%);
 
         }
 
-        .kleeblatt .notSelected img {
+        .kleeblatt .notSelected img,
+        .kleeblatt .notSelected svg {
             filter: invert(7%) sepia(3%) saturate(19%) hue-rotate(330deg) brightness(96%) contrast(96%);
         }
 
         .kleeblatt:active {
-            img {
+            img, svg {
                 filter: invert(65%) sepia(52%) saturate(3731%) hue-rotate(93deg) brightness(105%) contrast(94%);
             }
         }

@@ -170,8 +170,6 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
 
     const [moved, setMoved] = useState(false);
 
-
-
     const addFormOfLife = (formOfLife, pos) => {
         switch (formOfLife) {
             case 'klee':
@@ -216,16 +214,6 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
         }
     };
 
-    let globalScale = [0.8, 0.8, 0.8];
-
-    if(min781){
-        globalScale = [1.1, 1.1, 1.1];
-    } else if(min1281) {
-        globalScale = [1.4, 1.4, 1.4 ];
-    } else {
-        globalScale = [0.8, 0.8, 0.8];
-    }
-
 
     return (
         <div className={'Home' + ' ' + 'noselect' + ' ' + theme}>
@@ -235,10 +223,11 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
             </div>
 
             <Controls theme={theme} brush={brush} setBrush={setBrush} clearPlanet={clearPlanet} />
-            {homeHintEnabled && <span className='Hint'>rotate me! <br/>click me!</span> }
+            {homeHintEnabled && <span className='Hint'>rotate me! <br />click me!</span>}
             <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
-                <Canvas>
+                <Canvas dpr={window.devicePixelRatio}>
                     <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={3.5} maxDistance={8} rotateSpeed={0.5} />
+                    {/* <TrackballControls /> */}
                     <Suspense fallback={null}>
                         <ambientLight intensity={theme === "Light" ? 0.7 : 0.5} color={theme === "Light" ? 'white' : '#d7d8fc'} />
                         <directionalLight color={theme === "Light" ? '#ffdea6' : '#8e8aff'} position={theme === "Light" ? [0, 4, 2] : [2, 5, 0]} intensity={theme === "Light" ? 0.2 : 0.6} />
@@ -246,9 +235,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
                         {theme === 'Light' && <Sky />}
                         {theme === 'Light' && <Clouds />}
                         {theme === 'Dark' && <Stars radius={400} count={1500} />}
-
-                        <group scale={globalScale}>
-                            <PlanetModel onPointerUp={(e) => handlePointerUp(e)} onClick={() => setHomeHintEnabled(false)}/>
+                            <PlanetModel onPointerUp={(e) => { handlePointerUp(e); setHomeHintEnabled(false); }} />
                             {klees.map((klee, index) => (
                                 <KleeModel
                                     key={index}
@@ -272,7 +259,6 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
                                     scaleSmall={[0.5, 0.5, 0.5]}
                                     scaleLarge={[1.5, 1.5, 1.5]} />
                             ))}
-                        </group>
                     </Suspense>
                 </Canvas>
             </div>
