@@ -5,17 +5,8 @@ import Navbar from "./components/Navbar";
 import Work from './components/Work';
 import Home from "./components/Home";
 import About from './components/About';
+import Preloader from './components/Preloader';
 import './App.scss';
-
-const Preloader = () => {
-    return (
-        <div className="Preloader" id="preloader">
-            <p className="MichaelHochreiter">Michael Hochreiter</p>
-            <p className="Portfolio">Portfolio</p>
-        </div>
-    );
-}
-
 
 function App() {
     const [page, setPage] = useState("home");
@@ -30,8 +21,12 @@ function App() {
     useEffect(() => {
         setTimeout(() => {
             const preloader = document.getElementById("preloader");
+            preloader.classList.add("out");
+        }, 1800);
+        setTimeout(() => {
+            const preloader = document.getElementById("preloader");
             preloader.classList.add("disabled");
-        }, 2000);
+        }, 2100);
         setTimeout(() => {
             setLoading(false);
         }, 3000);

@@ -1,0 +1,55 @@
+@import './Colors.scss';
+
+.Preloader {
+
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    color: $dark-text1;
+    background-color: $dark-backgroundColor;
+
+    transition: opacity 500ms ease-in-out;
+
+    p {
+        margin: 0px 5px 0px 5px;
+    }
+
+    .Miho {
+        font-size: 1.75em;
+        font-weight: 600;
+        transition: all 400ms ease-in;
+    }
+
+    .Port {
+        font-size: 1.7em;
+        font-weight: 100;
+        transition: all 400ms ease-in;
+    }
+
+
+}
+
+.Preloader.disabled {
+    opacity: 0;
+}
+
+.Preloader.out {
+    .Miho {
+        transform: translate(0px, -20px);
+        opacity: 0;
+    }
+
+    .Port {
+        transform: translate(0px, 20px);
+        opacity: 0;
+    }
+}

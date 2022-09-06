@@ -1,26 +1,7 @@
 @import './components/styles/Colors.scss';
 
 /* --------------------------------- MOBILE --------------------------------- */
-@media (min-width:320px) {
-    
-    .Preloader {
-        background-color: $dark-backgroundColor;
-        z-index: 100;
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 1;
-        transition: opacity 500ms ease-in-out;
-    }
-
-    .Preloader.disabled {
-        opacity: 0;
-        // transition: opacity 500ms ease-in-out;
-    }
-
-}
+@media (min-width:320px) {}
 
 /* --------------------------------- TABLET --------------------------------- */
 @media (min-width:581px) {}
@@ -43,7 +24,7 @@
             grid-area: left;
         }
 
-        .background { 
+        .background {
             position: fixed;
             top: 0;
             left: 0;
@@ -61,8 +42,7 @@
 }
 
 /* --------------------------------- BIG SCREEN --------------------------------- */
-@media (min-width:1281px) {
-}
+@media (min-width:1281px) {}
 
 
 /* --------------------------------- THEMES --------------------------------- */
@@ -73,7 +53,7 @@
     ::selection {
         background-color: $dark-highlight1;
     }
-    
+
 }
 
 .App.Light {
