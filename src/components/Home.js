@@ -5,7 +5,6 @@ import './styles/Home.scss';
 import Controls from './Controls';
 import { useSpring, a } from '@react-spring/three';
 import { randFloat } from 'three/src/math/MathUtils';
-import { Vector3 } from 'three';
 
 
 
@@ -228,6 +227,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
             <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
                 <Canvas dpr={window.devicePixelRatio}>
                     <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={3.5} maxDistance={8} rotateSpeed={0.5} />
+                    {/* <TrackballControls /> */}
                     <Suspense fallback={null}>
                         <ambientLight intensity={theme === "Light" ? 0.7 : 0.5} color={theme === "Light" ? 'white' : '#d7d8fc'} />
                         <directionalLight color={theme === "Light" ? '#ffdea6' : '#8e8aff'} position={theme === "Light" ? [0, 4, 2] : [2, 5, 0]} intensity={theme === "Light" ? 0.2 : 0.6} />

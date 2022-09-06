@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import './styles/Navbar.scss';
 import ThemeSwitch from './ThemeSwitch';
-import kleeblatt_thin from './assets/svgs/Kleeblatt_thin.svg';
-import kleeblatt_bold from './assets/svgs/Kleeblatt_bold.svg';
-
+import {ReactComponent as KleeblattThin} from './assets/svgs/Kleeblatt_thin.svg';
+import {ReactComponent as KleeblattBold} from './assets/svgs/Kleeblatt_bold.svg';
 
 const Navbar = ({ page, theme, min781, setPage, setTheme }) => {
 
@@ -29,7 +28,7 @@ const Navbar = ({ page, theme, min781, setPage, setTheme }) => {
                         <ul>
                             <li className="kleeblatt">
                                 <Link to='/' onClick={() => { setPage("home"); setNavbarStatus('Inactive') }} className={page === "home" ? 'selected' : 'notSelected'}>
-                                    <img src={page === "home" ? kleeblatt_bold : kleeblatt_thin} alt="Clover Leaf Logo" />
+                                    {page === "home" ? <KleeblattBold /> : <KleeblattThin />}
                                 </Link>
                             </li>
                             <li>

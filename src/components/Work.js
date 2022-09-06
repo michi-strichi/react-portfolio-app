@@ -1,13 +1,9 @@
-import React, { useState } from 'react'
 import './styles/Work.scss';
 import Footer from './Footer';
 import Project from './Project';
 
 const Work = ({ theme, min781, min1281 }) => {
     const projects = require('./assets/projects.json');
-
-    // let initialExpandedProjects = Array(projects.length).fill(false);
-    // const [expandedProjects, setExpandedProjects] = useState(initialExpandedProjects);
 
     return (
         <div className={'Work' + ' ' + theme}>
