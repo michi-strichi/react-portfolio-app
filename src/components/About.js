@@ -43,8 +43,8 @@ const About = ({ theme, min781, aboutHintEnabled, setAboutHintEnabled }) => {
                         Hi ✌️ I'm Michael
                     </h1>
                     <h4>
-                        <span className="C">C</span>urrently I'm studying media technology &amp; design in Hagenberg and am really digging it. I come from a 3D background, but interactive media has found its way into my interests. Now i work in all the places where interactivity meets the three dimensions.<br />
-                        When I'm not playing around with 3D models, i'm probably either cooking pasta, blasting music way too loud or hiking through some forest.
+                        <span className="C">C</span>urrently I'm studying media technology &amp; design in Hagenberg and am really digging it. I come from a 3D background, but interactive media has found its way into my interests. Now I work in all the places where interactivity meets the three dimensions.<br />
+                        When I'm not playing around with 3D models, I'm probably either cooking pasta, blasting music way too loud or hiking through some forest.
                     </h4>
 
                     <h3>

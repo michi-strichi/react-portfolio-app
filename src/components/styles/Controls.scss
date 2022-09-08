@@ -32,16 +32,19 @@
     }
 
     .Questionmark {
-        height: 60px;
-        width: 60px;
+        height: 46px;
+        width: 46px;
+        margin: 12px;
 
         font-size: 3em;
+
+        border-radius: 8px;
 
         
         cursor: pointer;
 
         .IconWrapper {
-            transform: translate(18px, -5px);
+            transform: translate(11px, -12px);
         }
 
     }
@@ -96,15 +99,17 @@
     }
 
     .Clear {
-        height: 60px;
-        width: 60px;
+        height: 46px;
+        width: 46px;
+        margin: 12px;
 
-        
         cursor: pointer;
+
+        border-radius: 8px;
 
         .ClearBar{
             height: 3px; 
-            margin: 0 14px 0 14px;
+            margin: 0 7px 0 7px;
         }
 
         .b1 {
@@ -116,7 +121,7 @@
         }
 
         .IconWrapper {
-            transform: translate(0, 29px);
+            transform: translate(0, 22px);
         }
 
     }
@@ -179,14 +184,15 @@
 
 
     .Questionmark {
-        height: 46px;
-        width: 46px;
+        height: 34px;
+        width: 34px;
+        margin: 6px;
 
-        font-size: 2.2em;
-        font-weight: 300;
+        font-size: 2em;
+        font-weight: 400;
 
         .IconWrapper {
-            transform: translate(15px, -3px);
+            transform: translate(10px, -6px);
         }
     }
 
@@ -228,12 +234,13 @@
     }
 
     .Clear {
-        height: 46px;
-        width: 46px;
+        height: 34px;
+        width: 34px;
+        margin: 6px;
 
         .ClearBar{
             height: 2px; 
-            margin: 0 11px 0 11px;
+            margin: 0 7px 0 7px;
         }
 
         .b1 {
@@ -245,7 +252,7 @@
         }
 
         .IconWrapper {
-            transform: translate(0, 22px);
+            transform: translate(0px, 17px);
         }
     }
 
@@ -274,15 +281,19 @@
     .Brushes {
         background-color: $dark-backgroundColor1-5;
     }
+
+
     .Questionmark {
-        color: $dark-text5;
+        color: $dark-text2;
+
+        background-color: $dark-backgroundColor1-5;
     }
     .Questionmark:active{
         color: $dark-text2;
     }
 
     .ClearBar {
-        background-color: $dark-text5;
+        background-color: $dark-text2;
     }
 
     .Clear:active {
@@ -293,6 +304,10 @@
 
     .Bar {
         background-color: $dark-text1;
+    }
+
+    .Clear {
+        background-color: $dark-backgroundColor1-5;
     }
 }
 
@@ -308,14 +323,15 @@
         background-color: $light-backgroundColor1-5;
     }
     .Questionmark {
-        color: $light-text5;
+        color: $light-text2;
+        background-color: $light-backgroundColor1-5;
     }
     .Questionmark:active{
         color: $light-text2;
     }
 
     .ClearBar {
-        background-color: $light-text5;
+        background-color: $light-text2;
     }
 
     .Clear:active {
@@ -326,6 +342,10 @@
 
     .Bar {
         background-color: $light-text1;
+    }
+
+    .Clear {
+        background-color: $light-backgroundColor1-5;
     }
 }
 

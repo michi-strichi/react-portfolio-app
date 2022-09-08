@@ -144,7 +144,7 @@ const PlanetModel = ({ ...props }) => {
     });
 
     return (
-        <group ref={group} {...props} dispose={null} scale={[2, 2, 2]} renderOrder={1}>
+        <group ref={group} {...props} dispose={null} scale={[1.5, 1.5, 1.5]} renderOrder={1}>
             <mesh geometry={nodes.Mesh_01799.geometry} material={materials['Material_0.002']} />
             <mesh name={'planet'} geometry={nodes.Mesh_01799_1.geometry} material={materials.planet_core_MAT} />
         </group>
@@ -226,7 +226,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
             {homeHintEnabled && <span className='Hint'>rotate me! <br />click me!</span>}
             <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
                 <Canvas dpr={window.devicePixelRatio}>
-                    <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={3.5} maxDistance={8} rotateSpeed={0.5} />
+                    <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={3.2} maxDistance={8} rotateSpeed={0.5} />
                     {/* <TrackballControls /> */}
                     <Suspense fallback={null}>
                         <ambientLight intensity={theme === "Light" ? 0.7 : 0.5} color={theme === "Light" ? 'white' : '#d7d8fc'} />

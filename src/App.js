@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import Navbar from "./components/Navbar";
 import Work from './components/Work';
@@ -56,17 +57,21 @@ function App() {
 
     return (
         <Router>
-
             <div className={'App' + ' ' + theme} id='App'>
-                    {loading && <Preloader />}
-                    <Navbar className='bar' page={page} theme={theme} min781={min781} setPage={setPage} setTheme={setTheme} /><div className='page'>
-                        <Routes>
-                            <Route path='/' element={<Home theme={theme} min781={min781} min1281={min1281} homeHintEnabled={homeHintEnabled} setHomeHintEnabled={setHomeHintEnabled} />}></Route>
-                            <Route path='/work' element={<Work theme={theme} min781={min781} min1281={min1281} />}></Route>
-                            <Route path='/about' element={<About theme={theme} min781={min781} aboutHintEnabled={aboutHintEnabled} setAboutHintEnabled={setAboutHintEnabled} />}></Route>
-                        </Routes>
-                    </div>
+                {loading && <Preloader />}
+                <Navbar className='bar' page={page} theme={theme} min781={min781} setPage={setPage} setTheme={setTheme} /><div className='page'>
+                    <Routes>
+                        <Route path='/' element={<Home theme={theme} min781={min781} min1281={min1281} homeHintEnabled={homeHintEnabled} setHomeHintEnabled={setHomeHintEnabled} />}></Route>
+                        <Route path='/work' element={<Work theme={theme} min781={min781} min1281={min1281} />}></Route>
+                        <Route path='/about' element={<About theme={theme} min781={min781} aboutHintEnabled={aboutHintEnabled} setAboutHintEnabled={setAboutHintEnabled} />}></Route>
+                    </Routes>
+                </div>
             </div>
+            <HelmetProvider>
+                <Helmet>
+                    <meta name="theme-color" content={theme === "Light" ? "#f6f6f6" : "#191919"} />
+                </Helmet>
+            </HelmetProvider>
         </Router>
     );
 }
