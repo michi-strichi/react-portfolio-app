@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Helmet } from "react-helmet"
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import Navbar from "./components/Navbar";
 import Work from './components/Work';
@@ -67,9 +67,11 @@ function App() {
                     </Routes>
                 </div>
             </div>
-            {/* <Helmet>
-                <meta name="theme-color" content={theme === 'Light' ? "#000000" : "#ffffff"} />
-            </Helmet> */}
+            <HelmetProvider>
+                <Helmet>
+                    <meta name="theme-color" content={theme === "Light" ? "#f6f6f6" : "#191919"} />
+                </Helmet>
+            </HelmetProvider>
         </Router>
     );
 }
