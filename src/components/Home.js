@@ -132,7 +132,7 @@ useGLTF.preload('/planetModels/dandelion.glb')
 
 const PlanetModel = ({ ...props }) => {
     const group = useRef()
-    const { nodes, materials } = useGLTF('/planetModels/planet.glb')
+    const { nodes, materials } = useGLTF('/planetModels/planet_uncompressed.glb')
 
     useFrame(() => {
         group.current.rotation.y += rotationSpeed;
@@ -145,7 +145,7 @@ const PlanetModel = ({ ...props }) => {
         </group>
     )
 }
-useGLTF.preload('/planetModels/planet.glb')
+useGLTF.preload('/planetModels/planet_uncompressed.glb')
 
 
 const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) => {
