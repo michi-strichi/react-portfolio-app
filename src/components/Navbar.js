@@ -27,17 +27,17 @@ const Navbar = ({ page, theme, min781, setPage, setTheme }) => {
                     <nav>
                         <ul>
                             <li className="kleeblatt">
-                                <Link to='/' onClick={() => { setPage("home"); setNavbarStatus('Inactive') }} className={page === "home" ? 'selected' : 'notSelected'}>
+                                <Link to='/' onClick={() => { setPage("home"); setNavbarStatus('Inactive'); window.scrollTo({top: 0, left: 0, behavior: 'auto'}); }} className={page === "home" ? 'selected' : 'notSelected'}>
                                     {page === "home" ? <KleeblattBold /> : <KleeblattThin />}
                                 </Link>
                             </li>
                             <li>
-                                <Link to='/work' onClick={() => { setPage("work"); setNavbarStatus('Inactive') }} className={page === "work" ? 'selected' : 'notSelected'}>
+                                <Link to='/work' onClick={() => { setPage("work"); setNavbarStatus('Inactive'); window.scrollTo({top: 0, left: 0, behavior: 'auto'}); }} className={page === "work" ? 'selected' : 'notSelected'}>
                                     work
                                 </Link>
                             </li>
                             <li>
-                                <Link to='/about' onClick={() => { setPage("about"); setNavbarStatus('Inactive') }} className={page === "about" ? 'selected' : 'notSelected'}>
+                                <Link to='/about' onClick={() => { setPage("about"); setNavbarStatus('Inactive'); window.scrollTo({top: 0, left: 0, behavior: 'auto'}); }} className={page === "about" ? 'selected' : 'notSelected'}>
                                     about
                                 </Link>
 

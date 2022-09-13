@@ -6,6 +6,8 @@ import Controls from './Controls';
 import { useSpring, a } from '@react-spring/three';
 import { randFloat } from 'three/src/math/MathUtils';
 
+import { MoonLoader } from 'react-spinners';
+
 const rotationSpeed = 0.001;
 
 const Clouds = () => {
@@ -138,6 +140,10 @@ const PlanetModel = ({ ...props }) => {
         group.current.rotation.y += rotationSpeed;
     });
 
+    useEffect(() => {
+        props.setLoading(false);
+    }, []);
+
     return (
         <group ref={group} {...props} dispose={null} scale={[1.5, 1.5, 1.5]} renderOrder={1}>
             <mesh geometry={nodes.Mesh_01799.geometry} material={materials['Material_0.002']} />
@@ -155,6 +161,8 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
     const [dandelions, setDandelions] = useState([]);
 
     const [brush, setBrush] = useState('klee');
+
+    const [loading, setLoading] = useState(true);
 
     const addFormOfLife = (formOfLife, pos) => {
         switch (formOfLife) {
@@ -179,21 +187,21 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
 
     const handlePointerUp = (e) => {
         e.stopPropagation();
-            e.intersections.forEach(intersection => {
-                if (intersection.object.name === 'planet') {
-                    switch (brush) {
-                        case 'klee':
-                            addFormOfLife('klee', intersection.point);
-                            break;
-                        case 'mushroom':
-                            addFormOfLife('mushroom', intersection.point);
-                            break;
-                        case 'dandelion':
-                            addFormOfLife('dandelion', intersection.point);
-                            break;
-                    }
+        e.intersections.forEach(intersection => {
+            if (intersection.object.name === 'planet') {
+                switch (brush) {
+                    case 'klee':
+                        addFormOfLife('klee', intersection.point);
+                        break;
+                    case 'mushroom':
+                        addFormOfLife('mushroom', intersection.point);
+                        break;
+                    case 'dandelion':
+                        addFormOfLife('dandelion', intersection.point);
+                        break;
                 }
-            });
+            }
+        });
     };
 
 
@@ -205,8 +213,15 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
             </div>
 
             <Controls theme={theme} brush={brush} setBrush={setBrush} clearPlanet={clearPlanet} />
-            {homeHintEnabled && <span className='Hint'>rotate me! <br />click me!</span>}
+
+
+            {!loading && homeHintEnabled && <span className='Hint'>rotate me! <br />click me!</span>}
             <div className='CanvasWrapper'>
+                {loading &&
+                    <div className='LoaderWrapper'>
+                        <MoonLoader className={'Loader'} color={theme === 'Light' ? '#050505' : '#ffffff'} loading={true} size={30} speedMultiplier={0.5} />
+                    </div>
+                }
                 <Canvas dpr={window.devicePixelRatio}>
                     <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={3.2} maxDistance={8} rotateSpeed={0.5} />
                     <Suspense fallback={null}>
@@ -216,7 +231,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
                         {theme === 'Light' && <Sky />}
                         {theme === 'Light' && <Clouds />}
                         {theme === 'Dark' && <Stars radius={400} count={1500} />}
-                        <PlanetModel onPointerUp={(e) => {setHomeHintEnabled(false); }} onClick={(e) => { handlePointerUp(e); console.log("clicked Planet"); }} />
+                        <PlanetModel onPointerUp={(e) => { setHomeHintEnabled(false); }} onClick={(e) => { handlePointerUp(e); console.log("clicked Planet"); }} setLoading={setLoading} />
                         {klees.map((klee, index) => (
                             <KleeModel
                                 key={index}
