@@ -207,11 +207,11 @@
             filter: invert(86%) sepia(99%) saturate(7292%) hue-rotate(189deg) brightness(143%) contrast(84%);
         }
 
-        .kleeblatt:active {
-            img, svg {
-                filter: invert(23%) sepia(17%) saturate(6251%) hue-rotate(235deg) brightness(93%) contrast(96%);
-            }
-        }
+        // .kleeblatt:active {
+        //     img, svg {
+        //         filter: invert(23%) sepia(17%) saturate(6251%) hue-rotate(235deg) brightness(93%) contrast(96%);
+        //     }
+        // }
     }
 
 

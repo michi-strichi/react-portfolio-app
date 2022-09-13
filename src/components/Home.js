@@ -156,8 +156,6 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
 
     const [brush, setBrush] = useState('klee');
 
-    const [moved, setMoved] = useState(false);
-
     const addFormOfLife = (formOfLife, pos) => {
         switch (formOfLife) {
             case 'klee':
@@ -173,17 +171,14 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
 
     };
 
-
     const clearPlanet = () => {
         setKlees([]);
         setMushrooms([]);
         setDandelions([]);
     };
 
-
     const handlePointerUp = (e) => {
         e.stopPropagation();
-        if (!moved) {
             e.intersections.forEach(intersection => {
                 if (intersection.object.name === 'planet') {
                     switch (brush) {
@@ -199,7 +194,6 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
                     }
                 }
             });
-        }
     };
 
 
@@ -212,7 +206,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
 
             <Controls theme={theme} brush={brush} setBrush={setBrush} clearPlanet={clearPlanet} />
             {homeHintEnabled && <span className='Hint'>rotate me! <br />click me!</span>}
-            <div className='CanvasWrapper' onPointerDown={() => setMoved(false)} onPointerMove={() => setMoved(true)}>
+            <div className='CanvasWrapper'>
                 <Canvas dpr={window.devicePixelRatio}>
                     <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={3.2} maxDistance={8} rotateSpeed={0.5} />
                     <Suspense fallback={null}>
@@ -222,7 +216,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
                         {theme === 'Light' && <Sky />}
                         {theme === 'Light' && <Clouds />}
                         {theme === 'Dark' && <Stars radius={400} count={1500} />}
-                        <PlanetModel onPointerUp={(e) => { handlePointerUp(e); setHomeHintEnabled(false); }} />
+                        <PlanetModel onPointerUp={(e) => {setHomeHintEnabled(false); }} onClick={(e) => { handlePointerUp(e); console.log("clicked Planet"); }} />
                         {klees.map((klee, index) => (
                             <KleeModel
                                 key={index}

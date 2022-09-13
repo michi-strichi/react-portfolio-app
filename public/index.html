@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="noScroll">
+<html lang="en" class="noScroll noSelect">
 
 <head>
     <meta charset="utf-8" />
@@ -7,11 +7,8 @@
     <link rel="icon" href="%PUBLIC_URL%/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <meta name="theme-color" content="#000000" /> -->
     <meta name="description" content="Portfolio website of Michael Hochreiter, 3D Interaction Developer" />
-
     <meta property="og:type" content="website">
     <!-- <meta property="og:url" content=""> -->
     <!-- <meta property="og:image" content=""> -->
@@ -27,8 +24,23 @@
             overflow: -moz-scrollbars-none;
             scrollbar-width: none;
         }
+
         .noScroll::-webkit-scrollbar {
             display: none;
+        }
+
+        .noSelect {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .noSelect:focus {
+            outline: none !important;
         }
     </style>
 
