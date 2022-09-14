@@ -1,4 +1,4 @@
-import React, { useRef, Suspense } from 'react'
+import React, { useRef, Suspense, useEffect, useState } from 'react'
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 
@@ -8,6 +8,11 @@ import Footer from './Footer';
 function Michi_Model({ ...props }) {
     const group = useRef()
     const { nodes, materials } = useGLTF('/Michi_3D_smiling.glb')
+
+    useEffect(() => {
+        props.setLoading(false);
+    }, []);
+
     return (
         <group ref={group} {...props} dispose={null}>
             <mesh position={[0, -0.6, 0]} rotation={[0, -2, 0]} scale={[1.1, 1.1, 1.1]} geometry={nodes.michi_smiling.geometry} material={materials['Michi_FINAL_MAT.002']} />
@@ -16,18 +21,20 @@ function Michi_Model({ ...props }) {
 }
 
 const About = ({ theme, min781, aboutHintEnabled, setAboutHintEnabled }) => {
+    const [loading, setLoading] = useState(true);
+
     return (
         <div className={'About' + ' ' + theme}>
             <div className='Wrapper'>
                 <div className='Portrait'>
-                    {aboutHintEnabled && <span className='Hint'>rotate me!</span>}
+                    {!loading && aboutHintEnabled && <span className='Hint'>rotate me!</span>}
                     <div className='CanvasWrapper' onPointerUp={() => setAboutHintEnabled(false)}>
                         <Canvas dpr={window.devicePixelRatio}>
                             <OrbitControls autoRotate dampingFactor={0.3} enablePan={false} enableZoom={false} autoRotateSpeed={-0.5} />
 
                             <Suspense fallback={null}>
                                 <ambientLight intensity={0.9} />
-                                <Michi_Model  />
+                                <Michi_Model setLoading={setLoading} />
                             </Suspense>
                         </Canvas>
                     </div>
