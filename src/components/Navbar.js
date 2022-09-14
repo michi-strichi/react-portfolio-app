@@ -28,7 +28,7 @@ const Navbar = ({ page, theme, min781, setPage, setTheme }) => {
                         <ul>
                             <li className="kleeblatt">
                                 <Link to='/' onClick={() => { setPage("home"); setNavbarStatus('Inactive'); window.scrollTo({top: 0, left: 0, behavior: 'auto'}); }} className={page === "home" ? 'selected' : 'notSelected'}>
-                                    {page === "home" ? <KleeblattBold /> : <KleeblattBold />}
+                                    {page === "home" ? <KleeblattBold /> : <KleeblattThin />}
                                 </Link>
                             </li>
                             <li>
