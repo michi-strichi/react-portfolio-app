@@ -189,7 +189,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
 
     const handlePlanetClick = (e) => {
         e.stopPropagation();
-        if (true) {
+        if (!moved) {
             e.intersections.forEach(intersection => {
                 if (intersection.object.name === 'planet') {
                     switch (brush) {
