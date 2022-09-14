@@ -20,7 +20,6 @@ const Clouds = () => {
     )
 }
 
-
 const KleeModel = ({ ...props }) => {
     const innerGroup = useRef()
     const outerGroup = useRef()
@@ -180,9 +179,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
                 break;
             default:
                 break;
-
         }
-
     };
 
     const clearPlanet = () => {
@@ -230,7 +227,6 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
                 }
             });
         }
-
     };
 
     const determineTouchDevice = () => {
@@ -255,9 +251,8 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
             </div>
 
             {!loading && <Controls theme={theme} brush={brush} setBrush={setBrush} clearPlanet={clearPlanet} min781={min781} setHomeHintEnabled={setHomeHintEnabled}/>}
-
-
             {!loading && homeHintEnabled && <span className='Hint'>rotate me! <br />click me!</span>}
+
             <div className='CanvasWrapper' onPointerMove={() => {setMoved(true)}} >
                 {loading && <SceneLoader theme={theme}/>}
                 <Canvas dpr={window.devicePixelRatio}>
