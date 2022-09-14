@@ -1035,10 +1035,17 @@
     core-js-pure "^3.20.2"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.16.3", "@babel/runtime@^7.16.7", "@babel/runtime@^7.18.9", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.16.3", "@babel/runtime@^7.18.9", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.18.9"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.9.tgz#b4fcfce55db3d2e5e080d2490f608a3b9f407f4a"
   integrity sha512-lkqXDcvlFT5rvEjiu6+QYO+1GXrEHRo2LOtS7E4GtX5ESIZOgepqsZBVIj6Pv+a6zqsya9VCgiK1KAK4BvJDAw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.11.2", "@babel/runtime@^7.16.7":
+  version "7.19.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.0.tgz#22b11c037b094d27a8a2504ea4dcff00f50e2259"
+  integrity sha512-eR8Lo9hnDS7tqkO7NsV+mKvCmv5boaXFSZ70DnfhcgiEne8hv9oCEd36Klw74EtizEqLsy4YnW8UWwpBVolHZA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -1620,23 +1627,23 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@react-spring/animated@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@react-spring/animated/-/animated-9.5.2.tgz#42785b4f369d9715e9ee32c04b78483e7bb85489"
-  integrity sha512-oRlX+MmYLbK8IuUZR7SQUnRjXxJ4PMIZeBkBd1SUWVgVJAHMTfJzPltzm+I6p59qX+qLlklYHfnWaonQKDqLuQ==
+"@react-spring/animated@~9.5.2", "@react-spring/animated@~9.5.4":
+  version "9.5.4"
+  resolved "https://registry.yarnpkg.com/@react-spring/animated/-/animated-9.5.4.tgz#4fb2114c5b68243fc451d9af33f5dadd5b3b1c42"
+  integrity sha512-gYd+xWwcNxEGA9EdORz/xsGsuQmz46FCu7OLIGOZK00fiSkjEM8yTwBQ9i8SUslRAdxTW+POL5OctDpCA6A7xw==
   dependencies:
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
+    "@react-spring/shared" "~9.5.4"
+    "@react-spring/types" "~9.5.4"
 
-"@react-spring/core@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@react-spring/core/-/core-9.5.2.tgz#c8450783ce87a82d3f9ab21e2650e42922398ff7"
-  integrity sha512-UMRtFH6EfebMp/NMDGCUY5+hZFXsg9iT9hzt/iPzJSz2WMXKBjLoFZHJXcmiVOrIhzHmg1O0pFECn1Wp6pZ5Gw==
+"@react-spring/core@~9.5.2", "@react-spring/core@~9.5.4":
+  version "9.5.4"
+  resolved "https://registry.yarnpkg.com/@react-spring/core/-/core-9.5.4.tgz#3bfdaf40ff34cd2659c1d11c88dd0e3575701920"
+  integrity sha512-ZQxS5+5i6dVWL8mnRbrUMdkT7TfWhdIYYe2ze3my2SNAKC14JjxHxeknX57ywRyudskR1Z9CQjiC8aXX6QBl7w==
   dependencies:
-    "@react-spring/animated" "~9.5.2"
-    "@react-spring/rafz" "~9.5.2"
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
+    "@react-spring/animated" "~9.5.4"
+    "@react-spring/rafz" "~9.5.4"
+    "@react-spring/shared" "~9.5.4"
+    "@react-spring/types" "~9.5.4"
 
 "@react-spring/konva@~9.5.2":
   version "9.5.2"
@@ -1658,20 +1665,30 @@
     "@react-spring/shared" "~9.5.2"
     "@react-spring/types" "~9.5.2"
 
-"@react-spring/rafz@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@react-spring/rafz/-/rafz-9.5.2.tgz#1264d5df09717cf46d55055da2c55ff84f59073f"
-  integrity sha512-xHSRXKKBI/wDUkZGrspkOm4VlgN6lZi8Tw9Jzibp9QKf3neoof+U2mDNgklvnLaasymtUwAq9o4ZfFvQIVNgPQ==
+"@react-spring/rafz@~9.5.4":
+  version "9.5.4"
+  resolved "https://registry.yarnpkg.com/@react-spring/rafz/-/rafz-9.5.4.tgz#a2a036cb3e948c4f2a4be4d59e53857550c03db7"
+  integrity sha512-Tmev2j7sq2FW3ISUClnNS0PhkCsBfPPpkHVMxz8mkIKzMGXWskd0GblOoPVJiWvhbccaX/NYd+ykJqJ1gY0v9g==
 
-"@react-spring/shared@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@react-spring/shared/-/shared-9.5.2.tgz#e0a252e06daa3927964460fef05d8092e7d78ffc"
-  integrity sha512-/OSf2sjwY4BUnjZL6xMC+H3WxOOhMUCk+yZwgdj40XuyUpk6E6tYyiPeD9Yq5GLsZHodkvE1syVMRVReL4ndAg==
+"@react-spring/shared@~9.5.2", "@react-spring/shared@~9.5.4":
+  version "9.5.4"
+  resolved "https://registry.yarnpkg.com/@react-spring/shared/-/shared-9.5.4.tgz#0ae556047274997b87979df7ac27c29c58f590b3"
+  integrity sha512-22IYmNOzDRP9e5BaQk6T/P2aRxne9uTzGDYuBQCbJpChZypB98xWBMKlVTKdSRG7K4v+F97KFPAKBQzS/k7p5Q==
   dependencies:
-    "@react-spring/rafz" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
+    "@react-spring/rafz" "~9.5.4"
+    "@react-spring/types" "~9.5.4"
 
-"@react-spring/three@^9.3.1", "@react-spring/three@^9.5.2", "@react-spring/three@~9.5.2":
+"@react-spring/three@^9.3.1":
+  version "9.5.4"
+  resolved "https://registry.yarnpkg.com/@react-spring/three/-/three-9.5.4.tgz#8b461d60a05f205468ff19674e8e29509ba14521"
+  integrity sha512-grbkmBKuKyTdhDsGiSbFoKMhknJa2BwKo6sfbWjyypTpoJLXQAvW2GXmSgbcis1vLp19VrWy7zRqTJS5CZgkhQ==
+  dependencies:
+    "@react-spring/animated" "~9.5.4"
+    "@react-spring/core" "~9.5.4"
+    "@react-spring/shared" "~9.5.4"
+    "@react-spring/types" "~9.5.4"
+
+"@react-spring/three@^9.5.2", "@react-spring/three@~9.5.2":
   version "9.5.2"
   resolved "https://registry.yarnpkg.com/@react-spring/three/-/three-9.5.2.tgz#965ff4e729929ebbb9a1f8e84f3f4acb6acec4f9"
   integrity sha512-3H7Lv8BJZ3dajh0yJA3m9rEbqz5ZNrTCAkhVOeLqgvBlcWU5qVs4luYA1Z7H4vZnLqVtzv+kHAyg3XIpuTOXhQ==
@@ -1681,10 +1698,10 @@
     "@react-spring/shared" "~9.5.2"
     "@react-spring/types" "~9.5.2"
 
-"@react-spring/types@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.5.2.tgz#cce1b03afbafb23edfb9cd8c517cc7462abffb65"
-  integrity sha512-n/wBRSHPqTmEd4BFWY6TeR1o/UY+3ujoqMxLjqy90CcY/ozJzDRuREL3c+pxMeTF2+B7dX33dTPCtFMX51nbxg==
+"@react-spring/types@~9.5.2", "@react-spring/types@~9.5.4":
+  version "9.5.4"
+  resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.5.4.tgz#6d26df992a32ea5532a1e7b732f5485857116b00"
+  integrity sha512-dzcGxqL1kPKociXK+pcq5ley77cWDWiphfv8OREv8dAZS1dKDTJq1zVy7ZD5ocyMtKMZw/7AcOdIJ1H80Dp56g==
 
 "@react-spring/web@~9.5.2":
   version "9.5.2"
@@ -4065,9 +4082,9 @@ destroy@1.2.0:
   integrity sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==
 
 detect-gpu@^4.0.14:
-  version "4.0.38"
-  resolved "https://registry.yarnpkg.com/detect-gpu/-/detect-gpu-4.0.38.tgz#bf43f61065f6f555a12f9b0a557e5edd1033085a"
-  integrity sha512-rcUSndkHBA6jXq3yKolPHHyur7ypJkjwLQzrv3ONGays6/CPYBLA8fSWqRnNlGaT2J0bGrB5pPYcm5Oyz+xPoQ==
+  version "4.0.39"
+  resolved "https://registry.yarnpkg.com/detect-gpu/-/detect-gpu-4.0.39.tgz#174a95aa2716381beb22ea2642c4cca108e1799c"
+  integrity sha512-qJjdyt3cWdFtWPfYgT2hwcBWd9y7kbbGkEI2rgltyvTNzkqNM0u1fYUCkXpg+ErK/tmvs3OZN25DkEBJlYfgrw==
   dependencies:
     webgl-constants "^1.1.1"
 
@@ -8450,6 +8467,13 @@ react-dev-utils@^12.0.0:
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
+react-device-detect@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/react-device-detect/-/react-device-detect-2.2.2.tgz#dbabbce798ec359c83f574c3edb24cf1cca641a5"
+  integrity sha512-zSN1gIAztUekp5qUT/ybHwQ9fmOqVT1psxpSlTn1pe0CO+fnJHKRLOWWac5nKxOxvOpD/w84hk1I+EydrJp7SA==
+  dependencies:
+    ua-parser-js "^1.0.2"
+
 react-dom@^17.0.1, react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
@@ -9741,9 +9765,9 @@ text-table@^0.2.0:
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
 three-mesh-bvh@^0.5.7:
-  version "0.5.15"
-  resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.5.15.tgz#bcf681d784d8988618344a5e11e7ded7e76ee86a"
-  integrity sha512-jxE5iGjcoEMiyxUs7hMeZL6jBXBz9973ilqhXPhKlA1f7eitjIxRTtu7UWVQy+PhxXTsknmPzWmN5c+uAa/anA==
+  version "0.5.16"
+  resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.5.16.tgz#ed8518355fb70d7da6a5537558ba43f76a56b067"
+  integrity sha512-kN3QGKJNiQQcuiOsjVIkjtPnV3PJa+0Orih2E52afa+kQfs3zfoYt6Kxn6b6RNiAfaQ+7ckwPK0mTVFVl2F2LA==
 
 three-stdlib@^2.8.9:
   version "2.15.0"
@@ -9975,6 +9999,11 @@ typedarray-to-buffer@^3.1.5:
   integrity sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
   dependencies:
     is-typedarray "^1.0.0"
+
+ua-parser-js@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-1.0.2.tgz#e2976c34dbfb30b15d2c300b2a53eac87c57a775"
+  integrity sha512-00y/AXhx0/SsnI51fTc0rLRmafiGOM4/O+ny10Ps7f+j/b8p/ZY11ytMgznXkOVo4GQ+KwQG5UQLkLGirsACRg==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"

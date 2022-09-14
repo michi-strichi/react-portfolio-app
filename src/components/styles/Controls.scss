@@ -126,8 +126,8 @@
 
     }
 
-    img {
-        // z-index: 10;
+    svg {
+        border-radius: 6px;
     }
 
     .HelpText {
@@ -347,6 +347,7 @@
     .Clear {
         background-color: $light-backgroundColor1-5;
     }
+
 }
 
 .HelpText.Light {
