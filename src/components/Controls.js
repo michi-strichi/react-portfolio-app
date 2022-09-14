@@ -19,14 +19,14 @@ const Controls = ({ theme, brush, setBrush, clearPlanet, min781, setHomeHintEnab
                 <div className={'HelpText ' + 'noselect ' + theme}>
                     <div className='HelpTextWrapper'>
                         <p className='ControlsPlanet'>
-                            {min781 ? '🡰' : '🡱'} <br />
+                            {min781 ? '←' : '↑'} <br />
                             Click and drag planet to rotate. <br />
                             Click planet to spawn life form.
 
                         </p>
                         <p className='ControlsLifeForm'>
                             Choose life form. <br />
-                            {min781 ? '🡲' : '🡳'}
+                            {min781 ? '→' : '↓'}
                         </p>
                     </div>
                 </div>
