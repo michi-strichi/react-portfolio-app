@@ -26,13 +26,19 @@
     .Miho {
         font-size: 1.75em;
         font-weight: 600;
-        transition: all 400ms ease-in;
+        transition: transform 400ms ease-in;
+
+        transition-property: transform, opacity; 
+        transition-duration: 400ms; 
+        transition-timing-function: ease-in; 
     }
 
     .Port {
         font-size: 1.7em;
         font-weight: 100;
-        transition: all 400ms ease-in;
+        transition-property: transform, opacity; 
+        transition-duration: 400ms; 
+        transition-timing-function: ease-in; 
     }
 
 
