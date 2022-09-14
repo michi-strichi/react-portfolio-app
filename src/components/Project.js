@@ -22,7 +22,7 @@ const Project = ({ theme, title, year, description, link, color, software, role,
 
         <div className={'Project' + ' ' + theme + ' ' + isExpanded}>
             <div className='Thumbnail' onClick={toggleExpanded}>
-                <img src={thumbnail_loaded}></img>
+                <img src={thumbnail_loaded} alt={title + 'thumbnail image'}></img>
                 <div className='ThumbnailInfo'>
                     <h3 className='Title'>{title}</h3>
                     <p className='Year'>{year}</p>
@@ -31,14 +31,14 @@ const Project = ({ theme, title, year, description, link, color, software, role,
             <div className='Details'>
                 <div className='Info'>
                     <p className='Description'>{description}</p>
-                    {link !== undefined && <p className='Link'>-&gt; <a href={link} style={LinkStyle} target='_blank'>Check it out</a></p>}
+                    {link !== undefined && <p className='Link'>-&gt; <a href={link} style={LinkStyle} target='_blank' rel="noreferrer">Check it out</a></p>}
                 </div>
                 <div className='Images'>
                     <div className='Detail_0'>
-                        <img src={detail_0_loaded}></img>
+                        <img src={detail_0_loaded} alt={title + 'first detail image'}></img>
                     </div>
                     <div className='Detail_1'>
-                        <img src={detail_1_loaded}></img>
+                        <img src={detail_1_loaded} alt={title + 'second detail image'}></img>
                     </div>
                 </div>
                 <div className='Info'>

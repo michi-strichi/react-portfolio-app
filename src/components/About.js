@@ -4,8 +4,9 @@ import { OrbitControls, useGLTF } from '@react-three/drei';
 
 import './styles/About.scss';
 import Footer from './Footer';
+import SceneLoader from './SceneLoader';
 
-function Michi_Model({ ...props }) {
+function MichiModel({ ...props }) {
     const group = useRef()
     const { nodes, materials } = useGLTF('/Michi_3D_smiling.glb')
 
@@ -26,15 +27,17 @@ const About = ({ theme, min781, aboutHintEnabled, setAboutHintEnabled }) => {
     return (
         <div className={'About' + ' ' + theme}>
             <div className='Wrapper'>
+
                 <div className='Portrait'>
                     {!loading && aboutHintEnabled && <span className='Hint'>rotate me!</span>}
                     <div className='CanvasWrapper' onPointerUp={() => setAboutHintEnabled(false)}>
+                        {loading && <SceneLoader theme={theme} />}
                         <Canvas dpr={window.devicePixelRatio}>
                             <OrbitControls autoRotate dampingFactor={0.3} enablePan={false} enableZoom={false} autoRotateSpeed={-0.5} />
 
                             <Suspense fallback={null}>
                                 <ambientLight intensity={0.9} />
-                                <Michi_Model setLoading={setLoading} />
+                                <MichiModel setLoading={setLoading} />
                             </Suspense>
                         </Canvas>
                     </div>
@@ -58,9 +61,9 @@ const About = ({ theme, min781, aboutHintEnabled, setAboutHintEnabled }) => {
                         Work Experience
                     </h3>
                     <p>
-                        Interaction Developer at <a href='https://www.re-spaces.com' target='_blank'>Responsive Spaces</a>, Linz
+                        Interaction Developer at <a href='https://www.re-spaces.com' target='_blank' rel="noreferrer">Responsive Spaces</a>, Linz
                         <br />
-                        3D Design Intern at <a href='https://www.crazyeye.at' target='_blank'>Crazy Eye</a>, Vienna
+                        3D Design Intern at <a href='https://www.crazyeye.at' target='_blank' rel="noreferrer">Crazy Eye</a>, Vienna
                     </p>
 
                     <h3>

@@ -1,0 +1,44 @@
+@import './Colors.scss';
+
+/* --------------------------------- MOBILE --------------------------------- */
+@media (min-width:320px) {
+}
+
+
+.SceneLoader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;     
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    margin-top: 10px;
+
+    .LoaderText {
+        margin: 6px;
+    }
+}
+
+
+/* --------------------------------- THEMES --------------------------------- */
+
+
+.SceneLoader.Dark {
+    p.LoaderText{
+        color: $dark-text7;
+    }
+
+}
+
+.SceneLoader.Light {
+    p.LoaderText{
+        color: $light-text7;
+    }
+
+}

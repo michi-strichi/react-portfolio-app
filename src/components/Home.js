@@ -1,12 +1,12 @@
 import React, { useState, useRef, Suspense, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, TrackballControls, useGLTF, Stars, Environment, Cloud, Sky } from '@react-three/drei';
+import { OrbitControls, useGLTF, Stars, Environment, Cloud, Sky } from '@react-three/drei';
 import './styles/Home.scss';
 import Controls from './Controls';
 import { useSpring, a } from '@react-spring/three';
 import { randFloat } from 'three/src/math/MathUtils';
 
-import { MoonLoader } from 'react-spinners';
+import SceneLoader from './SceneLoader';
 
 const rotationSpeed = 0.001;
 
@@ -178,6 +178,9 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
             case 'dandelion':
                 setDandelions([...dandelions, pos]);
                 break;
+            default:
+                break;
+
         }
 
     };
@@ -221,6 +224,8 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
                         case 'dandelion':
                             addFormOfLife('dandelion', intersection.point);
                             break;
+                        default:
+                            break;
                     }
                 }
             });
@@ -249,16 +254,12 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
                 <p className='Title'>3D Developer</p>
             </div>
 
-            <Controls theme={theme} brush={brush} setBrush={setBrush} clearPlanet={clearPlanet} />
+            {!loading && <Controls theme={theme} brush={brush} setBrush={setBrush} clearPlanet={clearPlanet} min781={min781} setHomeHintEnabled={setHomeHintEnabled}/>}
 
 
             {!loading && homeHintEnabled && <span className='Hint'>rotate me! <br />click me!</span>}
             <div className='CanvasWrapper' onPointerMove={() => {setMoved(true)}} >
-                {loading &&
-                    <div className='LoaderWrapper'>
-                        <MoonLoader className={'Loader'} color={theme === 'Light' ? '#050505' : '#ffffff'} loading={true} size={30} speedMultiplier={0.5} />
-                    </div>
-                }
+                {loading && <SceneLoader theme={theme}/>}
                 <Canvas dpr={window.devicePixelRatio}>
                     <OrbitControls dampingFactor={0.3} enablePan={false} minDistance={3.2} maxDistance={8} rotateSpeed={0.5} />
                     <Suspense fallback={null}>

@@ -18,19 +18,6 @@
             height: 100vh;
             width: 100%;
             cursor: pointer;
-
-            .LoaderWrapper{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                position: absolute;
-
-                width: 100vw;
-                height: 100%;
-                top: 0;
-                left: 0;
-            }
         }
 
     }
@@ -103,9 +90,6 @@
 
 }
 
-/* --------------------------------- TABLET --------------------------------- */
-@media (min-width:581px) {}
-
 /* --------------------------------- WIDE TABLET --------------------------------- */
 @media (min-width:781px) {
 
@@ -138,11 +122,6 @@
     }
 
 }
-
-
-/* --------------------------------- BIG SCREEN --------------------------------- */
-// @media (min-width:1281px) {
-// }
 
 /* --------------------------------- THEMES --------------------------------- */
 

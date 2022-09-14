@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import './styles/Controls.scss';
 
-import {ReactComponent as KleeCol} from './assets/svgs/klee_col_icon.svg';
-import {ReactComponent as DandelionCol} from './assets/svgs/dandelion_col_icon.svg'
-import {ReactComponent as MushroomCol} from './assets/svgs/mushroom_col_icon.svg'
+import { ReactComponent as KleeCol } from './assets/svgs/klee_col_icon.svg';
+import { ReactComponent as DandelionCol } from './assets/svgs/dandelion_col_icon.svg'
+import { ReactComponent as MushroomCol } from './assets/svgs/mushroom_col_icon.svg'
 
-const Controls = ({ theme, brush, setBrush, clearPlanet }) => {
+const Controls = ({ theme, brush, setBrush, clearPlanet, min781, setHomeHintEnabled }) => {
 
     const [helpEnabled, setHelpEnabled] = useState(false);
 
@@ -17,17 +17,24 @@ const Controls = ({ theme, brush, setBrush, clearPlanet }) => {
         <>
             {helpEnabled &&
                 <div className={'HelpText ' + 'noselect ' + theme}>
-                    <p>
-                        Click and drag planet to rotate <br />
-                        Click planet to spawn form of life <br />
-                        Select form of life of life here --&gt;
-                    </p>
+                    <div className='HelpTextWrapper'>
+                        <p className='ControlsPlanet'>
+                            {min781 ? '🡰' : '🡱'} <br />
+                            Click and drag planet to rotate. <br />
+                            Click planet to spawn life form.
+
+                        </p>
+                        <p className='ControlsLifeForm'>
+                            Choose life form. <br />
+                            {min781 ? '🡲' : '🡳'}
+                        </p>
+                    </div>
                 </div>
             }
 
             <div className='ControlsWrapper noselect' >
                 <div className={'Controls' + ' ' + theme} >
-                    <div className='Questionmark' onClick={() => toggleHelpEnabled()}>
+                    <div className='Questionmark' onClick={() => {toggleHelpEnabled(); setHomeHintEnabled(false)}}>
                         <div className='IconWrapper'>
                             ?
                         </div>
@@ -38,10 +45,10 @@ const Controls = ({ theme, brush, setBrush, clearPlanet }) => {
                             <KleeCol />
                         </div>
                         <div className='IconWrapper' onClick={() => { setBrush('mushroom'); setHelpEnabled(false) }}>
-                             <MushroomCol />
+                            <MushroomCol />
                         </div>
                         <div className='IconWrapper' onClick={() => { setBrush('dandelion'); setHelpEnabled(false) }}>
-                             <DandelionCol />
+                            <DandelionCol />
                         </div>
                     </div>
                     <div className='Clear' onClick={() => { clearPlanet(); setHelpEnabled(false) }}>

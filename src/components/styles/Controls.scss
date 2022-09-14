@@ -40,7 +40,7 @@
 
         border-radius: 8px;
 
-        
+
         cursor: pointer;
 
         .IconWrapper {
@@ -49,7 +49,7 @@
 
     }
 
-   
+
 
     .Brushes {
         height: 60px;
@@ -67,9 +67,9 @@
         .IconWrapper {
             padding: 6px;
             height: 60px;
-            width: 60px;     
-            
-            
+            width: 60px;
+
+
         }
 
         .Bar {
@@ -85,8 +85,8 @@
             border-radius: 8px;
         }
 
-        .Bar.klee{
-            transform: translate(0,0);
+        .Bar.klee {
+            transform: translate(0, 0);
         }
 
         .Bar.mushroom {
@@ -94,7 +94,7 @@
         }
 
         .Bar.dandelion {
-            transform: translate(120px,0);
+            transform: translate(120px, 0);
         }
     }
 
@@ -107,8 +107,8 @@
 
         border-radius: 8px;
 
-        .ClearBar{
-            height: 3px; 
+        .ClearBar {
+            height: 3px;
             margin: 0 7px 0 7px;
         }
 
@@ -132,23 +132,36 @@
 
     .HelpText {
         position: fixed;
-        bottom: 125px;
 
+        height: 100%;
         width: 100%;
 
         z-index: 10;
 
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
 
-        p{
+        pointer-events: none;
+
+        .HelpTextWrapper {
+            margin: 0 0 100px 0;
             padding: 4px 10px 7px 10px;
             border-radius: 10px;
+            
             text-align: center;
             font-size: 1.3em;
             font-weight: 400;
+        }
+
+        p.ControlsPlanet {
+            margin: 0 0 10px 0;
+
+        }
+
+        p.ControlsLifeForm {
+            margin: 0;
         }
     }
 
@@ -219,8 +232,8 @@
             border-radius: 6px;
         }
 
-        .Bar.klee{
-            transform: translate(0,-1px);
+        .Bar.klee {
+            transform: translate(0, -1px);
 
         }
 
@@ -229,7 +242,7 @@
         }
 
         .Bar.dandelion {
-            transform: translate(0,92px);
+            transform: translate(0, 92px);
         }
     }
 
@@ -238,8 +251,8 @@
         width: 34px;
         margin: 6px;
 
-        .ClearBar{
-            height: 2px; 
+        .ClearBar {
+            height: 2px;
             margin: 0 7px 0 7px;
         }
 
@@ -258,9 +271,13 @@
 
     .HelpText {
         width: 85vw;
-        bottom: 46px;
-    }
+        flex-direction: row;
 
+        .HelpTextWrapper {
+            margin: 0 100px 0 0;
+        }
+
+    }
 
 }
 
@@ -288,7 +305,8 @@
 
         background-color: $dark-backgroundColor1-5;
     }
-    .Questionmark:active{
+
+    .Questionmark:active {
         color: $dark-text2;
     }
 
@@ -297,7 +315,7 @@
     }
 
     .Clear:active {
-        .ClearBar{
+        .ClearBar {
             background-color: $dark-text2;
         }
     }
@@ -313,7 +331,8 @@
 
 .HelpText.Dark {
     color: $dark-text2;
-        p {
+
+    .HelpTextWrapper {
         backdrop-filter: blur(20px);
     }
 }
@@ -322,11 +341,13 @@
     .Brushes {
         background-color: $light-backgroundColor1-5;
     }
+
     .Questionmark {
         color: $light-text2;
         background-color: $light-backgroundColor1-5;
     }
-    .Questionmark:active{
+
+    .Questionmark:active {
         color: $light-text2;
     }
 
@@ -335,7 +356,7 @@
     }
 
     .Clear:active {
-        .ClearBar{
+        .ClearBar {
             background-color: $light-text2;
         }
     }
@@ -353,9 +374,7 @@
 .HelpText.Light {
     color: $light-text2;
 
-    p {
+    .HelpTextWrapper {
         backdrop-filter: blur(20px);
     }
 }
-
-
