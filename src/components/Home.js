@@ -164,8 +164,6 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
 
     const [loading, setLoading] = useState(true);
 
-    const [moved, setMoved] = useState(false);
-
     const addFormOfLife = (formOfLife, pos) => {
         switch (formOfLife) {
             case 'klee':
@@ -189,7 +187,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
 
     const handlePlanetClick = (e) => {
         e.stopPropagation();
-        if (!moved) {
+        if (true) {
             e.intersections.forEach(intersection => {
                 if (intersection.object.name === 'planet') {
                     switch (brush) {
@@ -208,6 +206,15 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
         }
     };
 
+    const printIsTouch = () => {
+        if ("ontouchstart" in document.documentElement) {
+            alert("touch")
+        }
+        else {
+            alert("no touch")
+        }
+    };
+
 
     return (
         <div className={'Home' + ' ' + 'noselect' + ' ' + theme}>
@@ -220,7 +227,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
 
 
             {!loading && homeHintEnabled && <span className='Hint'>rotate me! <br />click me!</span>}
-            <div className='CanvasWrapper' onPointerMove={() => setMoved(true)}>
+            <div className='CanvasWrapper'>
                 {loading &&
                     <div className='LoaderWrapper'>
                         <MoonLoader className={'Loader'} color={theme === 'Light' ? '#050505' : '#ffffff'} loading={true} size={30} speedMultiplier={0.5} />
@@ -236,7 +243,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
                         {theme === 'Light' && <Clouds />}
                         {theme === 'Dark' && <Stars radius={400} count={1500} />}
 
-                        <PlanetModel onPointerDown={() => setMoved(false)} onPointerUp={(e) => { setHomeHintEnabled(false);}} onClick={(e) => { handlePlanetClick(e); }} setLoading={setLoading} />
+                        <PlanetModel onPointerUp={(e) => { setHomeHintEnabled(false); }} onClick={(e) => { handlePlanetClick(e); printIsTouch()}} setLoading={setLoading} />
                         {klees.map((klee, index) => (
                             <KleeModel
                                 key={index}
