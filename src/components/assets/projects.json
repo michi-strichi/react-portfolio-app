@@ -23,7 +23,7 @@
     {
         "title": "Virtual Gallery",
         "year": "2021 - 2022",
-        "description": "An interactive experience of the degree program Media Technology & Design at the University of Applied Austria Available in VR or as a desktop version. Numerous works created during the course are exhibited. Easily addable, modular displays (2D, 3D, audio, video & code/web/game) allow new projects to be added constantly.",
+        "description": "An interactive experience of the degree program Media Technology & Design at the University of Applied Sciences Upper Austria, available in VR or as a desktop version. Numerous works created during the course are exhibited. Modular displays (2D, 3D, audio, video & code/web/game) allow new projects to be added constantly.",
         "color": "#549ccb",
         "software": "Unity, Blender3D",
         "role": "Project lead, 3D modelling, interaction development, scene building",
@@ -34,7 +34,7 @@
     {
         "title": "ArtisVR",
         "year": "2022",
-        "description": "A virtual reality application that allows users to quickly and easily furnish a room as desired. A room can be created with custom dimensions or selected from one of the predefined rooms. ArtisVR meant as a brainstorming tool for interior designers and personal use alike. ",
+        "description": "A virtual reality application that allows users to quickly and easily furnish a room as desired. A room can be created with custom dimensions or selected from one of the predefined rooms. ArtisVR is meant as a brainstorming tool for interior designers and hobby users alike. ",
         "link": "https://youtu.be/ANwm-mRawRE",
         "color": "#9d72e8",
         "software": "Blender3D, Unity",
@@ -46,7 +46,7 @@
     {
         "title": "Spook - Toy Concept",
         "year": "2020",
-        "description": "A concept for a toy collectible. The different parts of 'Spook' can be rotatet and mixed up similar to a Rubik's cube.",
+        "description": "A concept for a toy collectible. The different parts of 'Spook' can be rotatet and mixed up similarly to a Rubik's cube.",
         "color": "#29c345",
         "software": "Autodesk Maya, Adobe PS",
         "thumbnail": "spook_thumbnail.jpg",
@@ -56,7 +56,7 @@
     {
         "title": "Realtime Voronoi",
         "year": "2020",
-        "description": "Realtime evolving voronoi texture generated from 4D perlin noise.",
+        "description": "Realtime evolving pseudo-voronoi texture generated from 4D perlin noise.",
         "color": "#8889b7",
         "software": "Touchdesigner",
         "thumbnail": "voronoi_thumbnail.jpg",
@@ -66,7 +66,7 @@
     {
         "title": "Witch",
         "year": "2022",
-        "description": "Game-ready witch character with a beetle's shell as a protective shield. ",
+        "description": "Game-ready witch character with a beetle's shell as a protective shield.",
         "link": "https://youtu.be/jAsvio0CDmg",
         "color": "#5fbb72",
         "software": "Blender3D, ZBrush, Adobe AE",
@@ -77,7 +77,7 @@
     {
         "title": "Sound-reactive",
         "year": "2022",
-        "description": "Realtime sound-reactive visualisation of the song 'Sorrows of the Moon' by I Hate Models. Different parts of the 3D scene react to different instrumental layers in the music based on their frequency and amplitude. ",
+        "description": "Realtime sound-reactive visualisation of the song 'Sorrows of the Moon' by I Hate Models. Different parts of the 3D scene react to different instrumental layers in the music based on their frequency and amplitude.",
         "color": "#a12848",
         "software": "Blender3D, vvvv",
         "thumbnail": "soundreactive_thumbnail.jpg",
