@@ -247,7 +247,7 @@ const Home = ({ theme, min781, min1281, homeHintEnabled, setHomeHintEnabled }) =
         <div className={'Home' + ' ' + 'noselect' + ' ' + theme}>
             <div className='MichaelHochreiter' >
                 <p className='Name'>Michael Hochreiter</p>
-                <p className='Title'>3D Developer</p>
+                <p className='Title'>creative developer</p>
             </div>
 
             {!loading && <Controls theme={theme} brush={brush} setBrush={setBrush} clearPlanet={clearPlanet} min781={min781} setHomeHintEnabled={setHomeHintEnabled}/>}
