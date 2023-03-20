@@ -1,5 +1,17 @@
 [
     {
+        "title": "MockApp",
+        "year": "2022-2023",
+        "description": "MockApp is a web-app for interactive 3D mockups. Graphic designers can upload the designs they are currently working on and preview them in realistic 3D scenes. Users can move around freely, place mockups everywhere in the scene and view them from all angles.",
+        "link": "https://mockapp.xyz",
+        "color": "#ff8bee",
+        "software": "React, three.js, Blender3D, Figma",
+        "role": "Project lead, visual design, interaction design, 3D development",
+        "thumbnail": "mockapp_thumbnail.jpg",
+        "detail_0": "mockapp_detail0.jpg",
+        "detail_1": "mockapp_detail1.png"
+    },
+    {
         "title": "Excavation Viewer",
         "year": "2021",
         "description": "An interactive 3D viewer of the excavation of prehistoric stilt houses at Attersee, Austria. A model of the surrounding area generated from satellite data, as well as high-resolution photogrammtery scans of the different excavation layers can be examined virtually. Various types of unearthed artefacts are marked for easier inspection.",
@@ -93,17 +105,5 @@
         "thumbnail": "website_thumbnail.jpg",
         "detail_0": "website_detail0.jpg",
         "detail_1": "website_detail1.png"
-    },
-    {
-        "title": "MockApp",
-        "year": "2022-2023",
-        "description": "MockApp is a web-app for interactive 3D mockups. Graphic designers can upload the designs they are currently working on and preview them in realistic 3D scenes. Users can move around freely, place mockups everywhere in the scene and view them from all angles.",
-        "link": "https://mockapp.xyz",
-        "color": "#ff8bee",
-        "software": "React, three.js, Blender3D, Figma",
-        "role": "Project lead, visual design, interaction design, 3D development",
-        "thumbnail": "mockapp_thumbnail.jpg",
-        "detail_0": "mockapp_detail0.jpg",
-        "detail_1": "mockapp_detail1.png"
     }
 ]

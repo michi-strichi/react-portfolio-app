@@ -61,6 +61,8 @@ const About = ({ theme, min781, aboutHintEnabled, setAboutHintEnabled }) => {
                         Work Experience
                     </h3>
                     <p>
+                        Creative Development Intern at <a href='https://ravespace.io' target='_blank' rel="noreferrer">RAVE.SPACE</a>, Berlin
+                        <br />
                         Interaction Developer at <a href='https://www.re-spaces.com' target='_blank' rel="noreferrer">Responsive Spaces</a>, Linz
                         <br />
                         3D Design Intern at <a href='https://www.crazyeye.at' target='_blank' rel="noreferrer">Crazy Eye</a>, Vienna
@@ -72,9 +74,9 @@ const About = ({ theme, min781, aboutHintEnabled, setAboutHintEnabled }) => {
                     <p>
                         <span className="Book">Moby Dick</span> by Herman Melville
                         <br />
-                        <span className="Book">Don't Sleep, There are Snakes</span> by Daniel Everett
+                        <span className="Book">Confessions of a Mask</span> by Yukio Mishima
                         <br />
-                        <span className="Book">Fear and Loathing in Las Vegas</span> by Hunter S. Thompson
+                        <span className="Book">A (Very) Short History of Life on Earth</span> by Henry Gee
                     </p>
 
                     <h3>
