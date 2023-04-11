@@ -72,11 +72,11 @@ const About = ({ theme, min781, aboutHintEnabled, setAboutHintEnabled }) => {
                         Current Reads
                     </h3>
                     <p>
-                        <span className="Book">Moby Dick</span> by Herman Melville
-                        <br />
                         <span className="Book">Confessions of a Mask</span> by Yukio Mishima
                         <br />
                         <span className="Book">A (Very) Short History of Life on Earth</span> by Henry Gee
+                        <br />
+                        <span className="Book">Star Maker</span> by Olaf Stapledon
                     </p>
 
                     <h3>
